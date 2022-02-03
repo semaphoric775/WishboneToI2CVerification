@@ -85,13 +85,13 @@ initial
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
 
 	wb_bus.master_write(CMDR, 8'bxxxxx100);
-	//revisit later and maybe put in a different place in simulation flow
-	//i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
 
+	i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
 
 	wb_bus.master_write(DPR, 8'h44);
 	wb_bus.master_write(CMDR, 8'bxxxxx001);
+
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
 
 	wb_bus.master_write(DPR, 8'h78);
@@ -105,16 +105,14 @@ initial
 // ****************************************************************************
 // Instantiate the I2C slave Bus Functional Model
 
-/*i2c_if	    #(
+i2c_if	    #(
 	.I2C_DATA_WIDTH(I2C_DATA_WIDTH),
 	.I2C_ADDR_WIDTH(I2C_ADDR_WIDTH)
 	)
 i2c_bus (
-	.scl_i(scl), 
-	.sda_i(sda),
-	.scl_o(scl), 
-	.sda_o(sda)
-);*/
+	.scl(scl), 
+	.sda(sda)
+);
 
 // ****************************************************************************
 
