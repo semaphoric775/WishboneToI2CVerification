@@ -4,7 +4,7 @@ interface i2c_if	#(
 	)
 (
     input wire scl,
-    inout logic sda
+    triand sda
 );
 
 typedef enum bit {WRITE, READ} i2c_op_t;
