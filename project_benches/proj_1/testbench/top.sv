@@ -70,6 +70,13 @@ logic [WB_DATA_WIDTH-1:0] wb_out;
 bit i2c_if_op;
 bit[I2C_DATA_WIDTH-1:0] i2c_if_write_data[];
 
+//i2c testflow
+initial
+	begin : TEST_FLOW_I2C
+	    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+	end
+
+//wishbone testflow
 initial
 	begin : TEST_FLOW
 	#1151
@@ -84,12 +91,13 @@ initial
 
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
 
+	//start command
 	wb_bus.master_write(CMDR, 8'bxxxxx100);
 
-	i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
 
 	wb_bus.master_write(DPR, 8'h44);
+	//write command
 	wb_bus.master_write(CMDR, 8'bxxxxx001);
 
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
@@ -107,7 +115,8 @@ initial
 
 i2c_if	    #(
 	.I2C_DATA_WIDTH(I2C_DATA_WIDTH),
-	.I2C_ADDR_WIDTH(I2C_ADDR_WIDTH)
+	.I2C_ADDR_WIDTH(I2C_ADDR_WIDTH),
+	.I2C_DEVICE_ADDR(8'h22)
 	)
 i2c_bus (
 	.scl(scl), 
