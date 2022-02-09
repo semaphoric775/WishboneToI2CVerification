@@ -74,7 +74,7 @@ bit[I2C_DATA_WIDTH-1:0] i2c_if_write_data[];
 initial
 	begin : TEST_FLOW_I2C
 	    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-	    $display("Completed I2C wait task");
+	    $display("Completed I2C wait task with op %b, data 0x%h", i2c_if_op, i2c_if_write_data);
 	end
 
 //wishbone testflow

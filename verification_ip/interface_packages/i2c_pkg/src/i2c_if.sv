@@ -21,7 +21,6 @@ always @(posedge sda) if(scl) stop_detected = 1;
 	bit[I2C_DATA_WIDTH-1:0] write_data_queue[$];
 	bit[I2C_DATA_WIDTH-1:0] packet;
 	@(negedge sda && scl);
-	$display("Start condition detected");
 	repeat(I2C_ADDR_WIDTH) begin
 	    @(posedge scl) addr = {addr, sda};
 	end
@@ -31,6 +30,7 @@ always @(posedge sda) if(scl) stop_detected = 1;
 	@(posedge scl)
 	op = sda ? READ : WRITE;
 
+	//pull line low for ack bit
 	@(posedge scl)
 	sda_we = 1;
 	sda_o = 0;
@@ -53,8 +53,8 @@ always @(posedge sda) if(scl) stop_detected = 1;
 		packet = {packet, sda};	
 	    end
 	    write_data_queue.push_back(packet);
-	    $display("Read packet 0x%h", packet);
 	    //pull sda low for acknowledge bit
+	    //during one data valid window
 	    @(posedge scl)
 	    sda_we = 1;
 	    sda_o = 0;
@@ -65,10 +65,24 @@ always @(posedge sda) if(scl) stop_detected = 1;
    endtask
 
 // ****************************************************************************              
-// ****************************************************************************             
-    task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data[], output bit transfer_complete);
-
-    endtask
+task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data []   ,output bit transfer_complete);
+    transfer_complete = 0;
+    for(int i = 0; i < read_data.size(); i=i+1) begin
+	sda_we = 1;
+	for(int j = I2C_DATA_WIDTH; j > 0; j=j-1) begin
+	    @(posedge scl) sda_o = read_data[i][j];
+	end
+	sda_we = 0;
+	@(posedge scl)
+	if(sda) begin
+	    transfer_complete = 1;
+	    return;
+	end
+    end 
+    //data exhausted returns transfer not completed
+    sda_we = 0;
+    return;
+endtask
 
 // ****************************************************************************             
     task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[]);
