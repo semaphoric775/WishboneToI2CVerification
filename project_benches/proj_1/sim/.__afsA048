@@ -1,0 +1,197 @@
+# //  ModelSim SE-64 2019.2 Apr 16 2019 Linux 3.10.0-1160.53.1.el7.x86_64
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Warning: (vsim-14) Failed to open "modelsim.ini" specified by the MODELSIM environment variable.
+# No such file or directory. (errno = ENOENT)
+# vsim -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb 
+# Start time: 17:18:54 on Feb 10,2022
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+# set NoQuitOnFinish 1
+# 1
+#  do wave.do
+# 
+# stdin: <EOF>
+add wave -position insertpoint  \
+sim:/top/i2c_bus/stop_detected
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# I2C monitor	Data: 0x, Address: 0x22, WE: 0x0 at time                90545
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# I2C monitor	Data: 0x, Address: 0x22, WE: 0x0 at time                90545
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# I2C monitor	Data: 0x, Address: 0x22, WE: 0x0 at time                90545
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Observed packet 0x78 in monitor task
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Observed packet 0x78 in monitor task
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Observed packet 0x78 in monitor task
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# I2C monitor	Data: 0x78, Address: 0x22, WE: 0x0 at time               195125
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 200000ns
+# Wishbone monitor	Data: 0x00, Address: 0x0, WE: 0x0
+# Wishbone monitor	Data: 0xc0, Address: 0x0, WE: 0x1
+# Wishbone monitor	Data: 0x05, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x06, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x04, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x44, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x78, Address: 0x1, WE: 0x1
+# Wishbone monitor	Data: 0x01, Address: 0x2, WE: 0x1
+# Observed packet 0x78 in monitor task
+# Wishbone monitor	Data: 0x81, Address: 0x2, WE: 0x0
+# Wishbone monitor	Data: 0x05, Address: 0x2, WE: 0x1
+# I2C monitor	Data: 0x78, Address: 0x22, WE: 0x0 at time               195125
+# Completed I2C wait task with op 0, data 0x78
+# Wishbone monitor	Data: 0x85, Address: 0x2, WE: 0x0
