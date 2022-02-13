@@ -1,4 +1,5 @@
 import types_pkg::*;
+`timescale 1ns / 10ps
 
 interface i2c_if	#(
 	int I2C_ADDR_WIDTH=7,
@@ -27,7 +28,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 	    begin : START_CASE
 		forever begin
 		    @(negedge sda)
-		    if(scl) begin 
+		    if(scl) begin
 			bt = START; 
 			break;
 		    end
@@ -91,7 +92,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 		end
 		packet = {packet, one_data_bit};
 	    end
-	    write_data_queue.push_back(packet);
+	    write_data_queue.push_front(packet);
 	    send_ack();
 	end
    endtask
@@ -102,6 +103,39 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 
 // ****************************************************************************             
     task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[$]);
+	bit[I2C_DATA_WIDTH-1:0] packet;
+
+	i2c_bit_type bt;
+	bit one_data_bit;
+	
+	do get_link_status(bt, one_data_bit); while(bt != START);
+	repeat(I2C_ADDR_WIDTH)
+	    begin
+		get_link_status(bt, one_data_bit);
+		addr = {addr, one_data_bit};
+	    end
+
+	if(addr != I2C_DEVICE_ADDR)
+	    return;
+
+	@(posedge scl);
+	op = sda ? READ : WRITE;	
+
+	@(posedge scl);
+	@(negedge scl);
+
+	forever begin
+	    repeat(I2C_DATA_WIDTH) begin
+		get_link_status(bt, one_data_bit);
+		if(bt == STOP) begin 
+		    return;
+		end
+		packet = {packet, one_data_bit};
+	    end
+	    data.push_front(packet);
+	    @(posedge scl);
+	    @(negedge scl);
+	end
     endtask
 // ****************************************************************************              
 
