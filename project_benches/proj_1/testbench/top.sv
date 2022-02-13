@@ -1,5 +1,7 @@
 `timescale 1ns / 10ps
 
+import types_pkg::*;
+
 module top();
 
 parameter int WB_ADDR_WIDTH = 2;
@@ -60,7 +62,7 @@ initial
 
 //    task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[]);
 bit [I2C_ADDR_WIDTH-1:0] i2c_monitor_addr;
-bit i2c_monitor_op;
+i2c_op_t i2c_monitor_op;
 bit [I2C_DATA_WIDTH-1:0] i2c_monitor_data[];
 
 initial

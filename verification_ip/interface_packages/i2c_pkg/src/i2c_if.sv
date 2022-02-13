@@ -1,3 +1,5 @@
+import types_pkg::*;
+
 interface i2c_if	#(
 	int I2C_ADDR_WIDTH=7,
 	int I2C_DATA_WIDTH=8,
@@ -8,7 +10,6 @@ interface i2c_if	#(
     triand sda
 );
 
-typedef enum bit {WRITE=0, READ} i2c_op_t;
 logic sda_o;
 bit sda_we = 0;
 bit stop_detected=0;
@@ -108,10 +109,8 @@ endtask
 		    return;
 		end
 	   end 
-	   $display("Observed packet 0x%h in monitor task", packet);
 	   data.push_front(packet);
 	end
-	$display("Finished monitor task");
     endtask
 // ****************************************************************************              
 
