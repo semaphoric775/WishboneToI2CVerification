@@ -65,12 +65,12 @@ bit [I2C_ADDR_WIDTH-1:0] i2c_monitor_addr;
 i2c_op_t i2c_monitor_op;
 bit [I2C_DATA_WIDTH-1:0] i2c_monitor_data[];
 
-initial
+/*initial
 	forever begin : I2C_MONITORING
 	i2c_bus.monitor(i2c_monitor_addr, i2c_monitor_op, i2c_monitor_data);
 	$display("I2C monitor	Data: 0x%h, Address: 0x%h, WE: 0x%b at time %d", i2c_monitor_data, i2c_monitor_addr, i2c_monitor_op, $time);
 	@(posedge clk);
-	end
+	end*/
 
 
 // ****************************************************************************

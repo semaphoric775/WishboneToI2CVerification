@@ -12,105 +12,96 @@ interface i2c_if	#(
 
 logic sda_o;
 bit sda_we = 0;
-bit stop_detected=0;
 assign sda = sda_we ? sda_o : 1'bz;
-always @(posedge sda) 
-     if(scl) begin 
-	stop_detected = 1;
-	@(scl) stop_detected = 0;
-     end
+
+typedef enum {START, STOP, DATA} i2c_bit_type;
+
+// ****************************************************************************             
+    task get_link_status(output i2c_bit_type bt, output bit data);
+	fork : GET_COND
+	    begin : DATA_CASE
+		@(posedge scl);
+		data = sda;
+		bt = DATA;
+	    end
+	    begin : START_CASE
+		forever begin
+		    @(negedge sda)
+		    if(scl) begin 
+			bt = START; 
+			break;
+		    end
+		end
+	    end
+	    begin : STOP_CASE
+		forever begin
+		   @(posedge sda)
+		   if(scl) begin
+			bt = STOP;
+			break;
+		   end
+		end
+	    end
+	join_any
+	return;
+    endtask
+
+// ****************************************************************************             
+    task send_ack();
+	@(posedge scl)
+	sda_we = 1;
+	sda_o = 0;
+	@(negedge scl)
+	sda_we = 0;
+    endtask
 
 // ****************************************************************************             
    task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
 	bit[I2C_ADDR_WIDTH-1:0] addr;
 	bit[I2C_DATA_WIDTH-1:0] write_data_queue[$];
 	bit[I2C_DATA_WIDTH-1:0] packet;
-	@(negedge sda && scl);
-	repeat(I2C_ADDR_WIDTH) begin
-	    @(posedge scl) addr = {addr, sda};
-	end
-	if(addr != I2C_DEVICE_ADDR) begin
-	    return;
-	end
-	@(posedge scl)
-	op = sda ? READ : WRITE;
 
-	//pull line low for ack bit
-	@(posedge scl)
-	sda_we = 1;
-	sda_o = 0;
-	@(negedge scl)
-	sda_we = 0;
-
-	//hand control back to the testbench if a read operation
-	if(op == READ) return;
+	i2c_bit_type bt;
+	bit one_data_bit;
 	
-	//start capturing transmission data
+	do get_link_status(bt, one_data_bit); while(bt != START);
+	repeat(I2C_ADDR_WIDTH)
+	    begin
+		get_link_status(bt, one_data_bit);
+		addr = {addr, one_data_bit};
+	    end
+
+	if(addr != I2C_DEVICE_ADDR)
+	    return;
+
+	@(posedge scl)
+	op = sda ? READ : WRITE;	
+
+	send_ack();
+
+	if(op == READ)
+		return;
+
 	forever begin
 	    repeat(I2C_DATA_WIDTH) begin
-	        @(posedge scl or stop_detected)
-		if(stop_detected) begin
+		get_link_status(bt, one_data_bit);
+		if(bt == STOP) begin 
+		    write_data = write_data_queue;
 		    return;
-	    	end
-		packet = {packet, sda};	
+		end
+		packet = {packet, one_data_bit};
 	    end
 	    write_data_queue.push_back(packet);
-	    //pull sda low for acknowledge bit
-	    //during one data valid window
-	    @(posedge scl)
-	    sda_we = 1;
-	    sda_o = 0;
-	    @(negedge scl)
-	    sda_we = 0;
-	    write_data = write_data_queue;
+	    send_ack();
 	end
    endtask
 
 // ****************************************************************************              
-task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data []   ,output bit transfer_complete);
-    transfer_complete = 0;
-    for(int i = 0; i < read_data.size(); i=i+1) begin
-	sda_we = 1;
-	for(int j = I2C_DATA_WIDTH; j > 0; j=j-1) begin
-	    @(posedge scl) sda_o = read_data[i][j];
-	end
-	sda_we = 0;
-	@(posedge scl)
-	if(!sda) begin
-	    transfer_complete = 1;
-	    return;
-	end
-    end 
-    //data exhausted returns transfer not completed
-    sda_we = 0;
-    return;
-endtask
+     task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data []   ,output bit transfer_complete);
+     endtask
 
 // ****************************************************************************             
     task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[$]);
-	bit [I2C_DATA_WIDTH-1:0] packet;
-	//block until start condition
-	@(negedge sda && scl);
-	repeat(I2C_ADDR_WIDTH) begin
-	    @(posedge scl) addr = {addr, sda};
-	end
-
-	//get operation type
-	@(posedge scl)
-	op = sda ? READ : WRITE;
-
-	//skip ack bit
-	@(posedge scl)
-
-	forever begin
-	   repeat(I2C_DATA_WIDTH) begin
-		@(posedge scl or stop_detected) packet = {packet, sda};
-		if(stop_detected) begin
-		    return;
-		end
-	   end 
-	   data.push_front(packet);
-	end
     endtask
 // ****************************************************************************              
 
