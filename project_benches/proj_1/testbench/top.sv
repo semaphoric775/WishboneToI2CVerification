@@ -53,7 +53,7 @@ logic wb_monitor_we;
 initial
 	forever begin : WB_MONITORING
 	wb_bus.master_monitor(wb_monitor_addr, wb_monitor_data, wb_monitor_we);
-//	$display("Wishbone monitor	Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
+	$display("Wishbone monitor	Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
 	@(posedge clk);
 	end
 
@@ -71,7 +71,7 @@ initial
 	if(i2c_monitor_op == WRITE)
 	    $display("I2C_BUS WRITE Transfer	Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
 	else
-	    $display("I2C_BUS READ Transfer	Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
+	    $display("I2C_BUS READ Transfer	Data: %h, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
 	@(posedge clk);
 	end
 
@@ -90,12 +90,19 @@ logic [WB_DATA_WIDTH-1:0] wb_out;
 //task wait_for_i2c_transfer(output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
 i2c_op_t i2c_if_op;
 bit[I2C_DATA_WIDTH-1:0] i2c_if_write_data[];
+bit i2c_transfer_complete;
 
 //i2c testflow
 initial
 	begin : TEST_FLOW_I2C
-	    for(int i = 0; i < 32; i++)
-	    	i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+	    //write 32 values -- it works!
+	    /*for(int i = 0; i < 32; i++)
+	    	i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);*/
+	bit [I2C_DATA_WIDTH-1:0] i2c_read_data [] = new[1];
+	i2c_read_data[0] = 8'h77;
+	i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+	i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);
+	if(i2c_transfer_complete) $display("I2C Transfer completed");
 	end
 
 //wishbone testflow
@@ -113,7 +120,24 @@ initial
 
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
 
-	for(int i = 0; i < 32; i++) begin
+	wb_bus.master_write(CMDR, 8'bxxxxx100);
+
+	@(!irq) wb_bus.master_read(CMDR, wb_out);
+
+	wb_bus.master_write(DPR, (8'h22 << 1)+8'h01);
+	//write command
+	wb_bus.master_write(CMDR, 8'bxxxxx001);
+
+	@(!irq) wb_bus.master_read(CMDR, wb_out);
+	wb_bus.master_write(CMDR, 8'bxxxxx011);
+	@(!irq) wb_bus.master_read(CMDR, wb_out);
+
+	wb_bus.master_read(DPR, wb_out);
+	wb_bus.master_write(CMDR, 8'bxxxx101);
+	@(!irq) wb_bus.master_read(CMDR, wb_out);
+
+	//write 32 values it works!
+	/*for(int i = 0; i < 32; i++) begin
 	//start command
 	wb_bus.master_write(CMDR, 8'bxxxxx100);
 
@@ -130,7 +154,7 @@ initial
 
 	wb_bus.master_write(CMDR, 8'bxxxx101);
 	@(!irq) wb_bus.master_read(CMDR, wb_out);
-	end
+	end*/
 	end
 
 // ****************************************************************************

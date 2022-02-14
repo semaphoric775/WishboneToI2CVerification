@@ -58,7 +58,6 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 
 // ****************************************************************************             
     task send_bit(bit b);
-	@(posedge scl)
 	sda_we = 1;
 	sda_o = b;
 	@(negedge scl)
@@ -85,8 +84,8 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 	if(addr != I2C_DEVICE_ADDR)
 	    return;
 
-	@(posedge scl)
-	op = sda ? READ : WRITE;	
+	@(posedge scl) op = sda ? READ : WRITE;	
+
 
 	send_ack();
 
@@ -143,6 +142,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 	@(posedge scl);
 	op = sda ? READ : WRITE;	
 
+	//skip ack bit
 	@(posedge scl);
 	@(negedge scl);
 
