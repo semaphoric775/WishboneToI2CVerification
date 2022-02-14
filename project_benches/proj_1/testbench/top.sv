@@ -66,9 +66,12 @@ i2c_op_t i2c_monitor_op;
 bit [I2C_DATA_WIDTH-1:0] i2c_monitor_data[];
 
 initial
-	forever begin : I2C_MONITORING
+	forever begin : MONITOR_I2C_BUS
 	i2c_bus.monitor(i2c_monitor_addr, i2c_monitor_op, i2c_monitor_data);
-	$display("I2C monitor	Data: 0x%h, Address: 0x%h, Op Type %s", i2c_monitor_data, i2c_monitor_addr, i2c_monitor_op, $time);
+	if(i2c_monitor_op == WRITE)
+	    $display("I2C_BUS WRITE Transfer	Data: 0x%h, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
+	else
+	    $display("I2C_BUS READ Transfer	Data: 0x%h, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
 	@(posedge clk);
 	end
 
@@ -92,7 +95,6 @@ bit[I2C_DATA_WIDTH-1:0] i2c_if_write_data[];
 initial
 	begin : TEST_FLOW_I2C
 	    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-	    $display("Completed I2C wait task with op %s, data 0x%h", i2c_if_op, i2c_if_write_data);
 	end
 
 //wishbone testflow

@@ -57,6 +57,15 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     endtask
 
 // ****************************************************************************             
+    task send_bit(bit b);
+	@(posedge scl)
+	sda_we = 1;
+	sda_o = b;
+	@(negedge scl)
+	sda_we = 0;
+    endtask
+
+// ****************************************************************************             
    task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
 	bit[I2C_ADDR_WIDTH-1:0] addr;
 	bit[I2C_DATA_WIDTH-1:0] write_data_queue[$];
@@ -86,7 +95,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 	forever begin
 	    repeat(I2C_DATA_WIDTH) begin
 		get_link_status(bt, one_data_bit);
-		if(bt == STOP) begin 
+		if(bt == STOP || bt == START) begin 
 		    write_data = write_data_queue;
 		    return;
 		end
@@ -99,6 +108,19 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 
 // ****************************************************************************              
      task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data []   ,output bit transfer_complete);
+	transfer_complete = 0;
+	for(int i=0; i<read_data.size(); i++) begin
+	    for(int j=I2C_DATA_WIDTH-1; j >= 0; j--) begin
+		//send MSB first
+		send_bit(read_data[i][j]);
+	    end 
+	    @(posedge scl);
+	    //nack condition detected
+	    if(sda == 1) begin
+		transfer_complete = 1;
+		return;
+	    end	   
+	end 
      endtask
 
 // ****************************************************************************             
