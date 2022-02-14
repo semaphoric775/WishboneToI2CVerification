@@ -74,6 +74,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 	i2c_bit_type bt;
 	bit one_data_bit;
 	
+	write_data_queue.delete();
 	do get_link_status(bt, one_data_bit); while(bt != START);
 	repeat(I2C_ADDR_WIDTH)
 	    begin
@@ -124,21 +125,20 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
      endtask
 
 // ****************************************************************************             
-    task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[$]);
+    task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[]);
 	bit[I2C_DATA_WIDTH-1:0] packet;
+	bit[I2C_DATA_WIDTH-1:0] data_queue[$];
 
 	i2c_bit_type bt;
 	bit one_data_bit;
 	
+	data_queue.delete();
 	do get_link_status(bt, one_data_bit); while(bt != START);
 	repeat(I2C_ADDR_WIDTH)
 	    begin
 		get_link_status(bt, one_data_bit);
 		addr = {addr, one_data_bit};
 	    end
-
-	if(addr != I2C_DEVICE_ADDR)
-	    return;
 
 	@(posedge scl);
 	op = sda ? READ : WRITE;	
@@ -150,11 +150,12 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 	    repeat(I2C_DATA_WIDTH) begin
 		get_link_status(bt, one_data_bit);
 		if(bt == STOP) begin 
+		    data = data_queue;
 		    return;
 		end
 		packet = {packet, one_data_bit};
 	    end
-	    data.push_front(packet);
+	    data_queue.push_front(packet);
 	    @(posedge scl);
 	    @(negedge scl);
 	end
