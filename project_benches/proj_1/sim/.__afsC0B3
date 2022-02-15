@@ -1,0 +1,2854 @@
+# //  ModelSim SE-64 2019.2 Apr 16 2019 Linux 3.10.0-1160.53.1.el7.x86_64
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Warning: (vsim-14) Failed to open "modelsim.ini" specified by the MODELSIM environment variable.
+# No such file or directory. (errno = ENOENT)
+# vsim -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb 
+# Start time: 17:38:27 on Feb 15,2022
+# Loading sv_std.std
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+# set NoQuitOnFinish 1
+# 1
+#  do wave.do
+# 
+# stdin: <EOF>
+reun 1000000ns
+# invalid command name "reun"
+run 1000000ns
+# Wishbone Monitor  Writing d to address 0x0 34
+# I2C_BUS WRITE Transfer    Data: 0, Address 0x22
+# Wishbone Monitor  Writing d to address 0x1 34
+# I2C_BUS WRITE Transfer    Data: 1, Address 0x22
+# Wishbone Monitor  Writing d to address 0x2 34
+# I2C_BUS WRITE Transfer    Data: 2, Address 0x22
+# Wishbone Monitor  Writing d to address 0x3 34
+# I2C_BUS WRITE Transfer    Data: 3, Address 0x22
+# Wishbone Monitor  Writing d to address 0x4 34
+# I2C_BUS WRITE Transfer    Data: 4, Address 0x22
+# Wishbone Monitor  Writing d to address 0x5 34
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 1000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+run 10000000ns
+# I2C_BUS WRITE Transfer    Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 31, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 100, Address 0x22
+# Wishbone Monitor  Read 100 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 101, Address 0x22
+# Wishbone Monitor  Read 101 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 102, Address 0x22
+# Wishbone Monitor  Read 102 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 103, Address 0x22
+# Wishbone Monitor  Read 103 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 104, Address 0x22
+# Wishbone Monitor  Read 104 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 105, Address 0x22
+# Wishbone Monitor  Read 105 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 106, Address 0x22
+# Wishbone Monitor  Read 106 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 107, Address 0x22
+# Wishbone Monitor  Read 107 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 108, Address 0x22
+# Wishbone Monitor  Read 108 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 109, Address 0x22
+# Wishbone Monitor  Read 109 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 110, Address 0x22
+# Wishbone Monitor  Read 110 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 111, Address 0x22
+# Wishbone Monitor  Read 111 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 112, Address 0x22
+# Wishbone Monitor  Read 112 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 113, Address 0x22
+# Wishbone Monitor  Read 113 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 114, Address 0x22
+# Wishbone Monitor  Read 114 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 115, Address 0x22
+# Wishbone Monitor  Read 115 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 116, Address 0x22
+# Wishbone Monitor  Read 116 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 117, Address 0x22
+# Wishbone Monitor  Read 117 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 118, Address 0x22
+# Wishbone Monitor  Read 118 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 119, Address 0x22
+# Wishbone Monitor  Read 119 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 120, Address 0x22
+# Wishbone Monitor  Read 120 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 121, Address 0x22
+# Wishbone Monitor  Read 121 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 122, Address 0x22
+# Wishbone Monitor  Read 122 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+run 10000000ns
+# I2C_BUS READ Transfer Data: 123, Address 0x22
+# Wishbone Monitor  Read 123 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 124, Address 0x22
+# Wishbone Monitor  Read 124 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 125, Address 0x22
+# Wishbone Monitor  Read 125 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 126, Address 0x22
+# Wishbone Monitor  Read 126 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 127, Address 0x22
+# Wishbone Monitor  Read 127 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: -128, Address 0x22
+# Wishbone Monitor  Read 128 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: -127, Address 0x22
+# Wishbone Monitor  Read 129 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: -126, Address 0x22
+# Wishbone Monitor  Read 130 from I2C interface
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: -125, Address 0x22
+# Wishbone Monitor  Read 131 from I2C interface
+# Wishbone Monitor  Writing          64 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 64, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 65, Address 0x22
+# Wishbone Monitor  Read  65 from I2C interface
+# Wishbone Monitor  Writing          66 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 66, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 67, Address 0x22
+# Wishbone Monitor  Read  67 from I2C interface
+# Wishbone Monitor  Writing          68 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 68, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 69, Address 0x22
+# Wishbone Monitor  Read  69 from I2C interface
+# Wishbone Monitor  Writing          70 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 70, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 71, Address 0x22
+# Wishbone Monitor  Read  71 from I2C interface
+# Wishbone Monitor  Writing          72 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 72, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 73, Address 0x22
+# Wishbone Monitor  Read  73 from I2C interface
+# Wishbone Monitor  Writing          74 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 74, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 75, Address 0x22
+# Wishbone Monitor  Read  75 from I2C interface
+# Wishbone Monitor  Writing          76 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 76, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 77, Address 0x22
+# Wishbone Monitor  Read  77 from I2C interface
+# Wishbone Monitor  Writing          78 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 78, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 79, Address 0x22
+# Wishbone Monitor  Read  79 from I2C interface
+# Wishbone Monitor  Writing          80 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 80, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 81, Address 0x22
+# Wishbone Monitor  Read  81 from I2C interface
+# Wishbone Monitor  Writing          82 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 82, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 83, Address 0x22
+# Wishbone Monitor  Read  83 from I2C interface
+# Wishbone Monitor  Writing          84 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 84, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 85, Address 0x22
+# Wishbone Monitor  Read  85 from I2C interface
+# Wishbone Monitor  Writing          86 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 86, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 87, Address 0x22
+# Wishbone Monitor  Read  87 from I2C interface
+# Wishbone Monitor  Writing          88 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 88, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 89, Address 0x22
+# Wishbone Monitor  Read  89 from I2C interface
+# Wishbone Monitor  Writing          90 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 90, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 91, Address 0x22
+# Wishbone Monitor  Read  91 from I2C interface
+# Wishbone Monitor  Writing          92 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 92, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 93, Address 0x22
+# Wishbone Monitor  Read  93 from I2C interface
+# Wishbone Monitor  Writing          94 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 94, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 95, Address 0x22
+# Wishbone Monitor  Read  95 from I2C interface
+# Wishbone Monitor  Writing          96 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 96, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 97, Address 0x22
+# Wishbone Monitor  Read  97 from I2C interface
+# Wishbone Monitor  Writing          98 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 98, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 99, Address 0x22
+# Wishbone Monitor  Read  99 from I2C interface
+# Wishbone Monitor  Writing         100 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 100, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 101, Address 0x22
+# Wishbone Monitor  Read 101 from I2C interface
+# Wishbone Monitor  Writing         102 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 102, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 103, Address 0x22
+# Wishbone Monitor  Read 103 from I2C interface
+# Wishbone Monitor  Writing         104 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 104, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+run 1000000ns
+# I2C_BUS READ Transfer Data: 105, Address 0x22
+# Wishbone Monitor  Read 105 from I2C interface
+# Wishbone Monitor  Writing         106 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 106, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 107, Address 0x22
+# Wishbone Monitor  Read 107 from I2C interface
+# Wishbone Monitor  Writing         108 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 108, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 109, Address 0x22
+# Wishbone Monitor  Read 109 from I2C interface
+# Wishbone Monitor  Writing         110 to address 0x22
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 1000000ns
+# Wishbone Monitor  Writing          64 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 64, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 63, Address 0x22
+# Wishbone Monitor  Read  63 from I2C interface
+# Wishbone Monitor  Writing          66 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 66, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 61, Address 0x22
+# Wishbone Monitor  Read  61 from I2C interface
+# Wishbone Monitor  Writing          68 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 68, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+run 1000000ns
+# I2C_BUS READ Transfer Data: 59, Address 0x22
+# Wishbone Monitor  Read  59 from I2C interface
+# Wishbone Monitor  Writing          70 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 70, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 57, Address 0x22
+# Wishbone Monitor  Read  57 from I2C interface
+# Wishbone Monitor  Writing          72 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 72, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 55, Address 0x22
+# Wishbone Monitor  Read  55 from I2C interface
+# Wishbone Monitor  Writing          74 to address 0x22
+run 10000000ns
+# I2C_BUS WRITE Transfer    Data: 74, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 53, Address 0x22
+# Wishbone Monitor  Read  53 from I2C interface
+# Wishbone Monitor  Writing          76 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 76, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 51, Address 0x22
+# Wishbone Monitor  Read  51 from I2C interface
+# Wishbone Monitor  Writing          78 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 78, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 49, Address 0x22
+# Wishbone Monitor  Read  49 from I2C interface
+# Wishbone Monitor  Writing          80 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 80, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 47, Address 0x22
+# Wishbone Monitor  Read  47 from I2C interface
+# Wishbone Monitor  Writing          82 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 82, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 45, Address 0x22
+# Wishbone Monitor  Read  45 from I2C interface
+# Wishbone Monitor  Writing          84 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 84, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 43, Address 0x22
+# Wishbone Monitor  Read  43 from I2C interface
+# Wishbone Monitor  Writing          86 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 86, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 41, Address 0x22
+# Wishbone Monitor  Read  41 from I2C interface
+# Wishbone Monitor  Writing          88 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 88, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 39, Address 0x22
+# Wishbone Monitor  Read  39 from I2C interface
+# Wishbone Monitor  Writing          90 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 90, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 37, Address 0x22
+# Wishbone Monitor  Read  37 from I2C interface
+# Wishbone Monitor  Writing          92 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 92, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 35, Address 0x22
+# Wishbone Monitor  Read  35 from I2C interface
+# Wishbone Monitor  Writing          94 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 94, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 33, Address 0x22
+# Wishbone Monitor  Read  33 from I2C interface
+# Wishbone Monitor  Writing          96 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 96, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 31, Address 0x22
+# Wishbone Monitor  Read  31 from I2C interface
+# Wishbone Monitor  Writing          98 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 98, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 29, Address 0x22
+# Wishbone Monitor  Read  29 from I2C interface
+# Wishbone Monitor  Writing         100 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 100, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 27, Address 0x22
+# Wishbone Monitor  Read  27 from I2C interface
+# Wishbone Monitor  Writing         102 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 102, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 25, Address 0x22
+# Wishbone Monitor  Read  25 from I2C interface
+# Wishbone Monitor  Writing         104 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 104, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 23, Address 0x22
+# Wishbone Monitor  Read  23 from I2C interface
+# Wishbone Monitor  Writing         106 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 106, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 21, Address 0x22
+# Wishbone Monitor  Read  21 from I2C interface
+# Wishbone Monitor  Writing         108 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 108, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 19, Address 0x22
+# Wishbone Monitor  Read  19 from I2C interface
+# Wishbone Monitor  Writing         110 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 110, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 17, Address 0x22
+# Wishbone Monitor  Read  17 from I2C interface
+# Wishbone Monitor  Writing         112 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 112, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 15, Address 0x22
+# Wishbone Monitor  Read  15 from I2C interface
+# Wishbone Monitor  Writing         114 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 114, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 13, Address 0x22
+# Wishbone Monitor  Read  13 from I2C interface
+# Wishbone Monitor  Writing         116 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 116, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 11, Address 0x22
+# Wishbone Monitor  Read  11 from I2C interface
+# Wishbone Monitor  Writing         118 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 118, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 9, Address 0x22
+# Wishbone Monitor  Read   9 from I2C interface
+# Wishbone Monitor  Writing         120 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 120, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 7, Address 0x22
+# Wishbone Monitor  Read   7 from I2C interface
+# Wishbone Monitor  Writing         122 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 122, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 5, Address 0x22
+# Wishbone Monitor  Read   5 from I2C interface
+# Wishbone Monitor  Writing         124 to address 0x22
+run 10000000ns
+# I2C_BUS WRITE Transfer    Data: 124, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 3, Address 0x22
+# Wishbone Monitor  Read   3 from I2C interface
+# Wishbone Monitor  Writing         126 to address 0x22
+# I2C_BUS WRITE Transfer    Data: 126, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer Data: 1, Address 0x22
+# Wishbone Monitor  Read   1 from I2C interface
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 10000000ns
+# Wishbone Monitor      Writing          64 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 64, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 63, Address 0x22
+# Wishbone Monitor      Read  63 from I2C interface
+# Wishbone Monitor      Writing          66 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 66, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 61, Address 0x22
+# Wishbone Monitor      Read  61 from I2C interface
+# Wishbone Monitor      Writing          68 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 68, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 59, Address 0x22
+# Wishbone Monitor      Read  59 from I2C interface
+# Wishbone Monitor      Writing          70 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 70, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 57, Address 0x22
+# Wishbone Monitor      Read  57 from I2C interface
+# Wishbone Monitor      Writing          72 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 72, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 55, Address 0x22
+# Wishbone Monitor      Read  55 from I2C interface
+# Wishbone Monitor      Writing          74 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 74, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 53, Address 0x22
+# Wishbone Monitor      Read  53 from I2C interface
+# Wishbone Monitor      Writing          76 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 76, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 51, Address 0x22
+# Wishbone Monitor      Read  51 from I2C interface
+# Wishbone Monitor      Writing          78 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 78, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 49, Address 0x22
+# Wishbone Monitor      Read  49 from I2C interface
+# Wishbone Monitor      Writing          80 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 80, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 47, Address 0x22
+# Wishbone Monitor      Read  47 from I2C interface
+# Wishbone Monitor      Writing          82 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 82, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 45, Address 0x22
+# Wishbone Monitor      Read  45 from I2C interface
+# Wishbone Monitor      Writing          84 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 84, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 43, Address 0x22
+# Wishbone Monitor      Read  43 from I2C interface
+# Wishbone Monitor      Writing          86 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 86, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 41, Address 0x22
+# Wishbone Monitor      Read  41 from I2C interface
+# Wishbone Monitor      Writing          88 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 88, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 39, Address 0x22
+# Wishbone Monitor      Read  39 from I2C interface
+# Wishbone Monitor      Writing          90 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 90, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 37, Address 0x22
+# Wishbone Monitor      Read  37 from I2C interface
+# Wishbone Monitor      Writing          92 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 92, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 35, Address 0x22
+# Wishbone Monitor      Read  35 from I2C interface
+# Wishbone Monitor      Writing          94 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 94, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 33, Address 0x22
+# Wishbone Monitor      Read  33 from I2C interface
+# Wishbone Monitor      Writing          96 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 96, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 31, Address 0x22
+# Wishbone Monitor      Read  31 from I2C interface
+# Wishbone Monitor      Writing          98 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 98, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 29, Address 0x22
+# Wishbone Monitor      Read  29 from I2C interface
+# Wishbone Monitor      Writing         100 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 100, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 27, Address 0x22
+# Wishbone Monitor      Read  27 from I2C interface
+# Wishbone Monitor      Writing         102 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 102, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 25, Address 0x22
+# Wishbone Monitor      Read  25 from I2C interface
+# Wishbone Monitor      Writing         104 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 104, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 23, Address 0x22
+# Wishbone Monitor      Read  23 from I2C interface
+# Wishbone Monitor      Writing         106 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 106, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 21, Address 0x22
+# Wishbone Monitor      Read  21 from I2C interface
+# Wishbone Monitor      Writing         108 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 108, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 19, Address 0x22
+# Wishbone Monitor      Read  19 from I2C interface
+# Wishbone Monitor      Writing         110 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 110, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 17, Address 0x22
+# Wishbone Monitor      Read  17 from I2C interface
+# Wishbone Monitor      Writing         112 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 112, Address 0x22
+# Wishbone Monitor  Initiating Read Request
+# I2C_BUS READ Transfer         Data: 15, Address 0x22
+# Wishbone Monitor      Read  15 from I2C interface
+# Wishbone Monitor      Writing         114 to address 0x22
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 10000000ns
+# Wishbone Monitor           Writing          64 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 64, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 63, Address 0x22
+# Wishbone Monitor           Read  63 from I2C interface
+# Wishbone Monitor           Writing          66 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 66, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 61, Address 0x22
+# Wishbone Monitor           Read  61 from I2C interface
+# Wishbone Monitor           Writing          68 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 68, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 59, Address 0x22
+# Wishbone Monitor           Read  59 from I2C interface
+# Wishbone Monitor           Writing          70 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 70, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 57, Address 0x22
+# Wishbone Monitor           Read  57 from I2C interface
+# Wishbone Monitor           Writing          72 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 72, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 55, Address 0x22
+# Wishbone Monitor           Read  55 from I2C interface
+# Wishbone Monitor           Writing          74 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 74, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 53, Address 0x22
+# Wishbone Monitor           Read  53 from I2C interface
+# Wishbone Monitor           Writing          76 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 76, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 51, Address 0x22
+# Wishbone Monitor           Read  51 from I2C interface
+# Wishbone Monitor           Writing          78 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 78, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 49, Address 0x22
+# Wishbone Monitor           Read  49 from I2C interface
+# Wishbone Monitor           Writing          80 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 80, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 47, Address 0x22
+# Wishbone Monitor           Read  47 from I2C interface
+# Wishbone Monitor           Writing          82 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 82, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 45, Address 0x22
+# Wishbone Monitor           Read  45 from I2C interface
+# Wishbone Monitor           Writing          84 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 84, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 43, Address 0x22
+# Wishbone Monitor           Read  43 from I2C interface
+# Wishbone Monitor           Writing          86 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 86, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 41, Address 0x22
+# Wishbone Monitor           Read  41 from I2C interface
+# Wishbone Monitor           Writing          88 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 88, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 39, Address 0x22
+# Wishbone Monitor           Read  39 from I2C interface
+# Wishbone Monitor           Writing          90 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 90, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 37, Address 0x22
+# Wishbone Monitor           Read  37 from I2C interface
+# Wishbone Monitor           Writing          92 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 92, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 35, Address 0x22
+# Wishbone Monitor           Read  35 from I2C interface
+# Wishbone Monitor           Writing          94 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 94, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 33, Address 0x22
+# Wishbone Monitor           Read  33 from I2C interface
+# Wishbone Monitor           Writing          96 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 96, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 31, Address 0x22
+# Wishbone Monitor           Read  31 from I2C interface
+# Wishbone Monitor           Writing          98 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 98, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 29, Address 0x22
+# Wishbone Monitor           Read  29 from I2C interface
+# Wishbone Monitor           Writing         100 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 100, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 27, Address 0x22
+# Wishbone Monitor           Read  27 from I2C interface
+# Wishbone Monitor           Writing         102 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 102, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 25, Address 0x22
+# Wishbone Monitor           Read  25 from I2C interface
+# Wishbone Monitor           Writing         104 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 104, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 23, Address 0x22
+# Wishbone Monitor           Read  23 from I2C interface
+# Wishbone Monitor           Writing         106 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 106, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 21, Address 0x22
+# Wishbone Monitor           Read  21 from I2C interface
+# Wishbone Monitor           Writing         108 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 108, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 19, Address 0x22
+# Wishbone Monitor           Read  19 from I2C interface
+# Wishbone Monitor           Writing         110 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 110, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 17, Address 0x22
+# Wishbone Monitor           Read  17 from I2C interface
+# Wishbone Monitor           Writing         112 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 112, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 15, Address 0x22
+# Wishbone Monitor           Read  15 from I2C interface
+# Wishbone Monitor           Writing         114 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer        Data: 114, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 13, Address 0x22
+# Wishbone Monitor           Read  13 from I2C interface
+# Wishbone Monitor           Writing         116 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 116, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 11, Address 0x22
+# Wishbone Monitor           Read  11 from I2C interface
+# Wishbone Monitor           Writing         118 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 118, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 9, Address 0x22
+# Wishbone Monitor           Read   9 from I2C interface
+# Wishbone Monitor           Writing         120 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 120, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 7, Address 0x22
+# Wishbone Monitor           Read   7 from I2C interface
+# Wishbone Monitor           Writing         122 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 122, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 5, Address 0x22
+# Wishbone Monitor           Read   5 from I2C interface
+# Wishbone Monitor           Writing         124 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer        Data: 124, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 3, Address 0x22
+# Wishbone Monitor           Read   3 from I2C interface
+# Wishbone Monitor           Writing         126 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 126, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 1, Address 0x22
+# Wishbone Monitor           Read   1 from I2C interface
+# Wishbone Monitor           Writing         128 to address 0x22
+# I2C_BUS WRITE Transfer        Data: -128, Address 0x22
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 2000000ns
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 64, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 62, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 60, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 58, Address 0x22
+# Wishbone Monitor           Read  58 from I2C interface
+# Wishbone Monitor           Writing          71 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 71, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 56, Address 0x22
+# Wishbone Monitor           Read  56 from I2C interface
+# Wishbone Monitor           Writing          73 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 73, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer         Data: 54, Address 0x22
+# Wishbone Monitor           Read  54 from I2C interface
+# Wishbone Monitor           Writing          75 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 75, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 52, Address 0x22
+# Wishbone Monitor           Read  52 from I2C interface
+# Wishbone Monitor           Writing          77 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 77, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 50, Address 0x22
+# Wishbone Monitor           Read  50 from I2C interface
+# Wishbone Monitor           Writing          79 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 79, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 48, Address 0x22
+# Wishbone Monitor           Read  48 from I2C interface
+# Wishbone Monitor           Writing          81 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 81, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 46, Address 0x22
+# Wishbone Monitor           Read  46 from I2C interface
+# Wishbone Monitor           Writing          83 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 83, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer         Data: 44, Address 0x22
+# Wishbone Monitor           Read  44 from I2C interface
+# Wishbone Monitor           Writing          85 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 85, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 42, Address 0x22
+# Wishbone Monitor           Read  42 from I2C interface
+# Wishbone Monitor           Writing          87 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 87, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 40, Address 0x22
+# Wishbone Monitor           Read  40 from I2C interface
+# Wishbone Monitor           Writing          89 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 89, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 38, Address 0x22
+# Wishbone Monitor           Read  38 from I2C interface
+# Wishbone Monitor           Writing          91 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 91, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 36, Address 0x22
+# Wishbone Monitor           Read  36 from I2C interface
+# Wishbone Monitor           Writing          93 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 93, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+run 10000000ns
+# I2C_BUS READ Transfer         Data: 34, Address 0x22
+# Wishbone Monitor           Read  34 from I2C interface
+# Wishbone Monitor           Writing          95 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 95, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 32, Address 0x22
+# Wishbone Monitor           Read  32 from I2C interface
+# Wishbone Monitor           Writing          97 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 97, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 30, Address 0x22
+# Wishbone Monitor           Read  30 from I2C interface
+# Wishbone Monitor           Writing          99 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 99, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 28, Address 0x22
+# Wishbone Monitor           Read  28 from I2C interface
+# Wishbone Monitor           Writing         101 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 101, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 26, Address 0x22
+# Wishbone Monitor           Read  26 from I2C interface
+# Wishbone Monitor           Writing         103 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 103, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 24, Address 0x22
+# Wishbone Monitor           Read  24 from I2C interface
+# Wishbone Monitor           Writing         105 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 105, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 22, Address 0x22
+# Wishbone Monitor           Read  22 from I2C interface
+# Wishbone Monitor           Writing         107 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 107, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 20, Address 0x22
+# Wishbone Monitor           Read  20 from I2C interface
+# Wishbone Monitor           Writing         109 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 109, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 18, Address 0x22
+# Wishbone Monitor           Read  18 from I2C interface
+# Wishbone Monitor           Writing         111 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 111, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 16, Address 0x22
+# Wishbone Monitor           Read  16 from I2C interface
+# Wishbone Monitor           Writing         113 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 113, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 14, Address 0x22
+# Wishbone Monitor           Read  14 from I2C interface
+# Wishbone Monitor           Writing         115 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 115, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 12, Address 0x22
+# Wishbone Monitor           Read  12 from I2C interface
+# Wishbone Monitor           Writing         117 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 117, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 10, Address 0x22
+# Wishbone Monitor           Read  10 from I2C interface
+# Wishbone Monitor           Writing         119 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 119, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 8, Address 0x22
+# Wishbone Monitor           Read   8 from I2C interface
+# Wishbone Monitor           Writing         121 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 121, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 6, Address 0x22
+# Wishbone Monitor           Read   6 from I2C interface
+# Wishbone Monitor           Writing         123 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 123, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 4, Address 0x22
+# Wishbone Monitor           Read   4 from I2C interface
+# Wishbone Monitor           Writing         125 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 125, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 2, Address 0x22
+# Wishbone Monitor           Read   2 from I2C interface
+# Wishbone Monitor           Writing         127 to address 0x22
+# I2C_BUS WRITE Transfer        Data: 127, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer         Data: 0, Address 0x22
+# Wishbone Monitor           Read   0 from I2C interface
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 10000000ns
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 64, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 62, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 60, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 58, Address 0x22
+# Wishbone Monitor           Read  58 from I2C interface
+# Wishbone Monitor           Writing          71 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 71, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 56, Address 0x22
+# Wishbone Monitor           Read  56 from I2C interface
+# Wishbone Monitor           Writing          73 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 73, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 54, Address 0x22
+# Wishbone Monitor           Read  54 from I2C interface
+# Wishbone Monitor           Writing          75 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 75, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 52, Address 0x22
+# Wishbone Monitor           Read  52 from I2C interface
+# Wishbone Monitor           Writing          77 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 77, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 50, Address 0x22
+# Wishbone Monitor           Read  50 from I2C interface
+# Wishbone Monitor           Writing          79 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 79, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 48, Address 0x22
+# Wishbone Monitor           Read  48 from I2C interface
+# Wishbone Monitor           Writing          81 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 81, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 46, Address 0x22
+# Wishbone Monitor           Read  46 from I2C interface
+# Wishbone Monitor           Writing          83 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 83, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 44, Address 0x22
+# Wishbone Monitor           Read  44 from I2C interface
+# Wishbone Monitor           Writing          85 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 85, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 42, Address 0x22
+# Wishbone Monitor           Read  42 from I2C interface
+# Wishbone Monitor           Writing          87 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 87, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 40, Address 0x22
+# Wishbone Monitor           Read  40 from I2C interface
+# Wishbone Monitor           Writing          89 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 89, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 38, Address 0x22
+# Wishbone Monitor           Read  38 from I2C interface
+# Wishbone Monitor           Writing          91 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 91, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 36, Address 0x22
+# Wishbone Monitor           Read  36 from I2C interface
+# Wishbone Monitor           Writing          93 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 93, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 34, Address 0x22
+# Wishbone Monitor           Read  34 from I2C interface
+# Wishbone Monitor           Writing          95 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 95, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 32, Address 0x22
+# Wishbone Monitor           Read  32 from I2C interface
+# Wishbone Monitor           Writing          97 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 97, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 30, Address 0x22
+# Wishbone Monitor           Read  30 from I2C interface
+# Wishbone Monitor           Writing          99 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 99, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 28, Address 0x22
+# Wishbone Monitor           Read  28 from I2C interface
+# Wishbone Monitor           Writing         101 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 101, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 26, Address 0x22
+# Wishbone Monitor           Read  26 from I2C interface
+# Wishbone Monitor           Writing         103 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 103, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 24, Address 0x22
+# Wishbone Monitor           Read  24 from I2C interface
+# Wishbone Monitor           Writing         105 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 105, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 22, Address 0x22
+# Wishbone Monitor           Read  22 from I2C interface
+# Wishbone Monitor           Writing         107 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 107, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 20, Address 0x22
+# Wishbone Monitor           Read  20 from I2C interface
+# Wishbone Monitor           Writing         109 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 109, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 18, Address 0x22
+# Wishbone Monitor           Read  18 from I2C interface
+# Wishbone Monitor           Writing         111 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 111, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer       Data: 16, Address 0x22
+# Wishbone Monitor           Read  16 from I2C interface
+# Wishbone Monitor           Writing         113 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 113, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 10000000ns
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 62, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 60, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 58, Address 0x22
+# Wishbone Monitor           Read  58 from I2C interface
+# Wishbone Monitor           Writing          71 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 71, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 56, Address 0x22
+# Wishbone Monitor           Read  56 from I2C interface
+# Wishbone Monitor           Writing          73 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 73, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 54, Address 0x22
+# Wishbone Monitor           Read  54 from I2C interface
+# Wishbone Monitor           Writing          75 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 75, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 52, Address 0x22
+# Wishbone Monitor           Read  52 from I2C interface
+# Wishbone Monitor           Writing          77 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 77, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 50, Address 0x22
+# Wishbone Monitor           Read  50 from I2C interface
+# Wishbone Monitor           Writing          79 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 79, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 48, Address 0x22
+# Wishbone Monitor           Read  48 from I2C interface
+# Wishbone Monitor           Writing          81 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 81, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 46, Address 0x22
+# Wishbone Monitor           Read  46 from I2C interface
+# Wishbone Monitor           Writing          83 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 83, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 44, Address 0x22
+# Wishbone Monitor           Read  44 from I2C interface
+# Wishbone Monitor           Writing          85 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 85, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 42, Address 0x22
+# Wishbone Monitor           Read  42 from I2C interface
+# Wishbone Monitor           Writing          87 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 87, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 40, Address 0x22
+# Wishbone Monitor           Read  40 from I2C interface
+# Wishbone Monitor           Writing          89 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 89, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 38, Address 0x22
+# Wishbone Monitor           Read  38 from I2C interface
+# Wishbone Monitor           Writing          91 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 91, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 36, Address 0x22
+# Wishbone Monitor           Read  36 from I2C interface
+# Wishbone Monitor           Writing          93 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 93, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 34, Address 0x22
+# Wishbone Monitor           Read  34 from I2C interface
+# Wishbone Monitor           Writing          95 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 95, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 32, Address 0x22
+# Wishbone Monitor           Read  32 from I2C interface
+# Wishbone Monitor           Writing          97 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 97, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 30, Address 0x22
+# Wishbone Monitor           Read  30 from I2C interface
+# Wishbone Monitor           Writing          99 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 99, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 28, Address 0x22
+# Wishbone Monitor           Read  28 from I2C interface
+# Wishbone Monitor           Writing         101 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 101, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 26, Address 0x22
+# Wishbone Monitor           Read  26 from I2C interface
+# Wishbone Monitor           Writing         103 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 103, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 24, Address 0x22
+# Wishbone Monitor           Read  24 from I2C interface
+# Wishbone Monitor           Writing         105 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 105, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 22, Address 0x22
+# Wishbone Monitor           Read  22 from I2C interface
+# Wishbone Monitor           Writing         107 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 107, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 20, Address 0x22
+# Wishbone Monitor           Read  20 from I2C interface
+# Wishbone Monitor           Writing         109 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 109, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 18, Address 0x22
+# Wishbone Monitor           Read  18 from I2C interface
+# Wishbone Monitor           Writing         111 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 111, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 16, Address 0x22
+# Wishbone Monitor           Read  16 from I2C interface
+# Wishbone Monitor           Writing         113 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 113, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+run 10000000ns
+# I2C_BUS READ Transfer      Data: 14, Address 0x22
+# Wishbone Monitor           Read  14 from I2C interface
+# Wishbone Monitor           Writing         115 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 115, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 12, Address 0x22
+# Wishbone Monitor           Read  12 from I2C interface
+# Wishbone Monitor           Writing         117 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 117, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 10, Address 0x22
+# Wishbone Monitor           Read  10 from I2C interface
+# Wishbone Monitor           Writing         119 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 119, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 8, Address 0x22
+# Wishbone Monitor           Read   8 from I2C interface
+# Wishbone Monitor           Writing         121 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 121, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 6, Address 0x22
+# Wishbone Monitor           Read   6 from I2C interface
+# Wishbone Monitor           Writing         123 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 123, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 4, Address 0x22
+# Wishbone Monitor           Read   4 from I2C interface
+# Wishbone Monitor           Writing         125 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 125, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 2, Address 0x22
+# Wishbone Monitor           Read   2 from I2C interface
+# Wishbone Monitor           Writing         127 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 127, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 0, Address 0x22
+# Wishbone Monitor           Read   0 from I2C interface
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 10000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31, Address 0x22
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 108, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+
+
+run 200000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+run 20000000ns
+# I2C_BUS WRITE Transfer      Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31, Address 0x22
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 108, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 118, Address 0x22
+# Wishbone Monitor          Read 118 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 119, Address 0x22
+# Wishbone Monitor          Read 119 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 120, Address 0x22
+# Wishbone Monitor          Read 120 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 121, Address 0x22
+# Wishbone Monitor          Read 121 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 122, Address 0x22
+# Wishbone Monitor          Read 122 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 123, Address 0x22
+# Wishbone Monitor          Read 123 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 124, Address 0x22
+# Wishbone Monitor          Read 124 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 125, Address 0x22
+# Wishbone Monitor          Read 125 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 126, Address 0x22
+# Wishbone Monitor          Read 126 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 127, Address 0x22
+# Wishbone Monitor          Read 127 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -128, Address 0x22
+# Wishbone Monitor          Read 128 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -127, Address 0x22
+# Wishbone Monitor          Read 129 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -126, Address 0x22
+# Wishbone Monitor          Read 130 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -125, Address 0x22
+# Wishbone Monitor          Read 131 from I2C interface
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 2000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer      Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer      Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer      Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31, Address 0x22
+# *-------- Finished 32 incrementing values wishbone -> I2C --------*
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer      Data: 108, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer      Data: 118, Address 0x22
+# Wishbone Monitor          Read 118 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 119, Address 0x22
+# Wishbone Monitor          Read 119 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 120, Address 0x22
+# Wishbone Monitor          Read 120 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 121, Address 0x22
+# Wishbone Monitor          Read 121 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 122, Address 0x22
+# Wishbone Monitor          Read 122 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 123, Address 0x22
+# Wishbone Monitor          Read 123 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 124, Address 0x22
+# Wishbone Monitor          Read 124 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 125, Address 0x22
+# Wishbone Monitor          Read 125 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 126, Address 0x22
+# Wishbone Monitor          Read 126 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 127, Address 0x22
+# Wishbone Monitor          Read 127 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer      Data: -128, Address 0x22
+# Wishbone Monitor          Read 128 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -127, Address 0x22
+# Wishbone Monitor          Read 129 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -126, Address 0x22
+# Wishbone Monitor          Read 130 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -125, Address 0x22
+# Wishbone Monitor          Read 131 from I2C interface
+# *-------- Finished 32 incrementing values I2C -> Wishbone --------*
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 62, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 60, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 2000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0 or b00000000, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 1 or b00000001, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2 or b00000010, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3 or b00000011, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4 or b00000100, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5 or b00000101, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6 or b00000110, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7 or b00000111, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8 or b00001000, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9 or b00001001, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer      Data: 10 or b00001010, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11 or b00001011, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12 or b00001100, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13 or b00001101, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14 or b00001110, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15 or b00001111, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16 or b00010000, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17 or b00010001, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18 or b00010010, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19 or b00010011, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer      Data: 20 or b00010100, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21 or b00010101, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22 or b00010110, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23 or b00010111, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24 or b00011000, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25 or b00011001, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26 or b00011010, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27 or b00011011, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28 or b00011100, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29 or b00011101, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+run 2000000ns
+# I2C_BUS WRITE Transfer      Data: 30 or b00011110, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31 or b00011111, Address 0x22
+# *-------- Finished 32 incrementing values wishbone -> I2C --------*
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer      Data: 108, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer      Data: 118, Address 0x22
+# Wishbone Monitor          Read 118 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 119, Address 0x22
+# Wishbone Monitor          Read 119 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 120, Address 0x22
+# Wishbone Monitor          Read 120 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 121, Address 0x22
+# Wishbone Monitor          Read 121 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 122, Address 0x22
+# Wishbone Monitor          Read 122 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 123, Address 0x22
+# Wishbone Monitor          Read 123 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 124, Address 0x22
+# Wishbone Monitor          Read 124 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 125, Address 0x22
+# Wishbone Monitor          Read 125 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 126, Address 0x22
+# Wishbone Monitor          Read 126 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 127, Address 0x22
+# Wishbone Monitor          Read 127 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 2000000ns
+# I2C_BUS READ Transfer      Data: -128, Address 0x22
+# Wishbone Monitor          Read 128 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -127, Address 0x22
+# Wishbone Monitor          Read 129 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -126, Address 0x22
+# Wishbone Monitor          Read 130 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -125, Address 0x22
+# Wishbone Monitor          Read 131 from I2C interface
+# *-------- Finished 32 incrementing values I2C -> Wishbone --------*
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65 or b01000001, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 62, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67 or b01000011, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 60, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69 or b01000101, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 10000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31, Address 0x22
+# *-------- Finished 32 incrementing values wishbone -> I2C --------*
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100 or 01100100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101 or 01100101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102 or 01100110, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103 or 01100111, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104 or 01101000, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105 or 01101001, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106 or 01101010, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107 or 01101011, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 108 or 01101100, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109 or 01101101, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110 or 01101110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111 or 01101111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112 or 01110000, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113 or 01110001, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114 or 01110010, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115 or 01110011, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116 or 01110100, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117 or 01110101, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+run 20000000ns
+# I2C_BUS READ Transfer      Data: 118 or 01110110, Address 0x22
+# Wishbone Monitor          Read 118 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 119 or 01110111, Address 0x22
+# Wishbone Monitor          Read 119 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 120 or 01111000, Address 0x22
+# Wishbone Monitor          Read 120 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 121 or 01111001, Address 0x22
+# Wishbone Monitor          Read 121 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 122 or 01111010, Address 0x22
+# Wishbone Monitor          Read 122 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 123 or 01111011, Address 0x22
+# Wishbone Monitor          Read 123 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 124 or 01111100, Address 0x22
+# Wishbone Monitor          Read 124 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 125 or 01111101, Address 0x22
+# Wishbone Monitor          Read 125 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 126 or 01111110, Address 0x22
+# Wishbone Monitor          Read 126 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 127 or 01111111, Address 0x22
+# Wishbone Monitor          Read 127 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -128 or 10000000, Address 0x22
+# Wishbone Monitor          Read 128 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -127 or 10000001, Address 0x22
+# Wishbone Monitor          Read 129 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -126 or 10000010, Address 0x22
+# Wishbone Monitor          Read 130 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -125 or 10000011, Address 0x22
+# Wishbone Monitor          Read 131 from I2C interface
+# *-------- Finished 32 incrementing values I2C -> Wishbone --------*
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64 or 01000000, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 62 or 00111110, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 60 or 00111100, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 58 or 00111010, Address 0x22
+# Wishbone Monitor           Read  58 from I2C interface
+# Wishbone Monitor           Writing          71 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 71, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 56 or 00111000, Address 0x22
+# Wishbone Monitor           Read  56 from I2C interface
+# Wishbone Monitor           Writing          73 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 73, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 54 or 00110110, Address 0x22
+# Wishbone Monitor           Read  54 from I2C interface
+# Wishbone Monitor           Writing          75 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 75, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 52 or 00110100, Address 0x22
+# Wishbone Monitor           Read  52 from I2C interface
+# Wishbone Monitor           Writing          77 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 77, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 50 or 00110010, Address 0x22
+# Wishbone Monitor           Read  50 from I2C interface
+# Wishbone Monitor           Writing          79 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 79, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 48 or 00110000, Address 0x22
+# Wishbone Monitor           Read  48 from I2C interface
+# Wishbone Monitor           Writing          81 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 81, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 46 or 00101110, Address 0x22
+# Wishbone Monitor           Read  46 from I2C interface
+# Wishbone Monitor           Writing          83 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 83, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 44 or 00101100, Address 0x22
+# Wishbone Monitor           Read  44 from I2C interface
+# Wishbone Monitor           Writing          85 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 85, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 42 or 00101010, Address 0x22
+# Wishbone Monitor           Read  42 from I2C interface
+# Wishbone Monitor           Writing          87 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 87, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 40 or 00101000, Address 0x22
+# Wishbone Monitor           Read  40 from I2C interface
+# Wishbone Monitor           Writing          89 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 89, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 38 or 00100110, Address 0x22
+# Wishbone Monitor           Read  38 from I2C interface
+# Wishbone Monitor           Writing          91 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 91, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 36 or 00100100, Address 0x22
+# Wishbone Monitor           Read  36 from I2C interface
+# Wishbone Monitor           Writing          93 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 93, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 34 or 00100010, Address 0x22
+# Wishbone Monitor           Read  34 from I2C interface
+# Wishbone Monitor           Writing          95 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 95, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 32 or 00100000, Address 0x22
+# Wishbone Monitor           Read  32 from I2C interface
+# Wishbone Monitor           Writing          97 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 97, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 30 or 00011110, Address 0x22
+# Wishbone Monitor           Read  30 from I2C interface
+# Wishbone Monitor           Writing          99 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 99, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 28 or 00011100, Address 0x22
+# Wishbone Monitor           Read  28 from I2C interface
+# Wishbone Monitor           Writing         101 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 101, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 26 or 00011010, Address 0x22
+# Wishbone Monitor           Read  26 from I2C interface
+# Wishbone Monitor           Writing         103 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 103, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 24 or 00011000, Address 0x22
+# Wishbone Monitor           Read  24 from I2C interface
+# Wishbone Monitor           Writing         105 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 105, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 22 or 00010110, Address 0x22
+# Wishbone Monitor           Read  22 from I2C interface
+# Wishbone Monitor           Writing         107 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 107, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 20 or 00010100, Address 0x22
+# Wishbone Monitor           Read  20 from I2C interface
+# Wishbone Monitor           Writing         109 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 109, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 18 or 00010010, Address 0x22
+# Wishbone Monitor           Read  18 from I2C interface
+# Wishbone Monitor           Writing         111 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 111, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 16 or 00010000, Address 0x22
+# Wishbone Monitor           Read  16 from I2C interface
+# Wishbone Monitor           Writing         113 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 113, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 14 or 00001110, Address 0x22
+# Wishbone Monitor           Read  14 from I2C interface
+# Wishbone Monitor           Writing         115 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 115, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 12 or 00001100, Address 0x22
+# Wishbone Monitor           Read  12 from I2C interface
+# Wishbone Monitor           Writing         117 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 117, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 10 or 00001010, Address 0x22
+# Wishbone Monitor           Read  10 from I2C interface
+# Wishbone Monitor           Writing         119 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 119, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 8 or 00001000, Address 0x22
+# Wishbone Monitor           Read   8 from I2C interface
+# Wishbone Monitor           Writing         121 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 121, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 6 or 00000110, Address 0x22
+# Wishbone Monitor           Read   6 from I2C interface
+# Wishbone Monitor           Writing         123 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 123, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 4 or 00000100, Address 0x22
+# Wishbone Monitor           Read   4 from I2C interface
+# Wishbone Monitor           Writing         125 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 125, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 2 or 00000010, Address 0x22
+# Wishbone Monitor           Read   2 from I2C interface
+# Wishbone Monitor           Writing         127 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 127, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 0 or 00000000, Address 0x22
+# Wishbone Monitor           Read   0 from I2C interface
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 20000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31, Address 0x22
+# *-------- Finished 32 incrementing values wishbone -> I2C --------*
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100 or 01100100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101 or 01100101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102 or 01100110, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103 or 01100111, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104 or 01101000, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105 or 01101001, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106 or 01101010, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107 or 01101011, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 108 or 01101100, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109 or 01101101, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110 or 01101110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111 or 01101111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112 or 01110000, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113 or 01110001, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114 or 01110010, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115 or 01110011, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116 or 01110100, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117 or 01110101, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 118 or 01110110, Address 0x22
+# Wishbone Monitor          Read 118 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 119 or 01110111, Address 0x22
+# Wishbone Monitor          Read 119 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 120 or 01111000, Address 0x22
+# Wishbone Monitor          Read 120 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 121 or 01111001, Address 0x22
+# Wishbone Monitor          Read 121 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 122 or 01111010, Address 0x22
+# Wishbone Monitor          Read 122 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 123 or 01111011, Address 0x22
+# Wishbone Monitor          Read 123 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 124 or 01111100, Address 0x22
+# Wishbone Monitor          Read 124 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 125 or 01111101, Address 0x22
+# Wishbone Monitor          Read 125 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 126 or 01111110, Address 0x22
+# Wishbone Monitor          Read 126 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 127 or 01111111, Address 0x22
+# Wishbone Monitor          Read 127 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -128 or 10000000, Address 0x22
+# Wishbone Monitor          Read 128 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -127 or 10000001, Address 0x22
+# Wishbone Monitor          Read 129 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -126 or 10000010, Address 0x22
+# Wishbone Monitor          Read 130 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -125 or 10000011, Address 0x22
+# Wishbone Monitor          Read 131 from I2C interface
+# *-------- Finished 32 incrementing values I2C -> Wishbone --------*
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64 or 01000000, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 62 or 00111110, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 60 or 00111100, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 58 or 00111010, Address 0x22
+# Wishbone Monitor           Read  58 from I2C interface
+# Wishbone Monitor           Writing          71 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 71, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 56 or 00111000, Address 0x22
+# Wishbone Monitor           Read  56 from I2C interface
+# Wishbone Monitor           Writing          73 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 73, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 54 or 00110110, Address 0x22
+# Wishbone Monitor           Read  54 from I2C interface
+# Wishbone Monitor           Writing          75 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 75, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 52 or 00110100, Address 0x22
+# Wishbone Monitor           Read  52 from I2C interface
+# Wishbone Monitor           Writing          77 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 77, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 50 or 00110010, Address 0x22
+# Wishbone Monitor           Read  50 from I2C interface
+# Wishbone Monitor           Writing          79 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 79, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 48 or 00110000, Address 0x22
+# Wishbone Monitor           Read  48 from I2C interface
+# Wishbone Monitor           Writing          81 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 81, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 46 or 00101110, Address 0x22
+# Wishbone Monitor           Read  46 from I2C interface
+# Wishbone Monitor           Writing          83 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 83, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 44 or 00101100, Address 0x22
+# Wishbone Monitor           Read  44 from I2C interface
+# Wishbone Monitor           Writing          85 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 85, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 42 or 00101010, Address 0x22
+# Wishbone Monitor           Read  42 from I2C interface
+# Wishbone Monitor           Writing          87 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 87, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 40 or 00101000, Address 0x22
+# Wishbone Monitor           Read  40 from I2C interface
+# Wishbone Monitor           Writing          89 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 89, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 38 or 00100110, Address 0x22
+# Wishbone Monitor           Read  38 from I2C interface
+# Wishbone Monitor           Writing          91 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 91, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 36 or 00100100, Address 0x22
+# Wishbone Monitor           Read  36 from I2C interface
+# Wishbone Monitor           Writing          93 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 93, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 34 or 00100010, Address 0x22
+# Wishbone Monitor           Read  34 from I2C interface
+# Wishbone Monitor           Writing          95 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 95, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 32 or 00100000, Address 0x22
+# Wishbone Monitor           Read  32 from I2C interface
+# Wishbone Monitor           Writing          97 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 97, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 30 or 00011110, Address 0x22
+# Wishbone Monitor           Read  30 from I2C interface
+# Wishbone Monitor           Writing          99 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 99, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+restart
+# Loading work.types_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+run 20000000ns
+# Wishbone Monitor  Writing           0 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 0, Address 0x22
+# Wishbone Monitor  Writing           1 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 1, Address 0x22
+# Wishbone Monitor  Writing           2 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 2, Address 0x22
+# Wishbone Monitor  Writing           3 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 3, Address 0x22
+# Wishbone Monitor  Writing           4 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 4, Address 0x22
+# Wishbone Monitor  Writing           5 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 5, Address 0x22
+# Wishbone Monitor  Writing           6 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 6, Address 0x22
+# Wishbone Monitor  Writing           7 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 7, Address 0x22
+# Wishbone Monitor  Writing           8 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 8, Address 0x22
+# Wishbone Monitor  Writing           9 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 9, Address 0x22
+# Wishbone Monitor  Writing          10 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 10, Address 0x22
+# Wishbone Monitor  Writing          11 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 11, Address 0x22
+# Wishbone Monitor  Writing          12 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 12, Address 0x22
+# Wishbone Monitor  Writing          13 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 13, Address 0x22
+# Wishbone Monitor  Writing          14 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 14, Address 0x22
+# Wishbone Monitor  Writing          15 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 15, Address 0x22
+# Wishbone Monitor  Writing          16 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 16, Address 0x22
+# Wishbone Monitor  Writing          17 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 17, Address 0x22
+# Wishbone Monitor  Writing          18 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 18, Address 0x22
+# Wishbone Monitor  Writing          19 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 19, Address 0x22
+# Wishbone Monitor  Writing          20 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 20, Address 0x22
+# Wishbone Monitor  Writing          21 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 21, Address 0x22
+# Wishbone Monitor  Writing          22 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 22, Address 0x22
+# Wishbone Monitor  Writing          23 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 23, Address 0x22
+# Wishbone Monitor  Writing          24 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 24, Address 0x22
+# Wishbone Monitor  Writing          25 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 25, Address 0x22
+# Wishbone Monitor  Writing          26 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 26, Address 0x22
+# Wishbone Monitor  Writing          27 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 27, Address 0x22
+# Wishbone Monitor  Writing          28 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 28, Address 0x22
+# Wishbone Monitor  Writing          29 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 29, Address 0x22
+# Wishbone Monitor  Writing          30 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 30, Address 0x22
+# Wishbone Monitor  Writing          31 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 31, Address 0x22
+# *-------- Finished 32 incrementing values wishbone -> I2C --------*
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 100 or 01100100, Address 0x22
+# Wishbone Monitor          Read 100 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 101 or 01100101, Address 0x22
+# Wishbone Monitor          Read 101 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 102 or 01100110, Address 0x22
+# Wishbone Monitor          Read 102 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 103 or 01100111, Address 0x22
+# Wishbone Monitor          Read 103 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 104 or 01101000, Address 0x22
+# Wishbone Monitor          Read 104 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 105 or 01101001, Address 0x22
+# Wishbone Monitor          Read 105 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 106 or 01101010, Address 0x22
+# Wishbone Monitor          Read 106 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 107 or 01101011, Address 0x22
+# Wishbone Monitor          Read 107 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 108 or 01101100, Address 0x22
+# Wishbone Monitor          Read 108 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 109 or 01101101, Address 0x22
+# Wishbone Monitor          Read 109 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 110 or 01101110, Address 0x22
+# Wishbone Monitor          Read 110 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 111 or 01101111, Address 0x22
+# Wishbone Monitor          Read 111 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 112 or 01110000, Address 0x22
+# Wishbone Monitor          Read 112 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 113 or 01110001, Address 0x22
+# Wishbone Monitor          Read 113 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 114 or 01110010, Address 0x22
+# Wishbone Monitor          Read 114 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 115 or 01110011, Address 0x22
+# Wishbone Monitor          Read 115 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 116 or 01110100, Address 0x22
+# Wishbone Monitor          Read 116 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 117 or 01110101, Address 0x22
+# Wishbone Monitor          Read 117 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 118 or 01110110, Address 0x22
+# Wishbone Monitor          Read 118 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 119 or 01110111, Address 0x22
+# Wishbone Monitor          Read 119 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 120 or 01111000, Address 0x22
+# Wishbone Monitor          Read 120 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 121 or 01111001, Address 0x22
+# Wishbone Monitor          Read 121 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 122 or 01111010, Address 0x22
+# Wishbone Monitor          Read 122 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 123 or 01111011, Address 0x22
+# Wishbone Monitor          Read 123 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 124 or 01111100, Address 0x22
+# Wishbone Monitor          Read 124 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 125 or 01111101, Address 0x22
+# Wishbone Monitor          Read 125 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 126 or 01111110, Address 0x22
+# Wishbone Monitor          Read 126 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: 127 or 01111111, Address 0x22
+# Wishbone Monitor          Read 127 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -128 or 10000000, Address 0x22
+# Wishbone Monitor          Read 128 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -127 or 10000001, Address 0x22
+# Wishbone Monitor          Read 129 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -126 or 10000010, Address 0x22
+# Wishbone Monitor          Read 130 from I2C interface
+# Wishbone Monitor          Initiating Read Request
+# I2C_BUS READ Transfer      Data: -125 or 10000011, Address 0x22
+# Wishbone Monitor          Read 131 from I2C interface
+# *-------- Finished 32 incrementing values I2C -> Wishbone --------*
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 64 or 01000000, Address 0x22
+# Wishbone Monitor           Read  64 from I2C interface
+# Wishbone Monitor           Writing          65 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 65, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 62 or 00111110, Address 0x22
+# Wishbone Monitor           Read  62 from I2C interface
+# Wishbone Monitor           Writing          67 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 67, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 60 or 00111100, Address 0x22
+# Wishbone Monitor           Read  60 from I2C interface
+# Wishbone Monitor           Writing          69 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 69, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 58 or 00111010, Address 0x22
+# Wishbone Monitor           Read  58 from I2C interface
+# Wishbone Monitor           Writing          71 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 71, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 56 or 00111000, Address 0x22
+# Wishbone Monitor           Read  56 from I2C interface
+# Wishbone Monitor           Writing          73 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 73, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 54 or 00110110, Address 0x22
+# Wishbone Monitor           Read  54 from I2C interface
+# Wishbone Monitor           Writing          75 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 75, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 52 or 00110100, Address 0x22
+# Wishbone Monitor           Read  52 from I2C interface
+# Wishbone Monitor           Writing          77 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 77, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 50 or 00110010, Address 0x22
+# Wishbone Monitor           Read  50 from I2C interface
+# Wishbone Monitor           Writing          79 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 79, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 48 or 00110000, Address 0x22
+# Wishbone Monitor           Read  48 from I2C interface
+# Wishbone Monitor           Writing          81 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 81, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 46 or 00101110, Address 0x22
+# Wishbone Monitor           Read  46 from I2C interface
+# Wishbone Monitor           Writing          83 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 83, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 44 or 00101100, Address 0x22
+# Wishbone Monitor           Read  44 from I2C interface
+# Wishbone Monitor           Writing          85 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 85, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 42 or 00101010, Address 0x22
+# Wishbone Monitor           Read  42 from I2C interface
+# Wishbone Monitor           Writing          87 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 87, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 40 or 00101000, Address 0x22
+# Wishbone Monitor           Read  40 from I2C interface
+# Wishbone Monitor           Writing          89 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 89, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 38 or 00100110, Address 0x22
+# Wishbone Monitor           Read  38 from I2C interface
+# Wishbone Monitor           Writing          91 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 91, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 36 or 00100100, Address 0x22
+# Wishbone Monitor           Read  36 from I2C interface
+# Wishbone Monitor           Writing          93 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 93, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 34 or 00100010, Address 0x22
+# Wishbone Monitor           Read  34 from I2C interface
+# Wishbone Monitor           Writing          95 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 95, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 32 or 00100000, Address 0x22
+# Wishbone Monitor           Read  32 from I2C interface
+# Wishbone Monitor           Writing          97 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 97, Address 0x22
+# Wishbone Monitor           Initiating Read Request
+# I2C_BUS READ Transfer      Data: 30 or 00011110, Address 0x22
+# Wishbone Monitor           Read  30 from I2C interface
+# Wishbone Monitor           Writing          99 to address 0x22
+# I2C_BUS WRITE Transfer      Data: 99, Address 0x22
+# Wishbone Monitor           Initiating Read Request

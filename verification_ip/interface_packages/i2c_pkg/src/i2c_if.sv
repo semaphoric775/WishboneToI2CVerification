@@ -1,3 +1,4 @@
+// Package with i2c_op_t definition
 import types_pkg::*;
 
 `timescale 1ns / 10ps
@@ -5,50 +6,62 @@ import types_pkg::*;
 interface i2c_if    #(
     int I2C_ADDR_WIDTH=7,
     int I2C_DATA_WIDTH=8,
+    // Device address filled in by testbench
     bit[I2C_ADDR_WIDTH-1:0] I2C_DEVICE_ADDR
     )
 (
+    // Clock signal -- technically tri state
+    // switch this to triand if clock stretching will be tested
     input wire scl,
+    // Data signal
     triand sda
 );
 
+// SDA output values and write enable
 logic sda_o;
 bit sda_we = 0;
+// Tri-state buffer
 assign sda = sda_we ? sda_o : 1'bz;
+
 
 typedef enum {START, STOP, DATA} i2c_bit_type;
 
 // ****************************************************************************             
+// Task to get data from sda && scl line
+//  can return a START, STOP, or DATA condition
+//  if data is detected (posedge scl happens before a start or stop condition)
+//  it is passed back as an output 
     task get_link_status(output i2c_bit_type bt, output bit data);
         fork : GET_COND
             begin : DATA_CASE
-            @(posedge scl);
-            data = sda;
-            bt = DATA;
+                @(posedge scl);
+                data = sda;
+                bt = DATA;
             end
             begin : START_CASE
-            forever begin
-                @(negedge sda)
-                if(scl) begin
-                bt = START; 
-                break;
+                forever begin
+                    @(negedge sda)
+                    if(scl) begin
+                        bt = START; 
+                        break;
+                    end
                 end
-            end
             end
             begin : STOP_CASE
-            forever begin
-               @(posedge sda)
-               if(scl) begin
-                    bt = STOP;
-                    break;
-                   end
+                forever begin
+                   @(posedge sda)
+                   if(scl) begin
+                        bt = STOP;
+                        break;
+                       end
                 end
             end
-        join_any
+        join_any // task will exit once any condition detected
         return;
     endtask
 
 // ****************************************************************************             
+// Pulls sda line low to acknowledge I2C master
     task send_ack();
         @(posedge scl)
         sda_o = 0;
@@ -58,6 +71,9 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     endtask
 
 // ****************************************************************************             
+// Immediately sends bit over sda line
+//  cannot change on clock edge since this would be an I2C violation
+
     task send_bit(bit b);
         sda_o = b;
         sda_we = 1;
@@ -66,23 +82,30 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     endtask
 
 // ****************************************************************************             
+
    task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
+    //temporary storage values
     bit[I2C_ADDR_WIDTH-1:0] addr;
     bit[I2C_DATA_WIDTH-1:0] write_data_queue[$];
+    //data from one I2C transmission
     bit[I2C_DATA_WIDTH-1:0] packet;
 
     i2c_bit_type bt;
     bit one_data_bit;
     
+    //clears queue to remove previous transmissions 
     write_data_queue.delete();
+
     do get_link_status(bt, one_data_bit); while(bt != START);
     repeat(I2C_ADDR_WIDTH)
         begin
         get_link_status(bt, one_data_bit);
+        assert(bt == DATA) else $display("Faulty I2C Address Transmission");
         addr = {addr, one_data_bit};
         end
 
     if(addr != I2C_DEVICE_ADDR) begin
+        $display("I2C Address 0x%h selected, exiting wait for transfer", addr);
         return;
     end
 
@@ -90,13 +113,13 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     @(negedge scl)
     send_ack();
 
-    if(op == READ) begin
+    if(op == READ)
         return;
-    end
 
     forever begin
         repeat(I2C_DATA_WIDTH) begin
             get_link_status(bt, one_data_bit);
+            //exit on new start or stop bit
             if(bt == STOP || bt == START) begin 
                 write_data = write_data_queue;
                 return;
@@ -113,17 +136,16 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     transfer_complete = 0;
     for(int i=0; i<read_data.size(); i++) begin
         for(int j=I2C_DATA_WIDTH-1; j >= 0; j--) begin
-        //send MSB first
-        send_bit(read_data[i][j]);
+            send_bit(read_data[i][j]);
         end 
         @(posedge scl);
         //nack condition detected
         if(sda == 1) begin
-        transfer_complete = 1;
-        return;
+            transfer_complete = 1;
+            return;
         end    
-    end 
-     endtask
+    end // quit task with transfer_complete=0 if read_data exhausted
+    endtask
 
 // ****************************************************************************             
     task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[]);
@@ -133,7 +155,9 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     i2c_bit_type bt;
     bit one_data_bit;
     
+    //reset data_queue
     data_queue.delete();
+
     do get_link_status(bt, one_data_bit); while(bt != START);
     repeat(I2C_ADDR_WIDTH)
         begin
@@ -150,18 +174,18 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 
     forever begin
         repeat(I2C_DATA_WIDTH) begin
-        get_link_status(bt, one_data_bit);
-        if(bt == STOP) begin 
-            data = data_queue;
-            return;
-        end
-        packet = {packet, one_data_bit};
+            get_link_status(bt, one_data_bit);
+            if(bt == STOP) begin 
+                data = data_queue;
+                return;
+            end
+            packet = {packet, one_data_bit};
         end
         data_queue.push_front(packet);
+        //skip ack bit
         @(posedge scl);
         @(negedge scl);
     end
     endtask
 // ****************************************************************************              
-
 endinterface
