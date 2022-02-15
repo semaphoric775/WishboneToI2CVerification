@@ -3,34 +3,37 @@ if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
 nmap gx <Plug>NetrwBrowseX
-noremap <F5> :!make -C /afs/unity.ncsu.edu/users/e/epmurphy/Documents/proj1/project_benches/proj_1/sim compile
+noremap <F5> :!(cd /afs/unity.ncsu.edu/users/e/epmurphy/Documents/proj1/project_benches/proj_1/sim && make compile)
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
+set expandtab
 set fileencodings=ucs-bom,utf-8,latin1
 set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=en
 set hlsearch
 set ruler
 set runtimepath=~/.vim,~/.vim/plugged/nerdtree,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,~/.vim/after
-set viminfo='20,\"50
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Documents/proj1/project_benches/proj_1/sim
+cd ~/Documents/proj1
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ../testbench/top.sv
-badd +1 ~/Documents/proj1/verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv
-badd +0 ~/Documents/proj1/verification_ip/interface_packages/wb_pkg/src/wb_if.sv
+badd +1 project_benches/proj_1/testbench/top.sv
+badd +15 verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv
+badd +1 verification_ip/interface_packages/wb_pkg/src/wb_if.sv
 argglobal
 silent! argdel *
-argadd ../testbench/top.sv
+argadd project_benches/proj_1/testbench/top.sv
 set stal=2
-edit ../testbench/top.sv
+edit project_benches/proj_1/testbench/top.sv
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -68,7 +71,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
+setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
@@ -117,10 +120,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=8
+setlocal shiftwidth=4
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=0
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -132,7 +135,7 @@ setlocal synmaxcol=3000
 if &syntax != 'verilog'
 setlocal syntax=verilog
 endif
-setlocal tabstop=8
+setlocal tabstop=4
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
@@ -143,13 +146,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 9 - ((8 * winheight(0) + 30) / 60)
+let s:l = 25 - ((24 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 014|
-tabedit ~/Documents/proj1/verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv
+25
+normal! 0
+tabedit verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -193,7 +196,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
+setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
@@ -242,10 +245,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=8
+setlocal shiftwidth=4
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=0
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -257,7 +260,7 @@ setlocal synmaxcol=3000
 if &syntax != 'verilog'
 setlocal syntax=verilog
 endif
-setlocal tabstop=8
+setlocal tabstop=4
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
@@ -268,15 +271,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 29) / 59)
+let s:l = 11 - ((10 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+11
+normal! 04|
 wincmd w
 argglobal
-edit ~/Documents/proj1/verification_ip/interface_packages/wb_pkg/src/wb_if.sv
+edit verification_ip/interface_packages/wb_pkg/src/wb_if.sv
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -308,7 +311,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
+setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
@@ -357,10 +360,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=8
+setlocal shiftwidth=4
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=0
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -372,7 +375,7 @@ setlocal synmaxcol=3000
 if &syntax != 'verilog'
 setlocal syntax=verilog
 endif
-setlocal tabstop=8
+setlocal tabstop=4
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
@@ -392,7 +395,7 @@ normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 96 + 96) / 193)
 exe 'vert 2resize ' . ((&columns * 96 + 96) / 193)
-tabnext 1
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

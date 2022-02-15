@@ -27,19 +27,19 @@ tri  [NUM_I2C_BUSSES-1:0] sda;
 // Clock generator
 
 initial
-	begin: CLK_GEN 
-		clk=1'b0;
-	end
+    begin: CLK_GEN 
+        clk=1'b0;
+    end
 always
-	#5 clk = !clk;
+    #5 clk = !clk;
 
 // ****************************************************************************
 // Reset generator
 
 initial
-	begin : RST_GEN
-	#113	rst=1'b0;
-	end
+    begin : RST_GEN
+    #113    rst=1'b0;
+    end
 
 // ****************************************************************************
 // Monitor Wishbone bus and display transfers in the transcript
@@ -50,11 +50,11 @@ logic [WB_DATA_WIDTH-1:0] wb_monitor_data;
 logic wb_monitor_we;
 
 initial
-	forever begin : WB_MONITORING
-	wb_bus.master_monitor(wb_monitor_addr, wb_monitor_data, wb_monitor_we);
-	//$display("Wishbone monitor	Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
-	@(posedge clk);
-	end
+    forever begin : WB_MONITORING
+    wb_bus.master_monitor(wb_monitor_addr, wb_monitor_data, wb_monitor_we);
+    //$display("Wishbone monitor    Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
+    @(posedge clk);
+    end
 
 // ****************************************************************************
 // Monitor I2C bus and display transfers in the transcript
@@ -65,14 +65,14 @@ i2c_op_t i2c_monitor_op;
 bit [I2C_DATA_WIDTH-1:0] i2c_monitor_data[];
 
 initial
-	forever begin : MONITOR_I2C_BUS
-	i2c_bus.monitor(i2c_monitor_addr, i2c_monitor_op, i2c_monitor_data);
-	if(i2c_monitor_op == WRITE)
-	    $display("I2C_BUS WRITE Transfer	Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
-	else
-	    $display("I2C_BUS READ Transfer	Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
-	@(posedge clk);
-	end
+    forever begin : MONITOR_I2C_BUS
+    i2c_bus.monitor(i2c_monitor_addr, i2c_monitor_op, i2c_monitor_data);
+    if(i2c_monitor_op == WRITE)
+        $display("I2C_BUS WRITE Transfer    Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
+    else
+        $display("I2C_BUS READ Transfer Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
+    @(posedge clk);
+    end
 
 // ****************************************************************************
 // Define the flow of the simulation
@@ -83,50 +83,50 @@ initial
 logic [WB_DATA_WIDTH-1:0] wb_out;
 
 task wishbone_write(input bit[I2C_DATA_WIDTH-1:0] data,input bit[I2C_ADDR_WIDTH-1:0] addr);
-	//start command
-	wb_bus.master_write(CMDR, 8'bxxxxx100);
+    //start command
+    wb_bus.master_write(CMDR, 8'bxxxxx100);
 
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
 
-	wb_bus.master_write(DPR, addr << 1);
-	//write command
-	wb_bus.master_write(CMDR, 8'bxxxxx001);
+    wb_bus.master_write(DPR, addr << 1);
+    //write command
+    wb_bus.master_write(CMDR, 8'bxxxxx001);
 
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
-	wb_bus.master_write(DPR, data);
-	wb_bus.master_write(CMDR, 8'bxxxxx001);
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
+    wb_bus.master_write(DPR, data);
+    wb_bus.master_write(CMDR, 8'bxxxxx001);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
 
-	wb_bus.master_write(CMDR, 8'bxxxx101);
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
+    wb_bus.master_write(CMDR, 8'bxxxx101);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
 endtask
 
 task wishbone_read(output bit[WB_DATA_WIDTH-1:0] data_out, input bit[I2C_ADDR_WIDTH-1:0] addr);
-	//start command
-	wb_bus.master_write(CMDR, 8'bxxxxx100);
+    //start command
+    wb_bus.master_write(CMDR, 8'bxxxxx100);
 
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
-	wb_bus.master_write(DPR, (addr << 1)+1'b1);
-	//write command
-	wb_bus.master_write(CMDR, 8'bxxxxx001);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
+    wb_bus.master_write(DPR, (addr << 1)+1'b1);
+    //write command
+    wb_bus.master_write(CMDR, 8'bxxxxx001);
 
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
-	wb_bus.master_write(CMDR, 8'bxxxxx011);
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
+    wb_bus.master_write(CMDR, 8'bxxxxx011);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
 
-	wb_bus.master_read(DPR, data_out);
-	wb_bus.master_write(CMDR, 8'bxxxx101);
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
+    wb_bus.master_read(DPR, data_out);
+    wb_bus.master_write(CMDR, 8'bxxxx101);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
 
 endtask
 
 // ****************************************************************************
 
 parameter
-	CSR = 2'b00,
-	DPR = 2'b01,
-	CMDR = 2'b10,
-	FSMR = 2'b11;
+    CSR = 2'b00,
+    DPR = 2'b01,
+    CMDR = 2'b10,
+    FSMR = 2'b11;
 
 i2c_op_t i2c_if_op;
 bit[I2C_DATA_WIDTH-1:0] i2c_if_write_data[];
@@ -135,79 +135,79 @@ bit [I2C_DATA_WIDTH-1:0] i2c_read_data [] = new[1];
 
 //i2c testflow
 initial
-	begin : TEST_FLOW_I2C
-	    for(int i = 0; i < 5; i++) begin
-		i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-		assert(i2c_if_op == WRITE) else $display("I2C Interface expected WRITE request");
-	    end
-	    for(int i = 0; i < 5; i++) begin
-		i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-		assert(i2c_if_op == READ) else $display("I2C interface expected READ request");
-		i2c_read_data[0] = 100+i;
-		i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);	
-	    end
-	    for(int i = 0; i < 64; i++) begin
-		if(i % 2 == 0) begin
-		    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-		    assert(i2c_if_op == WRITE) else $display("I2C Interface expected WRITE request");
-		end else begin
-		    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-		    assert(i2c_if_op == READ) else $display("I2C interface expected READ request");
-		    i2c_read_data[0] = 64+i;
-		    i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);	
-		end
-	     end
-	//i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);
-	end
+    begin : TEST_FLOW_I2C
+        for(int i = 0; i < 5; i++) begin
+        i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+        assert(i2c_if_op == WRITE) else $display("I2C Interface expected WRITE request");
+        end
+        for(int i = 0; i < 5; i++) begin
+        i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+        assert(i2c_if_op == READ) else $display("I2C interface expected READ request");
+        i2c_read_data[0] = 100+i;
+        i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);    
+        end
+        for(int i = 0; i < 64; i++) begin
+        if(i % 2 == 0) begin
+            i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+            assert(i2c_if_op == WRITE) else $display("I2C Interface expected WRITE request");
+        end else begin
+            i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+            assert(i2c_if_op == READ) else $display("I2C interface expected READ request");
+            i2c_read_data[0] = 64+i;
+            i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);    
+        end
+         end
+    //i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);
+    end
 
 bit[WB_DATA_WIDTH-1:0] data_from_i2c;
 //wishbone testflow
 initial
-	begin : TEST_FLOW
-	#1151
-	//wb_bus.master_write(adr, data);
-	
-	//example 6-1
-	wb_bus.master_write(CSR, 8'b11xxxxxx);
+    begin : TEST_FLOW
+    #1151
+    //wb_bus.master_write(adr, data);
+    
+    //example 6-1
+    wb_bus.master_write(CSR, 8'b11xxxxxx);
 
-	//example 6-3
-	wb_bus.master_write(DPR, 8'h05);
-	wb_bus.master_write(CMDR, 8'bxxxxx110);
+    //example 6-3
+    wb_bus.master_write(DPR, 8'h05);
+    wb_bus.master_write(CMDR, 8'bxxxxx110);
 
-	@(!irq) wb_bus.master_read(CMDR, wb_out);
+    @(!irq) wb_bus.master_read(CMDR, wb_out);
 
-	for(int i = 0; i < 5; i++) begin
-	    $display("Wishbone Monitor	Writing d to address 0x%0h", i, 8'h22);
-	    wishbone_write(i, 8'h22);
-	    end
-	for(int i = 0; i < 5; i++) begin
-	    wishbone_read(data_from_i2c, 8'h22);	
-	    $display("Wishbone Monitor	Read %d from I2C interface", data_from_i2c);
-	    end
+    for(int i = 0; i < 5; i++) begin
+        $display("Wishbone Monitor  Writing d to address 0x%0h", i, 8'h22);
+        wishbone_write(i, 8'h22);
+    end
+    for(int i = 0; i < 5; i++) begin
+        wishbone_read(data_from_i2c, 8'h22);    
+        $display("Wishbone Monitor  Read %d from I2C interface", data_from_i2c);
+    end
 
     for(int i = 0; i < 64; i++) begin
-	if(i % 2 == 0) begin
-	    $display("Wishbone Monitor	Writing %d to address 0x%0h", i+64, 8'h22);
-	    wishbone_write(64+i, 8'h22);
-	end else begin
-	    wishbone_read(data_from_i2c, 8'h22);
-	    $display("Wishbone Monitor	Read %d from I2C interface", data_from_i2c);
-	end
-     end
+    if(i % 2 == 0) begin
+        $display("Wishbone Monitor  Writing %d to address 0x%0h", i+64, 8'h22);
+        wishbone_write(64+i, 8'h22);
+    end else begin
+        wishbone_read(data_from_i2c, 8'h22);
+        $display("Wishbone Monitor  Read %d from I2C interface", data_from_i2c);
+        end
+    end
 
-	end
+    end
 
 // ****************************************************************************
 // Instantiate the I2C slave Bus Functional Model
 
-i2c_if	    #(
-	.I2C_DATA_WIDTH(I2C_DATA_WIDTH),
-	.I2C_ADDR_WIDTH(I2C_ADDR_WIDTH),
-	.I2C_DEVICE_ADDR(8'h22)
-	)
+i2c_if      #(
+    .I2C_DATA_WIDTH(I2C_DATA_WIDTH),
+    .I2C_ADDR_WIDTH(I2C_ADDR_WIDTH),
+    .I2C_DEVICE_ADDR(8'h22)
+    )
 i2c_bus (
-	.scl(scl), 
-	.sda(sda)
+    .scl(scl), 
+    .sda(sda)
 );
 
 // ****************************************************************************
