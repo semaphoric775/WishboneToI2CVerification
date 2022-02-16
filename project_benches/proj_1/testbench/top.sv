@@ -73,10 +73,15 @@ bit [I2C_DATA_WIDTH-1:0] i2c_monitor_data[];
 initial
     forever begin : MONITOR_I2C_BUS
         i2c_bus.monitor(i2c_monitor_addr, i2c_monitor_op, i2c_monitor_data);
+        //i2c_monitor_data can be of variable length
+        //  I know that it is one byte in this instance
+        //  the [0] is to force the %d specifier to display
+        //  an unsigned value
+
         if(i2c_monitor_op == WRITE)
-            $display("I2C_BUS WRITE Transfer      Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
+            $display("I2C_BUS WRITE Transfer      Data: %d, Address 0x%h", i2c_monitor_data[0], i2c_monitor_addr);
         else
-            $display("I2C_BUS READ Transfer      Data: %d, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
+            $display("I2C_BUS READ Transfer      Data: %d, Address 0x%h", i2c_monitor_data[0], i2c_monitor_addr);
         @(posedge clk);
     end
 
@@ -151,17 +156,15 @@ initial
             i2c_read_data[0] = 100+i;
             i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);    
         end
-        //Alternate writes and reads for 64 transfers
+        //Alternate writes and reads for 64 of each type of transfer
         //  write from 64 to 127
         //  read from 63 to 0
-        for(int i = 0; i < 65; i++) begin
-            if(i % 2 == 1) begin
+        for(int i = 0; i < 64*2; i++) begin
+            if(i % 2 == 0) begin
                 i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-                assert(i2c_if_op == WRITE) else $display("I2C Interface expected WRITE request");
             end else begin
                 i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-                assert(i2c_if_op == READ) else $display("I2C interface expected READ request");
-                i2c_read_data[0] = 64-i;
+                i2c_read_data[0] = 63-((i-1)/2);
                 i2c_bus.provide_read_data(i2c_read_data ,i2c_transfer_complete);    
             end
          end
@@ -198,11 +201,11 @@ initial
     end
     $display("*-------- Finished 32 incrementing values I2C -> Wishbone --------*");
 
-    //alternating reads and writes, 64 data points
-    for(int i = 0; i < 65; i++) begin
-        if(i % 2 == 1) begin
-            $display("Wishbone Monitor           Writing %d to address 0x%0h", i+64, I2C_DEVICE_ADDR);
-            wishbone_write(64+i, I2C_DEVICE_ADDR);
+    //alternating reads and writes, 64 data points each type
+    for(int i = 0; i < 64*2; i++) begin
+        if(i % 2 == 0) begin
+            $display("Wishbone Monitor           Writing %d to address 0x%0h", (i/2)+64, I2C_DEVICE_ADDR);
+            wishbone_write(64+(i/2), I2C_DEVICE_ADDR);
         end else begin
             $display("Wishbone Monitor           Initiating Read Request");
             wishbone_read(data_from_i2c, I2C_DEVICE_ADDR);
