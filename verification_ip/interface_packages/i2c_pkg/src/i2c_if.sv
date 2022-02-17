@@ -100,7 +100,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     repeat(I2C_ADDR_WIDTH)
         begin
         get_link_status(bt, one_data_bit);
-        assert(bt == DATA) else $display("Faulty I2C Address Transmission");
+        assert(bt == DATA) else $error("Faulty I2C Address Transmission");
         addr = {addr, one_data_bit};
         end
 
@@ -126,7 +126,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
             end
             packet = {packet, one_data_bit};
         end
-        write_data_queue.push_front(packet);
+        write_data_queue.push_back(packet);
         send_ack();
     end
    endtask
@@ -144,6 +144,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
             transfer_complete = 1;
             return;
         end    
+        @(negedge scl);
     end // quit task with transfer_complete=0 if read_data exhausted
     endtask
 
@@ -181,7 +182,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
             end
             packet = {packet, one_data_bit};
         end
-        data_queue.push_front(packet);
+        data_queue.push_back(packet);
         //skip ack bit
         @(posedge scl);
         @(negedge scl);
