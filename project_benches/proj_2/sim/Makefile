@@ -21,7 +21,7 @@ comp_I2C_MB:
 	vcom ../rtl/wishbone.vhd
 	vcom ../rtl/iicmb_m_wb.vhd
 
-comp_bench: comp_wb_pkg comp_i2c_pkg comp_i2cmb_env_pkg
+comp_bench: comp_i2cmb_env_pkg comp_wb_pkg comp_i2c_pkg
 	vlog ../testbench/top.sv
 
 optimize:
