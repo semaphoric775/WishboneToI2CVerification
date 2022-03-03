@@ -1,5 +1,5 @@
 // Package with i2c_op_t definition
-import i2cmb_env_pkg::*;
+import i2c_pkg::*;
 
 `timescale 1ns / 10ps
 

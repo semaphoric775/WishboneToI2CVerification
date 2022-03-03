@@ -1,7 +1,7 @@
 `timescale 1ns / 10ps
 
 // import the i2c_op_t type
-import i2cmb_env_pkg::*;
+import i2c_pkg::*;
 
 module top();
 
