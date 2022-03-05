@@ -5,9 +5,7 @@ import i2c_pkg::*;
 
 interface i2c_if    #(
     int I2C_ADDR_WIDTH=7,
-    int I2C_DATA_WIDTH=8,
-    // Device address filled in by testbench
-    bit[I2C_ADDR_WIDTH-1:0] I2C_DEVICE_ADDR
+    int I2C_DATA_WIDTH=8
     )
 (
     // Clock signal -- technically tri state
@@ -85,7 +83,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 
    task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
     //temporary storage values
-    bit[I2C_ADDR_WIDTH-1:0] addr;
+    bit[I2C_ADDR_WIDTH-1:0] addr_tmp;
     bit[I2C_DATA_WIDTH-1:0] write_data_queue[$];
     //data from one I2C transmission
     bit[I2C_DATA_WIDTH-1:0] packet;
@@ -99,15 +97,10 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     do get_link_status(bt, one_data_bit); while(bt != START);
     repeat(I2C_ADDR_WIDTH)
         begin
-        get_link_status(bt, one_data_bit);
-        assert(bt == DATA) else $error("Faulty I2C Address Transmission");
-        addr = {addr, one_data_bit};
+                get_link_status(bt, one_data_bit);
+                assert(bt == DATA) else $error("Faulty I2C Address Transmission");
+                addr_tmp = {addr_tmp, one_data_bit};
         end
-
-    if(addr != I2C_DEVICE_ADDR) begin
-        $display("I2C Address 0x%h selected, exiting wait for transfer", addr);
-        return;
-    end
 
     @(posedge scl) op = sda ? READ : WRITE; 
     @(negedge scl)
@@ -132,7 +125,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
    endtask
 
 // ****************************************************************************              
-     task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data []   ,output bit transfer_complete);
+     task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data [], output bit transfer_complete);
     transfer_complete = 0;
     for(int i=0; i<read_data.size(); i++) begin
         for(int j=I2C_DATA_WIDTH-1; j >= 0; j--) begin

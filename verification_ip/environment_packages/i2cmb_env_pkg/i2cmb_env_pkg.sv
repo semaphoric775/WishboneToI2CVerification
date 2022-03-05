@@ -1,5 +1,4 @@
 package i2cmb_env_pkg;
-    `include "src/i2c_op_t.svh"
     `include "src/i2cmb_test.svh"
     `include "src/i2cmb_generator.svh"
     `include "src/i2cmb_env_configuration.svh"

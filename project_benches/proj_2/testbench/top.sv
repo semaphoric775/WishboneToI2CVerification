@@ -10,7 +10,6 @@ parameter int WB_DATA_WIDTH = 8;
 parameter int NUM_I2C_BUSSES = 1;
 parameter int I2C_DATA_WIDTH = 8;
 parameter int I2C_ADDR_WIDTH = 7;
-parameter bit[I2C_ADDR_WIDTH-1:0] I2C_DEVICE_ADDR = 8'h22;
 
 bit  clk;
 bit  rst = 1'b1;
@@ -233,8 +232,7 @@ initial
 
 i2c_if      #(
     .I2C_DATA_WIDTH(I2C_DATA_WIDTH),
-    .I2C_ADDR_WIDTH(I2C_ADDR_WIDTH),
-    .I2C_DEVICE_ADDR(I2C_DEVICE_ADDR)
+    .I2C_ADDR_WIDTH(I2C_ADDR_WIDTH)
     )
 i2c_bus (
     .scl(scl), 
@@ -267,7 +265,8 @@ wb_bus (
   .we_i(),
   // Shred signals
   .dat_o(dat_wr_o),
-  .dat_i(dat_rd_i)
+  .dat_i(dat_rd_i),
+  .irq_i(irq)
   );
 
 // ****************************************************************************

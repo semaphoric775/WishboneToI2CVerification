@@ -10,7 +10,7 @@ class wb_transaction #(int WB_ADDR_WIDTH = 2, int WB_DATA_WIDTH = 8) extends ncs
     endfunction
 
     virtual function string convert2string();
-        return {super.convert2string(),$sformatf("Address: 0x%x command 0x%x")};
+        return {super.convert2string(),$sformatf("Address: 0x%x command 0x%x", this.address, this.data)};
     endfunction
 
     function bit compare(wb_transaction rhs);
