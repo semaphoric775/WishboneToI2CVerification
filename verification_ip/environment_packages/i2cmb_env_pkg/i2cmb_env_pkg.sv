@@ -1,4 +1,9 @@
 package i2cmb_env_pkg;
+    import ncsu_pkg::*;
+    `include "../../ncsu_pkg/ncsu_macros.svh"
+    import i2c_pkg::*;
+    import wb_pkg::*;
+
     `include "src/i2cmb_test.svh"
     `include "src/i2cmb_generator.svh"
     `include "src/i2cmb_env_configuration.svh"
