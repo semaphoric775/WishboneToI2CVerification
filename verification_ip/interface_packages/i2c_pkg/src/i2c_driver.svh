@@ -15,12 +15,23 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
     endfunction
     
     virtual task bl_put(T trans);
-        $display({get_full_name(), " ", trans.convert2string()});
-        if(trans.trans_type == WRITE) begin // I2C device has data written to it
-            //TODO
-        end else begin // I2C device providing data
-            //TODO
+        //CHANGE THIS FROM HARDCODED
+        bit[7:0] tmp[];
+        bit transfer_complete;
+        bus.wait_for_i2c_transfer(trans.trans_type, tmp);
+        if(trans.trans_type !== READ) begin
+            $warning("Expected read transaction from wishbone master");
         end
+        bus.provide_read_data(trans.data, transfer_complete);
+        if(!transfer_complete) begin
+            $warning("Wishbone master requests more data");
+        end
+    endtask
+
+    virtual task bl_get(output T trans);
+        bit[6:0] tmp;
+        trans = new;
+        bus.wait_for_i2c_transfer(tmp, trans.trans_type, trans.write_data);
     endtask
 
 endclass

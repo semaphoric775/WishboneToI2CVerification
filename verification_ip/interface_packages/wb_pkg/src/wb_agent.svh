@@ -40,6 +40,11 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
         driver.bl_put(trans);
     endtask
 
+    virtual task bl_get(output T trans);
+        trans = new;
+        driver.bl_get(trans);
+    endtask
+
     virtual function void connect_subscriber(ncsu_component#(T) subscriber);
         subscribers.push_back(subscriber);
     endfunction
