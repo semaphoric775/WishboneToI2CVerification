@@ -3,6 +3,7 @@ class wb_transaction #(int WB_ADDR_WIDTH = 2, int WB_DATA_WIDTH = 8) extends ncs
 
     bit [WB_ADDR_WIDTH-1:0] address;
     bit [WB_DATA_WIDTH-1:0] data;
+    bit we;
 
     function new(string name="");
         super.new(name);

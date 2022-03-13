@@ -1,9 +1,10 @@
 `timescale 1ns / 10ps
 
-// import the i2c_op_t type
-import i2c_pkg::*;
-
 module top();
+import i2c_pkg::*;
+import wb_pkg::*;
+import i2cmb_env_pkg::*;
+import ncsu_pkg::*;
 
 parameter int WB_ADDR_WIDTH = 2;
 parameter int WB_DATA_WIDTH = 8;
@@ -57,7 +58,7 @@ initial
         //  instead logging the read/writes for the i2c and wishbone interfaces
 
         //uncomment the next line to get wishbone_monitor output
-        //$display("Wishbone monitor    Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
+        $display("Wishbone monitor    Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
         @(posedge clk);
     end
 
@@ -82,149 +83,6 @@ initial
         else
             $display("I2C_BUS READ Transfer      Data: 0x%h, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
         @(posedge clk);
-    end
-
-// ****************************************************************************
-// Wishbone interface control register offsets
-parameter
-    CSR = 2'b00,
-    DPR = 2'b01,
-    CMDR = 2'b10,
-    FSMR = 2'b11;
-
-// ****************************************************************************
-// Define the flow of the simulation
-
-// I2C interface input and output arguments
-i2c_op_t i2c_if_op;
-bit[I2C_DATA_WIDTH-1:0] i2c_if_write_data[];
-bit i2c_transfer_complete;
-bit [I2C_DATA_WIDTH-1:0] i2c_read_data [] = new[32];
-
-//I2C Read/Writes
-initial
-    begin : TEST_FLOW_I2C
-    //TEST 1: 32 incrementing values from wishbone to I2C
-    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-
-    //TEST 2: 32 decrementing values read from I2C
-
-    //fill byte array transmitted to wishbone
-    for(int i = 0; i < 32; i++) 
-        i2c_read_data[i] = 100+i;
-
-    // Wait for read operation
-    i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-    assert(i2c_if_op == READ) else $error("Expected read request from wishbone master");
-    //send data back
-    i2c_bus.provide_read_data(i2c_read_data, i2c_transfer_complete);
-
-    //TEST 3: alternating read and writes
-    for(int i = 0; i < 128; i++) begin
-        if(i%2 == 0) begin //reading from wishbone
-            i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-        end else begin // sending data back to wishbone
-            i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
-            i2c_read_data[0] = 63 - ((i-1)/2);
-            i2c_bus.provide_read_data(i2c_read_data, i2c_transfer_complete);
-        end
-    end
-    end
-
-byte to_write;
-byte wb_out;
-
-//wishbone testflow
-initial
-    begin : TEST_FLOW
-    #1151
-    //wb_bus.master_write(adr, data);
-    
-    //enable core with interrupts
-    wb_bus.master_write(CSR, 8'b11xxxxxx);
-
-    //set bus ID    
-    wb_bus.master_write(DPR, 8'h05);
-    wb_bus.master_write(CMDR, 8'bxxxxx110);
-
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-
-   
-    //TEST 1: transmit 0 to 31 to i2c bus in one transmission
-    wb_bus.master_write(CMDR, 8'bxxxxx100);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-    // (slave address left shifted 1) + 0 for write
-    // see OpenCores I2C spec example 3
-    wb_bus.master_write(DPR, 8'h22 << 1);
-    //write command
-    wb_bus.master_write(CMDR, 8'bxxxxx001);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-    for(int i = 0; i < 32; i++) begin
-        wb_bus.master_write(DPR, i);
-        wb_bus.master_write(CMDR, 8'bxxxxx001);
-        $display("WISHBONE MONITOR  Sending 0x%h to I2C interface", i[7:0]);
-        @(!irq) wb_bus.master_read(CMDR, wb_out);
-    end
-    wb_bus.master_write(CMDR, 8'bxxxx101);
-
-    wb_bus.master_write(DPR, 8'h05);
-    wb_bus.master_write(CMDR, 8'bxxxxx110);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-
-    //TEST 2: Read 64 to 127 from I2C bus
-    wb_bus.master_write(CMDR, 8'bxxxxx100);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-    // (slave address left shifted 1) + 1 for write
-    // see OpenCores I2C spec example 3
-    wb_bus.master_write(DPR, (8'h22 << 1)+1'b1);
-    //write command
-    wb_bus.master_write(CMDR, 8'bxxxxx001);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-    // generate read requests with ACK 31 times
-    for(int i = 0; i < 31; i++) begin
-        wb_bus.master_write(CMDR, 8'bxxxxx010);
-        @(!irq) wb_bus.master_read(CMDR, wb_out);
-        wb_bus.master_read(DPR, wb_out);
-        $display("WISHBONE MONITOR  Recieved 0x%h from I2C interface", wb_out);
-    end
-    // generate final read request with NACK
-    wb_bus.master_write(CMDR, 8'bxxxxx011);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-    wb_bus.master_read(DPR, wb_out);
-    $display("WISHBONE MONITOR  Recieved 0x%h from I2C interface", wb_out);
-
-    // generate stop and clear IRQ
-    wb_bus.master_write(CMDR, 8'bxxxx101);
-    @(!irq) wb_bus.master_read(CMDR, wb_out);
-
-    //TEST 3: alternating incrementing and decrementing reads and writes
-    for(int i = 0; i < 128; i++) begin
-        wb_bus.master_write(CMDR, 8'bxxxxx100);
-        @(!irq) wb_bus.master_read(CMDR, wb_out);
-        // (slave address left shifted 1) + 1 for write
-        // see OpenCores I2C spec example 3
-        //alternate between reading and writing
-        wb_bus.master_write(DPR, (8'h22 << 1)+(i%2));
-        //write operation
-        wb_bus.master_write(CMDR, 8'bxxxxx001);
-        @(!irq) wb_bus.master_read(CMDR, wb_out);
-        if(i%2 == 0) begin // write case
-            to_write = 64+(i/2);
-            wb_bus.master_write(DPR, to_write);
-            wb_bus.master_write(CMDR, 8'bxxxxx001);
-            $display("WISHBONE MONITOR  Writing 0x%h to I2C interface", to_write);
-            @(!irq) wb_bus.master_read(CMDR, wb_out);
-            wb_bus.master_write(CMDR, 8'bxxxx101);
-            @(!irq) wb_bus.master_read(CMDR, wb_out);
-        end else begin
-            wb_bus.master_write(CMDR, 8'bxxxxx011);
-            @(!irq) wb_bus.master_read(CMDR, wb_out);
-            wb_bus.master_read(DPR, wb_out);
-            $display("WISHBONE MONITOR  Received 0x%h from I2C interface", wb_out);
-            wb_bus.master_write(CMDR, 8'bxxxx101);
-            @(!irq) wb_bus.master_read(CMDR, wb_out);
-        end
-    end
     end
 
 // ****************************************************************************
@@ -299,5 +157,16 @@ wb_bus (
     // ------------------------------------
   );
 
+// ****************************************************************************
+// Define the flow of the simulation
+
+i2cmb_test tst;
+
+initial begin : SIM_FLOW
+    ncsu_config_db#(.T(virtual i2c_if#(.ADDR_WIDTH(I2C_ADDR_WIDTH), .DATA_WIDTH(I2C_DATA_WIDTH))))::set("tst.env.i2c_slave_agent", i2c_bus);
+    ncsu_config_db#(.T(virtual wb_if#(.ADDR_WIDTH(WB_ADDR_WIDTH), .DATA_WIDTH(WB_DATA_WIDTH))))::set("tst.env.wb_master_agent", wb_bus);
+    tst = new("tst");
+    tst.run();
+end
 
 endmodule

@@ -4,6 +4,10 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 
     function new(string name = "", ncsu_component_base  parent = null); 
         super.new(name,parent);
+        if ( !(ncsu_config_db#(virtual i2c_if)::get(get_full_name(), this.bus))) begin;
+            $display("i2c_agent::ncsu_config_db::get() call for BFM handle failed for name: %s ",get_full_name());
+            $finish;
+        end
     endfunction
 
     virtual i2c_if bus;
@@ -29,9 +33,9 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
     endtask
 
     virtual task bl_get(output T trans);
-        bit[6:0] tmp;
+        i2c_op_t op;
         trans = new;
-        bus.wait_for_i2c_transfer(tmp, trans.trans_type, trans.write_data);
+        bus.wait_for_i2c_transfer(trans.trans_type, trans.data);
     endtask
 
 endclass

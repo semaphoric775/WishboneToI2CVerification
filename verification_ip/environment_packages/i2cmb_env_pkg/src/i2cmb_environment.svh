@@ -16,16 +16,16 @@ class i2cmb_environment extends ncsu_object;
     endfunction
 
     virtual function void build();
-        wb_master_agent = new("wb_master_agent", this);
+        wb_master_agent = new("wb_agent");
         wb_master_agent.set_configuration(configuration.wb_agent_config);
         wb_master_agent.build();
-        i2c_slave_agent = new("i2c_slave_agent", this);
+        i2c_slave_agent = new("i2c_slave_agent");
         i2c_slave_agent.set_configuration(configuration.i2c_agent_config);
         i2c_slave_agent.build();
-        pred = new("pred", this);
+        pred = new("pred");
         pred.set_configuration(configuration);
         pred.build();
-        scbd = new("scbd", this);
+        scbd = new("scbd");
         scbd.build();
         wb_master_agent.connect_subscriber(pred);
         pred.set_scoreboard(scbd);
