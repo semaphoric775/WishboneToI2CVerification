@@ -19,7 +19,7 @@ class i2cmb_environment extends ncsu_object;
         wb_master_agent = new("wb_agent");
         wb_master_agent.set_configuration(configuration.wb_agent_config);
         wb_master_agent.build();
-        i2c_slave_agent = new("i2c_slave_agent");
+        i2c_slave_agent = new("i2c_agent");
         i2c_slave_agent.set_configuration(configuration.i2c_agent_config);
         i2c_slave_agent.build();
         pred = new("pred");

@@ -7,7 +7,11 @@ class i2c_agent extends ncsu_component#(.T(i2c_transaction));
     virtual i2c_if bus;
 
     function new(string name = "", ncsu_component_base parent = null);
-
+        super.new(name,parent);
+        if ( !(ncsu_config_db#(virtual i2c_if)::get(get_full_name(), this.bus))) begin;
+            $display("i2c_agent::ncsu_config_db::get() call for BFM handle failed for name: %s ",get_full_name());
+            $finish;
+        end
     endfunction
 
     function void set_configuration(i2c_configuration cfg);

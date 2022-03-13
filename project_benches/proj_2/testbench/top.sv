@@ -163,8 +163,8 @@ wb_bus (
 i2cmb_test tst;
 
 initial begin : SIM_FLOW
-    ncsu_config_db#(.T(virtual i2c_if#(.ADDR_WIDTH(I2C_ADDR_WIDTH), .DATA_WIDTH(I2C_DATA_WIDTH))))::set("tst.env.i2c_slave_agent", i2c_bus);
-    ncsu_config_db#(.T(virtual wb_if#(.ADDR_WIDTH(WB_ADDR_WIDTH), .DATA_WIDTH(WB_DATA_WIDTH))))::set("tst.env.wb_master_agent", wb_bus);
+    ncsu_config_db#(.T(virtual i2c_if#(.ADDR_WIDTH(I2C_ADDR_WIDTH), .DATA_WIDTH(I2C_DATA_WIDTH))))::set("i2c_agent", i2c_bus);
+    ncsu_config_db#(.T(virtual wb_if#(.ADDR_WIDTH(WB_ADDR_WIDTH), .DATA_WIDTH(WB_DATA_WIDTH))))::set("wb_agent", wb_bus);
     tst = new("tst");
     tst.run();
 end
