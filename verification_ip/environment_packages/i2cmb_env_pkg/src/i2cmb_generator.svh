@@ -1,6 +1,9 @@
 class i2cmb_generator extends ncsu_object;
     `ncsu_register_object(i2cmb_generator)
 
+    wb_transaction wb_startup_seq[3];
+    wb_transaction wb_write_tst[6];
+    bit [7:0] tmp;
     wb_agent wb_master_agent;
     i2c_agent i2c_slave_agent;
 
@@ -9,7 +12,66 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     virtual task run();
-        //TODO
+        foreach(wb_startup_seq[i]) begin
+            wb_startup_seq[i] = new;
+        end
+        foreach(wb_write_tst[i]) begin
+            wb_write_tst[i] = new;
+        end
+        //core enable
+        wb_startup_seq[0].address = 2'b00;
+        wb_startup_seq[0].data = 8'b11xxxxxx;
+        wb_master_agent.bl_put(wb_startup_seq[0]);
+
+        //setting bus ID
+        wb_startup_seq[1].address = 2'b01;
+        wb_startup_seq[1].data = 8'h05;
+        wb_master_agent.bl_put(wb_startup_seq[1]);
+
+        wb_startup_seq[2].address = 2'b10;
+        wb_startup_seq[2].data = 8'bxxxxx110;
+        wb_master_agent.bl_put(wb_startup_seq[2]);
+
+        wb_master_agent.bus.wait_for_interrupt();
+        wb_master_agent.bus.master_read(2'b10, tmp);
+        
+        // Test write
+        wb_write_tst[0].address = 2'b10;
+        wb_write_tst[0].data = 8'bxxxxx100; 
+        wb_master_agent.bl_put(wb_write_tst[0]);
+
+        wb_master_agent.bus.wait_for_interrupt();
+        wb_master_agent.bus.master_read(2'b10, tmp);
+
+        wb_write_tst[1].address = 2'b01;
+        wb_write_tst[1].data = 8'h22 << 1; 
+        wb_master_agent.bl_put(wb_write_tst[1]);
+
+        wb_write_tst[2].address = 2'b10;
+        wb_write_tst[2].data = 8'bxxxxx001; 
+        wb_master_agent.bl_put(wb_write_tst[2]);
+
+        wb_master_agent.bus.wait_for_interrupt();
+        wb_master_agent.bus.master_read(2'b10, tmp);
+
+        wb_write_tst[3].address = 2'b01;
+        wb_write_tst[3].data = 8'h78; 
+        wb_master_agent.bl_put(wb_write_tst[3]);
+
+        wb_write_tst[4].address = 2'b10;
+        wb_write_tst[4].data = 8'bxxxxx001; 
+        wb_master_agent.bl_put(wb_write_tst[4]);
+
+        wb_master_agent.bus.wait_for_interrupt();
+        wb_master_agent.bus.master_read(2'b10, tmp);
+
+        wb_write_tst[5].address = 2'b10;
+        wb_write_tst[5].data = 8'bxxxxx101; 
+        wb_master_agent.bl_put(wb_write_tst[5]);
+
+        wb_master_agent.bus.wait_for_interrupt();
+        wb_master_agent.bus.master_read(2'b10, tmp);
+
     endtask
 
     function void set_i2c_agent(i2c_agent agent);

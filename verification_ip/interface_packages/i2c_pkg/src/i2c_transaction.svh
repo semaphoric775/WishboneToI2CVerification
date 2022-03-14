@@ -23,6 +23,6 @@ class i2c_transaction #(int I2C_DATA_WIDTH = 8, int I2C_ADDR_WIDTH = 7) extends 
         super.add_to_wave(transaction_viewing_stream_h);
         $add_attribute(transaction_view_h, addr,"addr");
         $add_attribute(transaction_view_h, trans_type,"optype");
-        $add_attribute(transaction_view_h, data,"data");
+        //$add_attribute(transaction_view_h, data, "data");
     endfunction
 endclass

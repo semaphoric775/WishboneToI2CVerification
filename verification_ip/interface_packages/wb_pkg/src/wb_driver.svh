@@ -18,8 +18,6 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 
     virtual task bl_get(output T trans);
         trans = new;
-        //adding an option to read different registers is a possibility
-        //since data from the I2C requires DPR, this is locked currently
         bus.master_read(2'b01, trans.data);
     endtask
 
