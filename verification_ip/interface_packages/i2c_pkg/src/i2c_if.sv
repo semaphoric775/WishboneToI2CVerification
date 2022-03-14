@@ -159,6 +159,8 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
         addr = {addr, one_data_bit};
         end
 
+    $display("Found address 0x%h", addr);
+
     @(posedge scl);
     op = sda ? READ : WRITE;    
 

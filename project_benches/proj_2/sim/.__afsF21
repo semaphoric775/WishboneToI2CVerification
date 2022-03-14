@@ -1,0 +1,772 @@
+# ** Warning: (vsim-14) Failed to open "modelsim.ini" specified by the MODELSIM environment variable.
+# No such file or directory. (errno = ENOENT)
+# //  Questa Sim
+# //  Version 2020.4_1 linux Nov  6 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb 
+# Start time: 13:30:39 on Mar 14,2022
+# Loading sv_std.std
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+# set NoQuitOnFinish 1
+# 1
+#  do wave.do
+# 
+# stdin: <EOF>
+run 2000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+run 2000ns
+run 2000ns
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+run 2000ns
+
+run 2000ns
+run 2000ns
+run 2000ns
+run 2000ns
+run 2000ns
+run 2000ns
+run 2000ns
+run 2000ns
+run 10000ns
+run 10000ns
+run 10000ns
+run 10000ns
+run 100000ns
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+run 100000ns
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# I2C_BUS WRITE Transfer      Data: 0xe0 c0, Address 0x0c
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# I2C_BUS WRITE Transfer      Data: 0x, Address 0x0c
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Clocking address bit 0 at time                 9345
+# Clocking address bit 0 at time                 9345
+# Clocking address bit 1 at time                19365
+# Clocking address bit 1 at time                19365
+# Clocking address bit 0 at time                29385
+# Clocking address bit 0 at time                29385
+# Clocking address bit 0 at time                39405
+# Clocking address bit 0 at time                39405
+# Clocking address bit 0 at time                49425
+# Clocking address bit 0 at time                49425
+# Clocking address bit 1 at time                59445
+# Clocking address bit 1 at time                59445
+# Clocking address bit 0 at time                69465
+# Found address 0x06
+# Clocking address bit 0 at time                69465
+# Found address 0x0c
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# I2C_BUS WRITE Transfer      Data: 0x, Address 0x0c
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Clocking address bit 0 at time                 9345
+# Clocking address bit 0 at time                 9345
+# Clocking address bit 1 at time                19365
+# Clocking address bit 1 at time                19365
+# Clocking address bit 0 at time                29385
+# Clocking address bit 0 at time                29385
+# Clocking address bit 0 at time                39405
+# Clocking address bit 0 at time                39405
+# Clocking address bit 0 at time                49425
+# Clocking address bit 0 at time                49425
+# Clocking address bit 1 at time                59445
+# Clocking address bit 1 at time                59445
+# Clocking address bit 0 at time                69465
+# Found address 0x06
+# Clocking address bit 0 at time                69465
+# Found address 0x0c
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# I2C_BUS WRITE Transfer      Data: 0x, Address 0x0c
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# Looking for           7 address bits
+# Looking for           7 address bits
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Clocking address bit 0 at time                 9345
+# Clocking address bit 0 at time                 9345
+# Clocking address bit 1 at time                19365
+# Clocking address bit 1 at time                19365
+# Clocking address bit 0 at time                29385
+# Clocking address bit 0 at time                29385
+# Clocking address bit 0 at time                39405
+# Clocking address bit 0 at time                39405
+# Clocking address bit 0 at time                49425
+# Clocking address bit 0 at time                49425
+# Clocking address bit 1 at time                59445
+# Clocking address bit 1 at time                59445
+# Clocking address bit 0 at time                69465
+# Found address 0x06
+# Clocking address bit 0 at time                69465
+# Found address 0x0c
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# I2C_BUS WRITE Transfer      Data: 0x, Address 0x0c
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# Looking for           7 address bits
+# Looking for           7 address bits
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Clocking address bit 0 type DATA at time                 9345
+# Clocking address bit 0 type DATA at time                 9345
+# Clocking address bit 1 type DATA at time                19365
+# Clocking address bit 1 type DATA at time                19365
+# Clocking address bit 0 type DATA at time                29385
+# Clocking address bit 0 type DATA at time                29385
+# Clocking address bit 0 type DATA at time                39405
+# Clocking address bit 0 type DATA at time                39405
+# Clocking address bit 0 type DATA at time                49425
+# Clocking address bit 0 type DATA at time                49425
+# Clocking address bit 1 type DATA at time                59445
+# Clocking address bit 1 type DATA at time                59445
+# Clocking address bit 0 type DATA at time                69465
+# Found address 0x06
+# Clocking address bit 0 type DATA at time                69465
+# Found address 0x0c
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# I2C_BUS WRITE Transfer      Data: 0x, Address 0x0c
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+
+
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# Looking for           7 address bits
+# Looking for           7 address bits
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Clocking address bit 0 type DATA at time                 9345
+# Address is 0x00
+# Clocking address bit 0 type DATA at time                 9345
+# Address is 0x00
+# Clocking address bit 1 type DATA at time                19365
+# Address is 0x01
+# Clocking address bit 1 type DATA at time                19365
+# Address is 0x03
+# Clocking address bit 0 type DATA at time                29385
+# Address is 0x06
+# Clocking address bit 0 type DATA at time                29385
+# Address is 0x0c
+# Clocking address bit 0 type DATA at time                39405
+# Address is 0x18
+# Clocking address bit 0 type DATA at time                39405
+# Address is 0x30
+# Clocking address bit 0 type DATA at time                49425
+# Address is 0x60
+# Clocking address bit 0 type DATA at time                49425
+# Address is 0x40
+# Clocking address bit 1 type DATA at time                59445
+# Address is 0x01
+# Clocking address bit 1 type DATA at time                59445
+# Address is 0x03
+# Clocking address bit 0 type DATA at time                69465
+# Address is 0x06
+# Found address 0x06
+# Clocking address bit 0 type DATA at time                69465
+# Address is 0x0c
+# Found address 0x0c
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x0c optype WRITE data 0xe0 c0
+# I2C_BUS WRITE Transfer      Data: 0x, Address 0x0c
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# Looking for           7 address bits
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Clocking address bit 0 type DATA at time                 9345
+# Address is 0x00
+# Clocking address bit 1 type DATA at time                19365
+# Address is 0x01
+# Clocking address bit 0 type DATA at time                29385
+# Address is 0x02
+# Clocking address bit 0 type DATA at time                39405
+# Address is 0x04
+# Clocking address bit 0 type DATA at time                49425
+# Address is 0x08
+# Clocking address bit 1 type DATA at time                59445
+# Address is 0x11
+# Clocking address bit 0 type DATA at time                69465
+# Address is 0x22
+# Found address 0x22
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x78
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# Wishbone monitor    Data: 0x00, Address: 0x0, WE: 0x0
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                  500:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# Wishbone monitor    Data: 0xc0, Address: 0x0, WE: 0x1
+# NCSU_INFO:Time                14500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# NCSU_INFO:Time                18500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# Wishbone monitor    Data: 0x05, Address: 0x1, WE: 0x1
+# NCSU_INFO:Time                22500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x06, Address: 0x2, WE: 0x1
+# SENDING START AT TIME                25500
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# NCSU_INFO:Time                26500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x16, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x04, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time                29500:ncsu_component::nb_put():  of pred called
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# NCSU_INFO:Time               505500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x84, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x44, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# NCSU_INFO:Time               508500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time               512500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# Found address 0x22
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x78
+# NCSU_INFO:Time              9534500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x78, Address: 0x1, WE: 0x1
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# NCSU_INFO:Time              9537500:ncsu_component::nb_put():  of pred called
+# NCSU_INFO:Time              9541500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x01, Address: 0x2, WE: 0x1
+# wb_agent.driver name:  transaction_count: 8 Address: 0x2 Data 0x05
+# NCSU_INFO:Time             18563500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x41, Address: 0x2, WE: 0x0
+# Wishbone monitor    Data: 0x05, Address: 0x2, WE: 0x1
+# NCSU_INFO:Time             18566500:ncsu_component::nb_put():  of pred called
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x78
+# NCSU_INFO:Time             19412500:ncsu_component::nb_put():  of pred called
+# Wishbone monitor    Data: 0x85, Address: 0x2, WE: 0x0

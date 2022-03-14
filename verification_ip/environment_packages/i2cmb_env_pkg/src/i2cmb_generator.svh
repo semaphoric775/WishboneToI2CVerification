@@ -1,6 +1,10 @@
 class i2cmb_generator extends ncsu_object;
     `ncsu_register_object(i2cmb_generator)
 
+    parameter CSR=2'b00;
+    parameter DPR=2'b01;
+    parameter CMDR=2'b10;
+    parameter FSMR=2'b11;
     wb_transaction wb_startup_seq[3];
     wb_transaction wb_write_tst[6];
     bit [7:0] tmp;
@@ -18,59 +22,62 @@ class i2cmb_generator extends ncsu_object;
         foreach(wb_write_tst[i]) begin
             wb_write_tst[i] = new;
         end
+        wb_master_agent.bus.wait_for_reset();
         //core enable
-        wb_startup_seq[0].address = 2'b00;
+        wb_startup_seq[0].address = CSR;
         wb_startup_seq[0].data = 8'b11xxxxxx;
         wb_master_agent.bl_put(wb_startup_seq[0]);
 
+        wb_master_agent.bus.wait_for_reset();
         //setting bus ID
-        wb_startup_seq[1].address = 2'b01;
+        wb_startup_seq[1].address = DPR;
         wb_startup_seq[1].data = 8'h05;
         wb_master_agent.bl_put(wb_startup_seq[1]);
 
-        wb_startup_seq[2].address = 2'b10;
+        wb_startup_seq[2].address = CMDR;
         wb_startup_seq[2].data = 8'bxxxxx110;
         wb_master_agent.bl_put(wb_startup_seq[2]);
 
         wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(2'b10, tmp);
+        wb_master_agent.bus.master_read(CMDR, tmp);
         
         // Test write
-        wb_write_tst[0].address = 2'b10;
+        wb_write_tst[0].address = CMDR;
         wb_write_tst[0].data = 8'bxxxxx100; 
+        $display("SENDING START AT TIME %d", $time);
         wb_master_agent.bl_put(wb_write_tst[0]);
 
         wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(2'b10, tmp);
+        wb_master_agent.bus.master_read(CMDR, tmp);
 
-        wb_write_tst[1].address = 2'b01;
-        wb_write_tst[1].data = 8'h22 << 1; 
+        wb_write_tst[1].address = DPR;
+        wb_write_tst[1].data = 8'h44; 
         wb_master_agent.bl_put(wb_write_tst[1]);
 
-        wb_write_tst[2].address = 2'b10;
+        wb_write_tst[2].address = CMDR;
         wb_write_tst[2].data = 8'bxxxxx001; 
         wb_master_agent.bl_put(wb_write_tst[2]);
 
         wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(2'b10, tmp);
+        wb_master_agent.bus.master_read(CMDR, tmp);
 
-        wb_write_tst[3].address = 2'b01;
+        wb_write_tst[3].address = DPR;
         wb_write_tst[3].data = 8'h78; 
         wb_master_agent.bl_put(wb_write_tst[3]);
 
-        wb_write_tst[4].address = 2'b10;
+        wb_write_tst[4].address = CMDR;
         wb_write_tst[4].data = 8'bxxxxx001; 
         wb_master_agent.bl_put(wb_write_tst[4]);
 
         wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(2'b10, tmp);
+        wb_master_agent.bus.master_read(CMDR, tmp);
 
-        wb_write_tst[5].address = 2'b10;
+        wb_write_tst[5].address = CMDR;
         wb_write_tst[5].data = 8'bxxxxx101; 
         wb_master_agent.bl_put(wb_write_tst[5]);
 
         wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(2'b10, tmp);
+        wb_master_agent.bus.master_read(CMDR, tmp);
 
     endtask
 

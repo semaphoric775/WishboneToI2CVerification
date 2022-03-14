@@ -5,7 +5,7 @@ class i2c_transaction #(int I2C_DATA_WIDTH = 8, int I2C_ADDR_WIDTH = 7) extends 
 
     bit [I2C_ADDR_WIDTH-1:0] addr;
     i2c_op_t trans_type;
-    bit [I2C_DATA_WIDTH] data[];
+    bit [I2C_DATA_WIDTH-1:0] data[];
 
     function new(string name="");
         super.new(name);

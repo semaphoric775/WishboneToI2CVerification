@@ -63,29 +63,6 @@ initial
     end
 
 // ****************************************************************************
-// Monitor I2C bus and display transfers in the transcript
-
-// storage variables for I2C monitoring task
-bit [I2C_ADDR_WIDTH-1:0] i2c_monitor_addr;
-i2c_op_t i2c_monitor_op;
-bit [I2C_DATA_WIDTH-1:0] i2c_monitor_data[];
-
-initial
-    forever begin : MONITOR_I2C_BUS
-        i2c_bus.monitor(i2c_monitor_addr, i2c_monitor_op, i2c_monitor_data);
-        //i2c_monitor_data can be of variable length
-        //  I know that it is one byte in this instance
-        //  the [0] is to force the %d specifier to display
-        //  an unsigned value
-
-        if(i2c_monitor_op == WRITE)
-            $display("I2C_BUS WRITE Transfer      Data: 0x%h, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
-        else
-            $display("I2C_BUS READ Transfer      Data: 0x%h, Address 0x%h", i2c_monitor_data, i2c_monitor_addr);
-        @(posedge clk);
-    end
-
-// ****************************************************************************
 // Instantiate the I2C slave Bus Functional Model
 
 i2c_if      #(
@@ -163,6 +140,7 @@ wb_bus (
 i2cmb_test tst;
 
 initial begin : SIM_FLOW
+    #5
     ncsu_config_db#(.T(virtual i2c_if#(.ADDR_WIDTH(I2C_ADDR_WIDTH), .DATA_WIDTH(I2C_DATA_WIDTH))))::set("i2c_agent", i2c_bus);
     ncsu_config_db#(.T(virtual wb_if#(.ADDR_WIDTH(WB_ADDR_WIDTH), .DATA_WIDTH(WB_DATA_WIDTH))))::set("wb_agent", wb_bus);
     tst = new("tst");
