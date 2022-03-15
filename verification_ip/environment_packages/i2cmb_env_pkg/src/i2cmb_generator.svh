@@ -17,14 +17,16 @@ class i2cmb_generator extends ncsu_object;
 
     virtual task run();
         bit[7:0] addr = 8'h22;
-        bit repeatedStart = 1'b0;
+        bit repeatedStart = 1'b1;
         bit[7:0] write_data[] = {8'h31, 8'h32};
-        bit[7:0] last_write[] = {8'h33};
+        bit[7:0] last_write[] = {8'h33, 8'h34};
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
         end
         genWriteTransactions(seq_writes, addr, write_data, repeatedStart);
+        repeatedStart = 1'b0;
         genWriteTransactions(seq_writes, addr, last_write, repeatedStart);
+        $display("Write transactions are %p", seq_writes);
 
         wb_master_agent.bus.wait_for_reset();
         //core enable
@@ -114,9 +116,10 @@ class i2cmb_generator extends ncsu_object;
             tmp.address = CMDR;
             tmp.data = 8'bxxxxx101;
             trans.push_back(tmp);
+
+            tmp = null;
+            trans.push_back(null);
         end
-        tmp = null;
-        trans.push_back(null);
         //wait after this transaction
     endfunction
 

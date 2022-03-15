@@ -172,3 +172,556 @@ run 200000ns
 # i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x33
 # scbd nb_put: actual transaction name: monitored_trans transaction_count: 35 Address: 0x22 Type: WRITE Data 0x33
 run 200000ns
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+run 200000ns
+run 200000ns
+run 200000ns
+run 200000ns
+run 200000ns
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, null}
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+restart
+
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null}
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+restart
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 15 Address: 0x22 Type: WRITE Data 0x31 32
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+run 200000ns
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+restart
+run 200000ns
+run 200000ns
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# END OF I2C TRANSACTION DETECTED AT               285975
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+run 200000ns
+run 200000ns
+run 200000ns
+restart
+
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# I2C MONITOR CALLED AT                    0
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# END OF I2C TRANSACTION DETECTED AT               285975
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# I2C MONITOR CALLED AT               285975
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+restart
+run 200000ns
+run 200000ns
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# I2C MONITOR CALLED AT                    0
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME                99635
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               109655
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               119675
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               129695
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               139715
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               149735
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               159755
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               169775
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               189925
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               199945
+run 200000ns
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               209965
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               219985
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               230005
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               240025
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               250045
+# I2C MONITOR GOT BIT 0 OF TYPE DATA AT TIME               260065
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# I2C MONITOR GOT BIT 1 OF TYPE DATA AT TIME               280175
+# I2C MONITOR GOT BIT 1 OF TYPE START AT TIME               285975
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# I2C MONITOR CALLED AT               285975
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# I2C MONITOR CALLED AT                    0
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# I2C MONITOR DETECTED START AT                  325
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# I2C MONITOR CALLED AT               285975
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# I2C MONITOR CALLED AT                    0
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# I2C MONITOR DETECTED START AT                  325
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# I2C MONITOR CALLED AT               285975
+# I2C MONITOR DETECTED START AT               285975
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x33
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 34 Address: 0x22 Type: WRITE Data 0x33
+# I2C MONITOR CALLED AT               479735
+# I2C MONITOR DETECTED START AT               479735
+run 200000ns
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, null}
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# Detected repeated start at               285975
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 16 Address: 0x22 Type: WRITE Data 0x31 32
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x2 Data 0x05
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x33
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 34 Address: 0x22 Type: WRITE Data 0x33
+run 200000ns
+run 200000ns
+restart
+restart
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2c_if(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if_sv_unit(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+run 200000ns
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of wb_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.driver called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of i2c_agent.monitor called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of pred called
+# NCSU_INFO:Time                    0:ncsu_component::build():  of scbd called
+# Write transactions are '{@wb_transaction__1@4, null, @wb_transaction__1@5, @wb_transaction__1@6, null, @wb_transaction__1@7, @wb_transaction__1@8, null, @wb_transaction__1@9, @wb_transaction__1@10, null, @wb_transaction__1@11, null, @wb_transaction__1@12, @wb_transaction__1@13, null, @wb_transaction__1@14, @wb_transaction__1@15, null, @wb_transaction__1@16, @wb_transaction__1@17, null, @wb_transaction__1@18, null}
+# wb_agent.driver name:  transaction_count: 0 Address: 0x0 Data 0xc0
+# wb_agent.driver name:  transaction_count: 1 Address: 0x1 Data 0x05
+# wb_agent.driver name:  transaction_count: 2 Address: 0x2 Data 0x06
+# wb_agent.driver name:  transaction_count: 3 Address: 0x2 Data 0x04
+# wb_agent.driver name:  transaction_count: 4 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 5 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 6 Address: 0x1 Data 0x31
+# wb_agent.driver name:  transaction_count: 7 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 8 Address: 0x1 Data 0x32
+# wb_agent.driver name:  transaction_count: 9 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 10 Address: 0x2 Data 0x04
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x31 32
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 18 Address: 0x22 Type: WRITE Data 0x31 32
+# wb_agent.driver name:  transaction_count: 11 Address: 0x1 Data 0x44
+# wb_agent.driver name:  transaction_count: 12 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 13 Address: 0x1 Data 0x33
+# wb_agent.driver name:  transaction_count: 14 Address: 0x2 Data 0x01
+run 200000ns
+# wb_agent.driver name:  transaction_count: 15 Address: 0x1 Data 0x34
+# wb_agent.driver name:  transaction_count: 16 Address: 0x2 Data 0x01
+# wb_agent.driver name:  transaction_count: 17 Address: 0x2 Data 0x05
+# i2c_agent.monitor i2c_monitor::run() address 0x22 optype WRITE data 0x33 34
+# scbd nb_put: actual transaction name: monitored_trans transaction_count: 36 Address: 0x22 Type: WRITE Data 0x33 34

@@ -141,7 +141,9 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     end // quit task with transfer_complete=0 if read_data exhausted
     endtask
 
-// ****************************************************************************             
+// ****************************************************************************
+    bit monitor_repeated_start = 1'b0;
+
     task monitor( output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data[]);
     bit[I2C_DATA_WIDTH-1:0] packet;
     bit[I2C_DATA_WIDTH-1:0] data_queue[$];
@@ -152,7 +154,11 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     //reset data_queue
     data_queue.delete();
 
-    do get_link_status(bt, one_data_bit); while(bt != START);
+    if(!monitor_repeated_start) begin
+        monitor_repeated_start = 1'b0;
+        do get_link_status(bt, one_data_bit); while(bt != START);
+    end
+
     repeat(I2C_ADDR_WIDTH)
         begin
         get_link_status(bt, one_data_bit);
@@ -169,7 +175,10 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     forever begin
         repeat(I2C_DATA_WIDTH) begin
             get_link_status(bt, one_data_bit);
-            if((bt == STOP) || (bt == START)) begin 
+            if(bt != DATA) begin
+                if(bt == START) begin
+                    monitor_repeated_start = 1'b1;
+                end
                 data = data_queue;
                 return;
             end
