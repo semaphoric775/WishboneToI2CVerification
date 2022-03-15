@@ -47,7 +47,7 @@ initial
 // Monitor Wishbone bus and display transfers in the transcript
 
 // dummy storage variables for monitoring task
-logic [WB_ADDR_WIDTH-1:0] wb_monitor_addr;
+/*logic [WB_ADDR_WIDTH-1:0] wb_monitor_addr;
 logic [WB_DATA_WIDTH-1:0] wb_monitor_data;
 logic wb_monitor_we;
 
@@ -60,7 +60,7 @@ initial
         //uncomment the next line to get wishbone_monitor output
         $display("Wishbone monitor    Data: 0x%h, Address: 0x%h, WE: 0x%b", wb_monitor_data, wb_monitor_addr, wb_monitor_we);
         @(posedge clk);
-    end
+    end*/
 
 // ****************************************************************************
 // Instantiate the I2C slave Bus Functional Model

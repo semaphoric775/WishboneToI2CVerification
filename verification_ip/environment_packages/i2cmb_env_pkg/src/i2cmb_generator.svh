@@ -6,7 +6,7 @@ class i2cmb_generator extends ncsu_object;
     parameter CMDR=2'b10;
     parameter FSMR=2'b11;
     wb_transaction wb_startup_seq[3];
-    wb_transaction wb_write_tst[6];
+    wb_transaction wb_write_tst[7];
     bit [7:0] tmp;
     wb_agent wb_master_agent;
     i2c_agent i2c_slave_agent;
@@ -41,10 +41,9 @@ class i2cmb_generator extends ncsu_object;
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
         
-        // Test write
+        // Test Single Write
         wb_write_tst[0].address = CMDR;
         wb_write_tst[0].data = 8'bxxxxx100; 
-        $display("SENDING START AT TIME %d", $time);
         wb_master_agent.bl_put(wb_write_tst[0]);
 
         wb_master_agent.bus.wait_for_interrupt();
@@ -65,16 +64,16 @@ class i2cmb_generator extends ncsu_object;
         wb_write_tst[3].data = 8'h78; 
         wb_master_agent.bl_put(wb_write_tst[3]);
 
-        wb_write_tst[4].address = CMDR;
-        wb_write_tst[4].data = 8'bxxxxx001; 
-        wb_master_agent.bl_put(wb_write_tst[4]);
+        wb_write_tst[5].address = CMDR;
+        wb_write_tst[5].data = 8'bxxxxx001; 
+        wb_master_agent.bl_put(wb_write_tst[5]);
 
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
 
-        wb_write_tst[5].address = CMDR;
-        wb_write_tst[5].data = 8'bxxxxx101; 
-        wb_master_agent.bl_put(wb_write_tst[5]);
+        wb_write_tst[6].address = CMDR;
+        wb_write_tst[6].data = 8'bxxxxx101; 
+        wb_master_agent.bl_put(wb_write_tst[6]);
 
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
