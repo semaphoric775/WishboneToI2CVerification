@@ -5,9 +5,9 @@ class i2cmb_generator extends ncsu_object;
     parameter DPR=2'b01;
     parameter CMDR=2'b10;
     parameter FSMR=2'b11;
+    bit[7:0] tmp;
     wb_transaction wb_startup_seq[3];
-    wb_transaction wb_write_tst[7];
-    bit [7:0] tmp;
+    wb_transaction seq_writes[$];
     wb_agent wb_master_agent;
     i2c_agent i2c_slave_agent;
 
@@ -16,12 +16,12 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     virtual task run();
+        bit[7:0] write_data[] = {8'h79};
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
         end
-        foreach(wb_write_tst[i]) begin
-            wb_write_tst[i] = new;
-        end
+        genWriteTransactions(seq_writes, 8'h22, write_data, 1'b0);
+
         wb_master_agent.bus.wait_for_reset();
         //core enable
         wb_startup_seq[0].address = CSR;
@@ -42,42 +42,14 @@ class i2cmb_generator extends ncsu_object;
         wb_master_agent.bus.master_read(CMDR, tmp);
         
         // Test Single Write
-        wb_write_tst[0].address = CMDR;
-        wb_write_tst[0].data = 8'bxxxxx100; 
-        wb_master_agent.bl_put(wb_write_tst[0]);
-
-        wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(CMDR, tmp);
-
-        wb_write_tst[1].address = DPR;
-        wb_write_tst[1].data = 8'h44; 
-        wb_master_agent.bl_put(wb_write_tst[1]);
-
-        wb_write_tst[2].address = CMDR;
-        wb_write_tst[2].data = 8'bxxxxx001; 
-        wb_master_agent.bl_put(wb_write_tst[2]);
-
-        wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(CMDR, tmp);
-
-        wb_write_tst[3].address = DPR;
-        wb_write_tst[3].data = 8'h78; 
-        wb_master_agent.bl_put(wb_write_tst[3]);
-
-        wb_write_tst[5].address = CMDR;
-        wb_write_tst[5].data = 8'bxxxxx001; 
-        wb_master_agent.bl_put(wb_write_tst[5]);
-
-        wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(CMDR, tmp);
-
-        wb_write_tst[6].address = CMDR;
-        wb_write_tst[6].data = 8'bxxxxx101; 
-        wb_master_agent.bl_put(wb_write_tst[6]);
-
-        wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(CMDR, tmp);
-
+        foreach(seq_writes[i]) begin
+            if(seq_writes[i] == null) begin
+                wb_master_agent.bus.wait_for_interrupt();
+                wb_master_agent.bus.master_read(CMDR, tmp);
+            end else begin
+                wb_master_agent.bl_put(seq_writes[i]);
+            end
+        end
     endtask
 
     function void set_i2c_agent(i2c_agent agent);
@@ -87,6 +59,60 @@ class i2cmb_generator extends ncsu_object;
     function void set_wb_agent(wb_agent agent);
         this.wb_master_agent = agent;
     endfunction
+
+    //  make this generic, not hardcoded, later
+    local task genWriteTransactions(
+        output wb_transaction trans[$],
+        input bit[7:0] addr,
+        input bit[7:0] data[],
+        input bit useRepeatedStart);
+        
+        wb_transaction tmp = new;
+        //start transaction
+        tmp.address = CMDR;
+        tmp.data = 8'bxxxxx100;
+        trans.push_back(tmp);
+        //wait after this first transaction in the run task
+        tmp = null;
+        trans.push_back(tmp);
+
+        //I2C address transaction
+        tmp = new;
+        tmp.address = DPR;
+        tmp.data = addr << 1;
+        trans.push_back(tmp);
+
+        tmp = new;
+        tmp.address = CMDR;
+        tmp.data = 8'bxxxxx001;
+        trans.push_back(tmp);
+        //wait after this transaction in the run task
+        tmp = null;
+        trans.push_back(tmp);
+        
+        for(int i = 0; i < data.size(); i++) begin
+            tmp = new;
+            tmp.address = DPR;
+            tmp.data = data[i];
+            trans.push_back(tmp);
+            
+            tmp = new;
+            tmp.address = CMDR;
+            tmp.data = 8'bxxxxx001;
+            trans.push_back(tmp);
+            //wait after this transaction
+            tmp = null;
+            trans.push_back(null);
+        end
+
+        if(!useRepeatedStart) begin
+            tmp = new;
+            tmp.address = CMDR;
+            tmp.data = 8'bxxxxx101;
+            trans.push_back(tmp);
+        end
+        //wait after this transaction
+    endtask
 
 endclass
 
