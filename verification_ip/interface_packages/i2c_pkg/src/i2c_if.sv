@@ -169,7 +169,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     forever begin
         repeat(I2C_DATA_WIDTH) begin
             get_link_status(bt, one_data_bit);
-            if(bt == STOP) begin 
+            if((bt == STOP) || (bt == START)) begin 
                 data = data_queue;
                 return;
             end

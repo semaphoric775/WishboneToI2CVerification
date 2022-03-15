@@ -16,11 +16,15 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     virtual task run();
-        bit[7:0] write_data[] = {8'h79};
+        bit[7:0] addr = 8'h22;
+        bit repeatedStart = 1'b0;
+        bit[7:0] write_data[] = {8'h31, 8'h32};
+        bit[7:0] last_write[] = {8'h33};
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
         end
-        genWriteTransactions(seq_writes, 8'h22, write_data, 1'b0);
+        genWriteTransactions(seq_writes, addr, write_data, repeatedStart);
+        genWriteTransactions(seq_writes, addr, last_write, repeatedStart);
 
         wb_master_agent.bus.wait_for_reset();
         //core enable
@@ -61,11 +65,11 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     //  make this generic, not hardcoded, later
-    local task genWriteTransactions(
-        output wb_transaction trans[$],
-        input bit[7:0] addr,
-        input bit[7:0] data[],
-        input bit useRepeatedStart);
+    local function void genWriteTransactions(
+        ref wb_transaction trans[$],
+        bit[7:0] addr,
+        bit[7:0] data[],
+        bit useRepeatedStart);
         
         wb_transaction tmp = new;
         //start transaction
@@ -111,8 +115,10 @@ class i2cmb_generator extends ncsu_object;
             tmp.data = 8'bxxxxx101;
             trans.push_back(tmp);
         end
+        tmp = null;
+        trans.push_back(null);
         //wait after this transaction
-    endtask
+    endfunction
 
 endclass
 
