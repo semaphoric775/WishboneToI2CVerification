@@ -185,8 +185,14 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
             packet = {packet, one_data_bit};
         end
         data_queue.push_back(packet);
-        //skip ack bit
+        //check if bit is NACK in the case of a read
         @(posedge scl);
+        if(op == READ) begin
+            if(sda == 1'b1) begin
+                data = data_queue;
+                return;
+            end
+        end
         @(negedge scl);
     end
     endtask

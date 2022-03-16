@@ -19,3 +19,8 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
         //TODO
     endfunction
 endclass
+
+/*
+Start Transaction -> Address with read/write included as LSB -> data
+Other conditions -> increment error/warning
+*/

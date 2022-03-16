@@ -5,14 +5,16 @@ class i2cmb_generator extends ncsu_object;
     parameter DPR=2'b01;
     parameter CMDR=2'b10;
     parameter FSMR=2'b11;
+    wb_agent wb_master_agent;
+    i2c_agent i2c_slave_agent;
+
     bit[7:0] tmp;
     bit[7:0] addr = 8'h22;
     bit useRepeatedStart = 1'b0;
     wb_transaction wb_startup_seq[3];
     wb_transaction seq_writes[$];
+    wb_transaction wb_read_requests[$];
     bit[7:0] seq_write_data[];
-    wb_agent wb_master_agent;
-    i2c_agent i2c_slave_agent;
 
     function new(string name = "");
         super.new(name);
@@ -20,7 +22,8 @@ class i2cmb_generator extends ncsu_object;
 
     virtual task run();
         fork
-        begin
+        begin : WISHBONE_SIM_FLOW
+        wb_transaction wb_data_from_i2c;
         seq_write_data = new[32];
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
@@ -29,7 +32,10 @@ class i2cmb_generator extends ncsu_object;
             seq_write_data[i] = i;
         end
 
-        genWriteTransactions(seq_writes, addr, seq_write_data, useRepeatedStart);
+        //uncomment to enable write test flow
+        //genWriteTransactions(seq_writes, addr, seq_write_data, useRepeatedStart);
+        genReadTransactionPreamble(wb_read_requests, addr, 1'b1);
+
         wb_master_agent.bus.wait_for_reset();
         /*          WISHBONE STARTUP SEQUENCE       */
         //core enable
@@ -53,19 +59,26 @@ class i2cmb_generator extends ncsu_object;
         // Test Single Write
         foreach(seq_writes[i]) begin
             //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
-            if(seq_writes[i] == null) begin
-                //could be replaced with polling CMDR register
-                wb_master_agent.bus.wait_for_interrupt();
-                wb_master_agent.bus.master_read(CMDR, tmp);
-            end else begin
-                wb_master_agent.bl_put(seq_writes[i]);
-            end
+            if(seq_writes[i] == null) clearIRQ();
+            else wb_master_agent.bl_put(seq_writes[i]);
         end
 
+        foreach(wb_read_requests[i]) begin
+            //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
+            if(wb_read_requests[i] == null) clearIRQ();
+            else wb_master_agent.bl_put(wb_read_requests[i]);
+        end;
+        wb_master_agent.bl_get(wb_data_from_i2c);
         end
-        begin
-            i2c_transaction t;
-            i2c_slave_agent.bl_get(t);
+
+        begin : I2C_SIM_FLOW
+            //i2c_transaction t;
+            //i2c_slave_agent.bl_put(t);
+            i2c_transaction i2c_to_wb_data = new;
+            bit[7:0] i2c_write_data[] = new[1];
+            i2c_write_data[0] = 8'h61;
+            i2c_to_wb_data.data = i2c_write_data;
+            i2c_slave_agent.bl_put(i2c_to_wb_data);
         end
         join
     endtask
@@ -78,12 +91,56 @@ class i2cmb_generator extends ncsu_object;
         this.wb_master_agent = agent;
     endfunction
 
-    //  make this generic, not hardcoded, later
+    local task clearIRQ();
+        bit[7:0] tmp;
+        wb_master_agent.bus.wait_for_interrupt();
+        wb_master_agent.bus.master_read(CMDR, tmp);
+    endtask
+
+    // make this generic, not hardcoded, later
+    local function void genReadTransactionPreamble(
+        ref wb_transaction trans[$],
+        input bit[7:0] addr,
+        input bit sendNack
+    );
+    wb_transaction tmp = new;
+
+    tmp.address = CMDR;
+    tmp.data = 8'bxxxxx100;
+    trans.push_back(tmp);
+
+    tmp = null;
+    trans.push_back(tmp);
+
+    tmp = new;
+    tmp.address = DPR;
+    tmp.data = (addr << 1) + 1'b1;
+    trans.push_back(tmp);
+
+    tmp = new;
+    tmp.address = CMDR;
+    tmp.data = 8'bxxxxx001;
+    trans.push_back(tmp);
+
+    tmp = null;
+    trans.push_back(tmp);
+
+    tmp = new;
+    tmp.address = CMDR;
+    if(sendNack) tmp.data = 8'bxxxxx011;
+    else tmp.data = 8'bxxxxx010;
+    trans.push_back(tmp);
+
+    tmp = null;
+    trans.push_back(tmp);
+    endfunction
+
+    // make this generic, not hardcoded, later
     local function void genWriteTransactions(
         ref wb_transaction trans[$],
-        bit[7:0] addr,
-        bit[7:0] data[],
-        bit useRepeatedStart);
+        input bit[7:0] addr,
+        input bit[7:0] data[],
+        input bit useRepeatedStart);
         
         wb_transaction tmp = new;
         //start transaction
@@ -128,11 +185,10 @@ class i2cmb_generator extends ncsu_object;
             tmp.address = CMDR;
             tmp.data = 8'bxxxxx101;
             trans.push_back(tmp);
-
+            //wait after this transaction
             tmp = null;
             trans.push_back(null);
         end
-        //wait after this transaction
     endfunction
 
 endclass

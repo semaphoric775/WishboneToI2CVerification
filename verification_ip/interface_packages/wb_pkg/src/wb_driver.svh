@@ -19,6 +19,7 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
     virtual task bl_get(output T trans);
         trans = new;
         bus.master_read(2'b01, trans.data);
+        $display({get_full_name(), " ", trans.convert2string()});
     endtask
 
 endclass

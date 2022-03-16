@@ -14,7 +14,7 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
         configuration = cfg;
     endfunction
     
-    virtual task bl_put(T trans);
+    virtual task bl_put(input T trans);
         //CHANGE THIS FROM HARDCODED
         bit[7:0] tmp[];
         bit transfer_complete;
