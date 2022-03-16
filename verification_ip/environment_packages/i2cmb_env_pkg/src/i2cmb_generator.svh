@@ -19,6 +19,8 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     virtual task run();
+        fork
+        begin
         seq_write_data = new[32];
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
@@ -59,6 +61,13 @@ class i2cmb_generator extends ncsu_object;
                 wb_master_agent.bl_put(seq_writes[i]);
             end
         end
+
+        end
+        begin
+            i2c_transaction t;
+            i2c_slave_agent.bl_get(t);
+        end
+        join
     endtask
 
     function void set_i2c_agent(i2c_agent agent);
