@@ -6,8 +6,11 @@ class i2cmb_generator extends ncsu_object;
     parameter CMDR=2'b10;
     parameter FSMR=2'b11;
     bit[7:0] tmp;
+    bit[7:0] addr = 8'h22;
+    bit useRepeatedStart = 1'b0;
     wb_transaction wb_startup_seq[3];
     wb_transaction seq_writes[$];
+    bit[7:0] seq_write_data[];
     wb_agent wb_master_agent;
     i2c_agent i2c_slave_agent;
 
@@ -16,19 +19,17 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     virtual task run();
-        bit[7:0] addr = 8'h22;
-        bit repeatedStart = 1'b1;
-        bit[7:0] write_data[] = {8'h31, 8'h32};
-        bit[7:0] last_write[] = {8'h33, 8'h34};
+        seq_write_data = new[32];
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
         end
-        genWriteTransactions(seq_writes, addr, write_data, repeatedStart);
-        repeatedStart = 1'b0;
-        genWriteTransactions(seq_writes, addr, last_write, repeatedStart);
-        $display("Write transactions are %p", seq_writes);
+        for(int i = 0; i < 32; i++) begin
+            seq_write_data[i] = i;
+        end
 
+        genWriteTransactions(seq_writes, addr, seq_write_data, useRepeatedStart);
         wb_master_agent.bus.wait_for_reset();
+        /*          WISHBONE STARTUP SEQUENCE       */
         //core enable
         wb_startup_seq[0].address = CSR;
         wb_startup_seq[0].data = 8'b11xxxxxx;
@@ -49,7 +50,9 @@ class i2cmb_generator extends ncsu_object;
         
         // Test Single Write
         foreach(seq_writes[i]) begin
+            //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
             if(seq_writes[i] == null) begin
+                //could be replaced with polling CMDR register
                 wb_master_agent.bus.wait_for_interrupt();
                 wb_master_agent.bus.master_read(CMDR, tmp);
             end else begin
