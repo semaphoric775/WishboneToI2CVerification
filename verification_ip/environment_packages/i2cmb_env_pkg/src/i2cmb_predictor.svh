@@ -10,14 +10,18 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
     //there is also likely a procedural way to do this
     //scoreboard will receive predicted transaction if a stop/start bit after the initial start is detected when writing to the wishbone
     //or when a read request with a NACK is sent
-    local typedef enum {WAITING, TRANSACTION_STARTED, SENDING_ADDRESS, WRITE_TRANSACTION, READ_TRANSACTION_STARTED, READ_TRANSACTION_NO_NACK} trans_states;
-    local trans_states current_state = WAITING;
+    local typedef enum {
+        WAITING, TRANSACTION_STARTED, SENDING_ADDRESS,
+        WRITE_TRANSACTION_STARTED, READ_TRANSACTION_STARTED,
+        WRITE_TRANSACTION_IN_PROGRESS} 
+    trans_state;
+    local trans_state current_state = WAITING;
 
     ncsu_component#(.T(i2c_transaction)) scoreboard;
     i2c_transaction predicted_trans;
     i2cmb_env_configuration configuration;
     //dummy transaction used in scbd
-    i2c_transaction trans_out;
+    i2c_transaction throwaway;
     //CHANGE FROM HARDCODED
     bit[7:0] predicted_trans_data[$];
 
@@ -34,6 +38,7 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
     endfunction
 
     virtual function void nb_put(T trans);
+    //add compatability for IRQ & polling mode
         case (current_state)
         WAITING: begin
             //move to transaction started if start bit detected,
@@ -59,38 +64,36 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
                     current_state = READ_TRANSACTION_STARTED;
                 end else begin // write transaction
                     predicted_trans.trans_type = WRITE;
-                    current_state = WRITE_TRANSACTION;
+                    current_state = WRITE_TRANSACTION_STARTED;
                 end
             end
         end
-        WRITE_TRANSACTION: begin
-            //stop or start seen ->
-            //send transaction to scoreboard
-            //repeated start, go straight to address preamble
-            $display("PREDICTOR OBSERVING WRITE TRANSACTION");
-            //check if transaction is write data
+        WRITE_TRANSACTION_STARTED: begin
+            if(trans.address == CMDR) begin
+                current_state = WRITE_TRANSACTION_IN_PROGRESS;
+            end
+        end
+        WRITE_TRANSACTION_IN_PROGRESS: begin
             if(trans.address == DPR) begin
                 predicted_trans_data.push_back(trans.data);
-            //repeated start case
-            end else if((trans.address == CMDR) && (trans.data[2:0] = 3'b100)) begin
-                current_state = TRANSACTION_STARTED;
-                predicted_trans.data = predicted_trans_data;
-                //AND PUSH TO SCOREBOARD
-                $display("PREDICTOR Pushing transaction %p to scoreboard", predicted_trans);
-            end else if((trans.address == CMDR) && (trans.data[2:0] = 3'b101)) begin
-                current_state = WAITING;
-                predicted_trans.data = predicted_trans_data;
-                //AND PUSH TO SCOREBOARD
-                $display("PREDICTOR Pushing transaction %p to scoreboard", predicted_trans);
-            end else begin end
-        end
-        READ_TRANSACTION_STARTED: begin
-            //send to scoreboard
-            //go back to waiting
+            end else if(trans.address == CMDR) begin
+                //repeated start case
+                if(trans.data[2:0] == 3'b100) begin
+                    predicted_trans.data = predicted_trans_data;
+                    current_state = TRANSACTION_STARTED;
+                    scoreboard.nb_transport(predicted_trans, throwaway);
+                end
+                //stop bit case
+                if(trans.data[2:0] == 3'b101) begin
+                    predicted_trans.data = predicted_trans_data;
+                    current_state = WAITING;
+                    scoreboard.nb_transport(predicted_trans, throwaway);
+                end
+            end
         end
         default: current_state = WAITING;
         endcase
 
-        $display({get_full_name()," nb_put: actual ",trans.convert2string()});
+        //$display({get_full_name()," nb_put: actual ",trans.convert2string()});
     endfunction
 endclass
