@@ -12,8 +12,9 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
     //or when a read request with a NACK is sent
     local typedef enum {
         WAITING, TRANSACTION_STARTED, SENDING_ADDRESS,
-        WRITE_TRANSACTION_STARTED, READ_TRANSACTION_STARTED,
-        WRITE_TRANSACTION_IN_PROGRESS} 
+        WRITE_TRANSACTION_STARTED, READ_TRANSACTION_STARTING,
+        WRITE_TRANSACTION_IN_PROGRESS, READ_TRANSACTION_W_NACK,
+        READ_TRANSACTION_NO_NACK} 
     trans_state;
     local trans_state current_state = WAITING;
 
@@ -41,8 +42,6 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
     //add compatability for IRQ & polling mode
         case (current_state)
         WAITING: begin
-            //move to transaction started if start bit detected,
-            //create new i2c transaction object
             if((trans.address == CMDR) && (trans.data[2:0] == 3'b100)) begin
                 current_state = TRANSACTION_STARTED;
             end else current_state = WAITING;
@@ -58,11 +57,10 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
             //3 cases all resolved with throwing away LSB and right shifting by 1
             if(trans.address == DPR) begin
                 predicted_trans.addr = trans.data >> 1;
-                //read transaction
                 if(trans.data[0]) begin
                     predicted_trans.trans_type = READ;
-                    current_state = READ_TRANSACTION_STARTED;
-                end else begin // write transaction
+                    current_state = READ_TRANSACTION_STARTING;
+                end else begin
                     predicted_trans.trans_type = WRITE;
                     current_state = WRITE_TRANSACTION_STARTED;
                 end
@@ -89,6 +87,30 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
                     current_state = WAITING;
                     scoreboard.nb_transport(predicted_trans, throwaway);
                 end
+            end
+        end
+        READ_TRANSACTION_STARTING: begin
+            if(trans.address == CMDR) begin
+                if(trans.data == 3'b010) begin
+                    current_state = READ_TRANSACTION_NO_NACK;
+                end
+                if (trans.data == 3'b011) begin
+                    current_state = READ_TRANSACTION_W_NACK;
+                end
+            end
+        end
+        READ_TRANSACTION_NO_NACK: begin
+            if(trans.address == DPR) begin
+                predicted_trans_data.push_back(trans.data);
+                current_state = READ_TRANSACTION_STARTING;
+            end
+        end
+        READ_TRANSACTION_W_NACK: begin
+            if(trans.address == DPR) begin
+                predicted_trans_data.push_back(trans.data);
+                predicted_trans.data = predicted_trans_data;
+                current_state = WAITING;
+                scoreboard.nb_transport(predicted_trans, throwaway);
             end
         end
         default: current_state = WAITING;

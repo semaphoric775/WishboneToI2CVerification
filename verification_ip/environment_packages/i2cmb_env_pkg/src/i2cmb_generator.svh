@@ -34,7 +34,7 @@ class i2cmb_generator extends ncsu_object;
 
         //uncomment to enable write test flow
         genWriteTransactions(seq_writes, addr, seq_write_data, useRepeatedStart);
-        //genReadTransactionPreamble(wb_read_requests, addr, 1'b1);
+        genReadTransactionPreamble(wb_read_requests, addr, 1'b1);
 
         wb_master_agent.bus.wait_for_reset();
         /*          WISHBONE STARTUP SEQUENCE       */
@@ -74,11 +74,11 @@ class i2cmb_generator extends ncsu_object;
         begin : I2C_SIM_FLOW
             //i2c_transaction t;
             //i2c_slave_agent.bl_put(t);
-            /*i2c_transaction i2c_to_wb_data = new;
+            i2c_transaction i2c_to_wb_data = new;
             bit[7:0] i2c_write_data[] = new[1];
             i2c_write_data[0] = 8'h61;
             i2c_to_wb_data.data = i2c_write_data;
-            i2c_slave_agent.bl_put(i2c_to_wb_data);*/
+            i2c_slave_agent.bl_put(i2c_to_wb_data);
         end
         join
     endtask
