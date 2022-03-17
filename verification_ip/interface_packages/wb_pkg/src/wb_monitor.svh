@@ -28,6 +28,10 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
             bus.master_monitor(monitored_trans.address,
                         monitored_trans.data,
                         monitored_trans.we);
+            /*$display("%s wb_monitor::run() address 0x%x data 0x%x",
+                get_full_name(),
+                monitored_trans.address,
+                monitored_trans.data,);*/
             agent.nb_put(monitored_trans);
             if ( enable_transaction_viewing) begin
                 monitored_trans.end_time = $time;
