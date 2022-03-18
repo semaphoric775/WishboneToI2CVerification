@@ -254,3 +254,5 @@ run 200000ns
 # scbd wb_transaction->i2c_transaction MATCH!
 # ** Warning: Expected read transaction from wishbone master
 #    Time: 374665 ns  Scope: i2c_pkg.i2c_driver.bl_put File: /afs/unity.ncsu.edu/users/e/epmurphy/Documents/ece745proj/project_benches/proj_2/sim/../../../verification_ip/interface_packages/i2c_pkg/src/i2c_driver.svh Line: 23
+# End time: 15:34:29 on Mar 17,2022, Elapsed time: 0:31:41
+# Errors: 0, Warnings: 1

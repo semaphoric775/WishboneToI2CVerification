@@ -24,17 +24,17 @@ class i2cmb_generator extends ncsu_object;
         fork
         begin : WISHBONE_SIM_FLOW
         wb_transaction wb_data_from_i2c;
-        seq_write_data = new[3];
+        seq_write_data = new[32];
         foreach(wb_startup_seq[i]) begin
             wb_startup_seq[i] = new;
         end
-        for(int i = 0; i < 3; i++) begin
+        for(int i = 0; i < 32; i++) begin
             seq_write_data[i] = i;
         end
 
         //uncomment to enable write test flow
         genWriteTransactions(seq_writes, addr, seq_write_data, useRepeatedStart);
-        genReadTransactionPreamble(wb_read_requests, addr, 1'b1);
+        genReadTransactionPreamble(wb_read_requests, addr, 1'b0);
 
         wb_master_agent.bus.wait_for_reset();
         /*          WISHBONE STARTUP SEQUENCE       */
@@ -63,20 +63,43 @@ class i2cmb_generator extends ncsu_object;
             else wb_master_agent.bl_put(seq_writes[i]);
         end
 
-        /*foreach(wb_read_requests[i]) begin
+        foreach(wb_read_requests[i]) begin
             //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
             if(wb_read_requests[i] == null) clearIRQ();
             else wb_master_agent.bl_put(wb_read_requests[i]);
-        end;
-        wb_master_agent.bl_get(wb_data_from_i2c);*/
+        end
+        wb_master_agent.bl_get(wb_data_from_i2c);
+
+        repeat (30) begin
+            wb_read_requests.delete();
+            genReadRequest(wb_read_requests, 1'b0);
+            foreach(wb_read_requests[i]) begin
+                //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
+                if(wb_read_requests[i] == null) clearIRQ();
+                else wb_master_agent.bl_put(wb_read_requests[i]);
+            end
+            wb_master_agent.bl_get(wb_data_from_i2c);
+        end
+        wb_read_requests.delete();
+        genReadRequest(wb_read_requests, 1'b1);
+
+        foreach(wb_read_requests[i]) begin
+                //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
+                if(wb_read_requests[i] == null) clearIRQ();
+                else wb_master_agent.bl_put(wb_read_requests[i]);
+            end
+        wb_master_agent.bl_get(wb_data_from_i2c);
+
         end
 
         begin : I2C_SIM_FLOW
-            //i2c_transaction t;
-            //i2c_slave_agent.bl_put(t);
+            i2c_transaction t;
+            bit[7:0] i2c_write_data[] = new[32];
             i2c_transaction i2c_to_wb_data = new;
-            bit[7:0] i2c_write_data[] = new[1];
-            i2c_write_data[0] = 8'h61;
+            for(int i = 0; i < 32; i++) begin
+                i2c_write_data[i] = 100+i;
+            end
+            i2c_slave_agent.bl_get(t);
             i2c_to_wb_data.data = i2c_write_data;
             i2c_slave_agent.bl_put(i2c_to_wb_data);
         end
@@ -96,6 +119,22 @@ class i2cmb_generator extends ncsu_object;
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
     endtask
+
+    //generates read transaction request without address/start bit
+    local function void genReadRequest(
+        ref wb_transaction trans[$],
+        input bit sendNack
+    );
+    wb_transaction tmp = new;
+    tmp.address = CMDR;
+    if(sendNack) tmp.data = 8'bxxxxx011;
+    else tmp.data = 8'bxxxxx010;
+    trans.push_back(tmp);
+
+    tmp = null;
+    trans.push_back(tmp);
+
+    endfunction
 
     // make this generic, not hardcoded, later
     local function void genReadTransactionPreamble(
