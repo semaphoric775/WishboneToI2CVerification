@@ -27,11 +27,13 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
             bus.monitor(monitored_trans.addr,
                         monitored_trans.trans_type,
                         monitored_trans.data);
-            $display("%s i2c_monitor::run() address 0x%x optype %s data 0x%x",
+            if(configuration.monitor_show_transactions) begin
+                $display("%s i2c_monitor::run() address 0x%x optype %s data 0x%x",
                     get_full_name(),
                     monitored_trans.addr,
                     monitored_trans.trans_type,
                     monitored_trans.data);
+            end
             agent.nb_put(monitored_trans);
             if ( enable_transaction_viewing) begin
                 monitored_trans.end_time = $time;

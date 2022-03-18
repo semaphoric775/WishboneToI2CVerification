@@ -1,33 +1,34 @@
 import i2c_pkg::*;
 
 class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
+    //shorthands for wishbone register offsets
     parameter CSR=2'b00;
     parameter DPR=2'b01;
     parameter CMDR=2'b10;
     parameter FSMR=2'b11;
 
-    //states used to track the wishbone transaction progress
-    //there is also likely a procedural way to do this
-    //scoreboard will receive predicted transaction if a stop/start bit after the initial start is detected when writing to the wishbone
-    //or when a read request with a NACK is sent
+    //states used to track transaction progress
+    //NOTE: the predictor model assumes a valid sequence of operations from the generator,
+    //  predictor model also assumes interrupts are enabled, polling the CMDR is also possible
     local typedef enum {
         WAITING, TRANSACTION_STARTED, SENDING_ADDRESS,
         WRITE_TRANSACTION_STARTED, READ_TRANSACTION_STARTING,
         WRITE_TRANSACTION_IN_PROGRESS, READ_TRANSACTION_W_NACK,
         READ_TRANSACTION_NO_NACK} 
     trans_state;
-    local trans_state current_state = WAITING;
+    local trans_state current_state;
 
     ncsu_component#(.T(i2c_transaction)) scoreboard;
-    i2c_transaction predicted_trans;
     i2cmb_env_configuration configuration;
-    //dummy transaction used in scbd
-    i2c_transaction throwaway;
-    //CHANGE FROM HARDCODED
+
+    i2c_transaction predicted_trans;
+    i2c_transaction throwaway; //throwaway transaction to use scoreboards nb_transport function
+
     bit[7:0] predicted_trans_data[$];
 
     function new(string name = "", ncsu_component_base  parent = null); 
         super.new(name,parent);
+        current_state = WAITING;
     endfunction
 
     function void set_configuration(i2cmb_env_configuration cfg);
@@ -39,7 +40,6 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
     endfunction
 
     virtual function void nb_put(T trans);
-    //add compatability for IRQ & polling mode
         case (current_state)
         WAITING: begin
             if((trans.address == CMDR) && (trans.data[2:0] == 3'b100)) begin
@@ -54,7 +54,7 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
         SENDING_ADDRESS: begin
             predicted_trans = new;
             predicted_trans_data.delete();
-            //3 cases all resolved with throwing away LSB and right shifting by 1
+
             if(trans.address == DPR) begin
                 predicted_trans.addr = trans.data >> 1;
                 if(trans.data[0]) begin
@@ -116,6 +116,5 @@ class i2cmb_predictor extends ncsu_component#(.T(wb_transaction));
         default: current_state = WAITING;
         endcase
 
-        //$display({get_full_name()," nb_put: actual ",trans.convert2string()});
     endfunction
 endclass

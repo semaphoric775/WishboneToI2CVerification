@@ -8,8 +8,6 @@ interface i2c_if    #(
     int I2C_DATA_WIDTH=8
     )
 (
-    // Clock signal -- technically tri state
-    // switch this to triand if clock stretching will be tested
     input wire scl,
     // Data signal
     triand sda
@@ -185,7 +183,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
             packet = {packet, one_data_bit};
         end
         data_queue.push_back(packet);
-        //check if bit is NACK in the case of a read
+        //check if bit is NACK in the case of a read from master
         @(posedge scl);
         if(op == READ) begin
             if(sda == 1'b1) begin
@@ -195,6 +193,5 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
         end
         @(negedge scl);
     end
-    endtask
-// ****************************************************************************              
+    endtask            
 endinterface

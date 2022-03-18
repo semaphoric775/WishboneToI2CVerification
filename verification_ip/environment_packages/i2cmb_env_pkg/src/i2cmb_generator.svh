@@ -39,12 +39,6 @@ class i2cmb_generator extends ncsu_object;
             end
         end
 
-        $display("*-----------------------*");
-        $display("Simulation Finished");
-        $display("Warnings %d, Errors %d, Fatals, %d", ncsu_warnings, ncsu_errors, ncsu_fatals);
-        if((ncsu_warnings == 0) && (ncsu_errors == 0) && (ncsu_fatals == 0)) $display("ALL TESTS PASSED");
-        $display("*-----------------------*");
-        $finish();
         end
 
         begin : I2C_SIM_FLOW
@@ -71,6 +65,13 @@ class i2cmb_generator extends ncsu_object;
             end
         end
         join
+
+        $display("*-----------------------*");
+        $display("Simulation Finished");
+        $display("Warnings %d, Errors %d, Fatals, %d", ncsu_warnings, ncsu_errors, ncsu_fatals);
+        if((ncsu_warnings == 0) && (ncsu_errors == 0) && (ncsu_fatals == 0)) $display("ALL TESTS PASSED");
+        $display("*-----------------------*");
+        $finish();
     endtask
 
     function void set_i2c_agent(i2c_agent agent);
