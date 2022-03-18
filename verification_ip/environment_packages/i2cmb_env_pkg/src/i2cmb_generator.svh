@@ -10,9 +10,9 @@ class i2cmb_generator extends ncsu_object;
 
     bit[7:0] addr = 8'h22;
     bit useRepeatedStart = 1'b0;
-    wb_transaction wb_startup_seq[3];
     bit[7:0] seq_write_data[];
     bit[7:0] seq_read_data[];
+    bit[7:0] wb_write_data[1];
 
     function new(string name = "");
         super.new(name);
@@ -23,32 +23,21 @@ class i2cmb_generator extends ncsu_object;
         for(int i = 0; i < 32; i++) begin
             seq_write_data[i] = i;
         end
-        foreach(wb_startup_seq[i]) begin
-            wb_startup_seq[i] = new;
-        end
 
-        wb_master_agent.bus.wait_for_reset();
-        /*          WISHBONE STARTUP SEQUENCE       */
-        //core enable
-        wb_startup_seq[0].address = CSR;
-        wb_startup_seq[0].data = 8'b11xxxxxx;
-        wb_master_agent.bl_put(wb_startup_seq[0]);
-
-        wb_master_agent.bus.wait_for_reset();
-        //setting bus ID
-        wb_startup_seq[1].address = DPR;
-        wb_startup_seq[1].data = 8'h05;
-        wb_master_agent.bl_put(wb_startup_seq[1]);
-
-        wb_startup_seq[2].address = CMDR;
-        wb_startup_seq[2].data = 8'bxxxxx110;
-        wb_master_agent.bl_put(wb_startup_seq[2]);
-
-        clearIRQ();
         fork
         begin : WISHBONE_SIM_FLOW
+        initializeCore(8'h05);
         wishboneWriteData(addr, seq_write_data, 1'b1);
         wishboneReadData(addr, 32, seq_read_data);
+
+        for(int i = 0; i < 128; i++) begin
+            if(i%2 == 0) begin // write case
+                wb_write_data[0] = 64 + (i/2);
+                wishboneWriteData(addr, wb_write_data, 1'b1);
+            end else begin
+                wishboneReadData(addr, 1, seq_read_data);
+            end
+        end
 
         $display("*-----------------------*");
         $display("Simulation Finished");
@@ -61,6 +50,7 @@ class i2cmb_generator extends ncsu_object;
         begin : I2C_SIM_FLOW
             i2c_transaction t = new;
             bit[7:0] i2c_write_data[] = new[32];
+            bit[7:0] i2c_alternating_data[] = new[1];
             for(int i = 0; i < 32; i++) begin
                 i2c_write_data[i] = 64 + i;
             end
@@ -68,6 +58,17 @@ class i2cmb_generator extends ncsu_object;
             t = new;
             t.data = i2c_write_data;
             i2c_slave_agent.bl_put(t);
+            for(int i = 0; i < 128; i++) begin
+                if(i%2 == 0) begin // read case
+                    t = new;
+                    i2c_slave_agent.bl_get(t);
+                end else begin
+                    i2c_alternating_data[0] = 63 - ((i-1)/2);
+                    t = new;
+                    t.data = i2c_alternating_data;
+                    i2c_slave_agent.bl_put(t);
+                end
+            end
         end
         join
     endtask
@@ -84,6 +85,27 @@ class i2cmb_generator extends ncsu_object;
         bit[7:0] tmp;
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
+    endtask
+
+    local task initializeCore(input byte busID);
+        wb_transaction tmp = new;
+        tmp.address = CSR;
+        tmp.data = 8'b11xxxxxx;
+        wb_master_agent.bl_put(tmp);
+
+         wb_master_agent.bus.wait_for_reset();
+        
+        tmp = new;
+        tmp.address = DPR;
+        tmp.data = busID;
+        wb_master_agent.bl_put(tmp);
+
+        tmp = new;
+        tmp.address = CMDR;
+        tmp.data = 8'bxxxxx110;
+        wb_master_agent.bl_put(tmp);
+
+        clearIRQ();
     endtask
 
     local task wishboneReadData(
