@@ -21,8 +21,6 @@ class i2cmb_generator extends ncsu_object;
     endfunction
 
     virtual task run();
-        fork
-        begin : WISHBONE_SIM_FLOW
         wb_transaction wb_data_from_i2c;
         seq_write_data = new[32];
         foreach(wb_startup_seq[i]) begin
@@ -55,45 +53,55 @@ class i2cmb_generator extends ncsu_object;
 
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
-        
+        fork
+        begin : WISHBONE_SIM_FLOW
         // Test Single Write
-        foreach(seq_writes[i]) begin
-            //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
-            if(seq_writes[i] == null) clearIRQ();
-            else wb_master_agent.bl_put(seq_writes[i]);
-        end
+        sendWbTransactionsBlPut(seq_writes);
 
-        foreach(wb_read_requests[i]) begin
-            //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
-            if(wb_read_requests[i] == null) clearIRQ();
-            else wb_master_agent.bl_put(wb_read_requests[i]);
-        end
+        sendWbTransactionsBlPut(wb_read_requests);
         wb_master_agent.bl_get(wb_data_from_i2c);
 
         repeat (30) begin
             wb_read_requests.delete();
             genReadRequest(wb_read_requests, 1'b0);
-            foreach(wb_read_requests[i]) begin
-                //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
-                if(wb_read_requests[i] == null) clearIRQ();
-                else wb_master_agent.bl_put(wb_read_requests[i]);
-            end
+            sendWbTransactionsBlPut(wb_read_requests);
             wb_master_agent.bl_get(wb_data_from_i2c);
         end
         wb_read_requests.delete();
         genReadRequest(wb_read_requests, 1'b1);
 
-        foreach(wb_read_requests[i]) begin
-                //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
-                if(wb_read_requests[i] == null) clearIRQ();
-                else wb_master_agent.bl_put(wb_read_requests[i]);
-            end
+        sendWbTransactionsBlPut(wb_read_requests);
         wb_master_agent.bl_get(wb_data_from_i2c);
 
+        /*
+for(int i = 0; i < 128; i++) begin
+        if(i%2 == 0) begin //reading from wishbone
+            i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+        end else begin // sending data back to wishbone
+            i2c_bus.wait_for_i2c_transfer(i2c_if_op, i2c_if_write_data);
+            i2c_read_data[0] = 63 - ((i-1)/2);
+            i2c_bus.provide_read_data(i2c_read_data, i2c_transfer_complete);
+        end
+        */
+
+        for(int i = 0; i < 128; i++) begin
+            if(i%2==0) begin // write case
+                seq_writes.delete();
+                seq_write_data = new[1];
+                seq_write_data[0] = 64 + (i/2);
+                genWriteTransactions(seq_writes, addr, seq_write_data, useRepeatedStart);
+                sendWbTransactionsBlPut(seq_writes);
+            end else begin // read case
+                wb_read_requests.delete();
+                genReadTransactionPreamble(wb_read_requests, addr, 1'b1);
+                sendWbTransactionsBlPut(wb_read_requests);
+                wb_master_agent.bl_get(wb_data_from_i2c);
+            end
+        end
         end
 
         begin : I2C_SIM_FLOW
-            i2c_transaction t;
+            i2c_transaction t = new;
             bit[7:0] i2c_write_data[] = new[32];
             i2c_transaction i2c_to_wb_data = new;
             for(int i = 0; i < 32; i++) begin
@@ -101,7 +109,22 @@ class i2cmb_generator extends ncsu_object;
             end
             i2c_slave_agent.bl_get(t);
             i2c_to_wb_data.data = i2c_write_data;
+            t = new;
             i2c_slave_agent.bl_put(i2c_to_wb_data);
+
+            i2c_write_data.delete();
+            i2c_write_data = new[1];
+            i2c_to_wb_data.data = i2c_write_data;
+            for(int i = 0; i < 128; i++) begin
+                if(i%2 == 0) begin // read from wishbone master
+                    t = new;
+                    i2c_slave_agent.bl_get(t);
+                end else begin
+                    i2c_write_data[0] = 63 - ((i-1)/2);
+                    i2c_to_wb_data.data = i2c_write_data;
+                    i2c_slave_agent.bl_put(i2c_to_wb_data);
+                end
+            end
         end
         join
     endtask
@@ -118,6 +141,16 @@ class i2cmb_generator extends ncsu_object;
         bit[7:0] tmp;
         wb_master_agent.bus.wait_for_interrupt();
         wb_master_agent.bus.master_read(CMDR, tmp);
+    endtask
+
+    local task sendWbTransactionsBlPut(
+        wb_transaction trans[$]
+    );
+        foreach(trans[i]) begin
+            //null in wb_transaction sequence is used to denote that the IRQ flag must be cleared
+            if(trans[i] == null) clearIRQ();
+            else wb_master_agent.bl_put(trans[i]);
+        end
     endtask
 
     //generates read transaction request without address/start bit

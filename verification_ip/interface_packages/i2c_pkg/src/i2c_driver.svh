@@ -29,7 +29,6 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
     endtask
 
     virtual task bl_get(output T trans);
-        $display("Called bl_get at time %d, got handle %p", $time, trans);
         trans = new;
         bus.wait_for_i2c_transfer(trans.trans_type, trans.data);
     endtask

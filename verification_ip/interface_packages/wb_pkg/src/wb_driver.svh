@@ -12,14 +12,14 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
     endfunction
 
     virtual task bl_put(T trans);
-        $display({get_full_name(), " ", trans.convert2string()});
+        //$display({get_full_name(), " ", trans.convert2string()});
         bus.master_write(trans.address, trans.data);
     endtask
 
     virtual task bl_get(output T trans);
         trans = new;
         bus.master_read(2'b01, trans.data);
-        $display({get_full_name(), " ", trans.convert2string()});
+        //$display({get_full_name(), " ", trans.convert2string()});
     endtask
 
 endclass
