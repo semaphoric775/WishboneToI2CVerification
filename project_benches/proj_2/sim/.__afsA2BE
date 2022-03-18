@@ -2152,3 +2152,5 @@ run 20000000ns
 # scbd nb_put: actual transaction name: monitored_trans transaction_count: 2579 Address: 0x22 Type: READ Data 0x00
 # scbd nb_transport: expected transaction name:  transaction_count: 2587 Address: 0x22 Type: READ Data 0x00
 # scbd wb_transaction->i2c_transaction MATCH!
+# End time: 10:33:31 on Mar 18,2022, Elapsed time: 1:02:46
+# Errors: 0, Warnings: 0
