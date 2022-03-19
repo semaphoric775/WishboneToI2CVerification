@@ -78,8 +78,9 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     endtask
 
 // ****************************************************************************             
+    bit wait_for_i2c_transfer_repeated_start = 1'b0;
 
-   task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
+    task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
     //temporary storage values
     bit[I2C_ADDR_WIDTH-1:0] addr_tmp;
     bit[I2C_DATA_WIDTH-1:0] write_data_queue[$];
@@ -92,7 +93,9 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     //clears queue to remove previous transmissions 
     write_data_queue.delete();
 
-    do get_link_status(bt, one_data_bit); while(bt != START);
+    if(!wait_for_i2c_transfer_repeated_start) do get_link_status(bt, one_data_bit); while(bt != START);
+    else wait_for_i2c_transfer_repeated_start = 1'b0;
+
     repeat(I2C_ADDR_WIDTH)
         begin
                 get_link_status(bt, one_data_bit);
@@ -111,8 +114,11 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
         repeat(I2C_DATA_WIDTH) begin
             get_link_status(bt, one_data_bit);
             //exit on new start or stop bit
-            if(bt == STOP || bt == START) begin 
+            if(bt != DATA) begin 
                 write_data = write_data_queue;
+                if(bt == START) begin
+                    wait_for_i2c_transfer_repeated_start = 1'b1;
+                end
                 return;
             end
             packet = {packet, one_data_bit};
@@ -152,16 +158,13 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
     //reset data_queue
     data_queue.delete();
 
-    if(!monitor_repeated_start) begin
-        monitor_repeated_start = 1'b0;
-        do get_link_status(bt, one_data_bit); while(bt != START);
-    end
+    if(!monitor_repeated_start) do get_link_status(bt, one_data_bit); while(bt != START);
+    else monitor_repeated_start = 1'b0;
 
-    repeat(I2C_ADDR_WIDTH)
-        begin
+    repeat(I2C_ADDR_WIDTH) begin
         get_link_status(bt, one_data_bit);
         addr = {addr, one_data_bit};
-        end
+    end
 
     @(posedge scl);
     op = sda ? READ : WRITE;    
