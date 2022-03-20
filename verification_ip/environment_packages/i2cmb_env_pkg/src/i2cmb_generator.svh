@@ -1,5 +1,4 @@
-class i2cmb_generator extends ncsu_object;
-    `ncsu_register_object(i2cmb_generator)
+class i2cmb_generator extends ncsu_component;
 
     //shorthands for wishbone register offsets
     parameter CSR=2'b00;

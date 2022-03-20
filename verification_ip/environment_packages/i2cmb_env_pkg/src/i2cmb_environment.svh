@@ -1,7 +1,6 @@
 import wb_pkg::*;
 
-class i2cmb_environment extends ncsu_object;
-    `ncsu_register_object(i2cmb_environment)
+class i2cmb_environment extends ncsu_component;
 
     i2cmb_env_configuration configuration;
     wb_agent wb_master_agent;

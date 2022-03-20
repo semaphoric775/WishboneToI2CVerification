@@ -1,5 +1,5 @@
-class i2cmb_test extends ncsu_object;
-    `ncsu_register_object(i2cmb_test);
+class i2cmb_test extends ncsu_component;
+
     i2cmb_env_configuration cfg;
     i2cmb_environment env;
     i2cmb_generator gen;
