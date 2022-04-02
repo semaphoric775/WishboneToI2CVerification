@@ -21,8 +21,8 @@ class i2cmb_generator extends ncsu_component;
     int seq_read_count = 32;
 
 
-    function new(string name = "");
-        super.new(name);
+    function new(string name = "", ncsu_component_base  parent = null);
+        super.new(name, parent);
     endfunction
 
     virtual task run();
@@ -76,6 +76,8 @@ class i2cmb_generator extends ncsu_component;
                         wishboneReadData(i2c_device_addr, 1, wb_data_from_i2c);
                     end
                 end
+
+                #200000;
             end
 
             begin : I2C_SIM_FLOW
@@ -107,6 +109,7 @@ class i2cmb_generator extends ncsu_component;
         if((ncsu_warnings == 0) && (ncsu_errors == 0) && (ncsu_fatals == 0)) $display("ALL TESTS PASSED");
         else $display("TESTS FAILED OR WARNINGS TRIGGERED");
         $display("*----------------------------------------------*");
+        $finish;
     endtask
 
     function void set_i2c_agent(i2c_agent agent);

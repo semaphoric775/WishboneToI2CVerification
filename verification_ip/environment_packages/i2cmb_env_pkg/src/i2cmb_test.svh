@@ -4,13 +4,13 @@ class i2cmb_test extends ncsu_component;
     i2cmb_environment env;
     i2cmb_generator gen;
 
-    function new(string name = "");
-        super.new(name);
+    function new(string name = "", ncsu_component_base  parent = null);
+        super.new(name, parent);
         cfg = new("cfg");
-        env = new("env");
+        env = new("env", this);
         env.set_configuration(cfg);
         env.build();
-        gen = new("gen");
+        gen = new("gen", this);
         gen.set_wb_agent(env.get_wb_agent());
         gen.set_i2c_agent(env.get_i2c_agent());
     endfunction
