@@ -16,6 +16,9 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
     endfunction
 
     virtual function void nb_put(T trans);
+        if(verbosity_level > NCSU_MEDIUM) begin
+            $display("I2C_COVERAGE: Sampling trans %p at time %d", trans, $time);
+        end
         i2c_transaction_cg.sample();
     endfunction
 endclass

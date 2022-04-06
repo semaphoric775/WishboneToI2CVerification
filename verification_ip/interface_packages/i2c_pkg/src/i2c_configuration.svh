@@ -1,6 +1,6 @@
 class i2c_configuration extends ncsu_configuration;
     bit monitor_show_transactions;
-    bit en_clock_stretching;
+    rand bit en_clock_stretching;
 
     covergroup i2c_configuration_cg;
         option.per_instance = 1;
@@ -16,6 +16,9 @@ class i2c_configuration extends ncsu_configuration;
     endfunction
 
     function void sample_coverage();
+        if(verbosity_level > NCSU_LOW) begin
+            $display("I2C_CONFIGURATION: Sampling Coverage at time %d", $time);
+        end
         i2c_configuration_cg.sample();
     endfunction
 

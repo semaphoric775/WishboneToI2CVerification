@@ -7,6 +7,7 @@ class i2cmb_test_base extends ncsu_component;
     function new(string name = "", ncsu_component_base  parent = null);
         super.new(name, parent);
         cfg = new("cfg");
+        cfg.sample_coverage();
         env = new("env", this);
         env.set_configuration(cfg);
         env.build();

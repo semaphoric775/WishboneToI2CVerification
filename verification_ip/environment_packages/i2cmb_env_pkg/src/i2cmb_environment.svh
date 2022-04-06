@@ -35,6 +35,8 @@ class i2cmb_environment extends ncsu_component;
         wb_master_agent.connect_subscriber(pred);
         pred.set_scoreboard(scbd);
         i2c_slave_agent.connect_subscriber(scbd);
+        //gather transaction-level coverage in environment from i2c side
+        i2c_slave_agent.connect_subscriber(coverage);
     endfunction
 
     function wb_agent get_wb_agent();

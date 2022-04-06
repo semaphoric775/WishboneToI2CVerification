@@ -17,6 +17,9 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     endfunction
 
     virtual function void nb_put(T trans);
+        if(verbosity_level > NCSU_MEDIUM) begin
+            $display("WB_COVERAGE: Sampled transaction %p at time %d", trans, $time);
+        end
         wb_transaction_cg.sample();
     endfunction
 endclass

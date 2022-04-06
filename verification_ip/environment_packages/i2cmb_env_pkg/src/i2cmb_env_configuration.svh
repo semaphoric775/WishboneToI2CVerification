@@ -24,9 +24,11 @@ class i2cmb_env_configuration extends ncsu_configuration;
 
     function new(string name="");
         super.new(name);
+        env_configuration_cg = new;
         i2c_agent_config = new("i2c_agent_config");
         wb_agent_config = new("wb_agent_config");
-        env_configuration_cg = new;
+        i2c_agent_config.sample_coverage();
+        wb_agent_config.sample_coverage();
     endfunction
 
     function void sample_coverage();

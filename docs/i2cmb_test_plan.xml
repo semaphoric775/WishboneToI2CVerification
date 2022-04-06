@@ -287,7 +287,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.1</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;2.1&quot;"><Data ss:Type="String">2.1</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Data Received</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -303,7 +303,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.2000000000000002</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;2.2&quot;"><Data ss:Type="String">2.2</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Data Written</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -353,7 +353,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s69"><Data ss:Type="Number">2.5</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
-    <Cell ss:StyleID="s66"><Data ss:Type="String">Read/Writes</Data><NamedCell
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Readand Writes</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Read and write operations to range of I2C devices</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -441,7 +441,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">4.0999999999999996</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;4.1&quot;"><Data ss:Type="String">4.1</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Stop bit</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -457,7 +457,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">4.2</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;4.2&quot;"><Data ss:Type="String">4.2</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Repeated Start</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -486,7 +486,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="30">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">5.0999999999999996</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;5.1&quot;"><Data ss:Type="String">5.1</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Multiple busses</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -502,7 +502,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="30">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">5.2</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;5.2&quot;"><Data ss:Type="String">5.2</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Multiple I2C Devices</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -518,7 +518,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">5.3</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;5.3&quot;"><Data ss:Type="String">5.3</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Invalid bus selected</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -613,8 +613,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>24</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>21</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

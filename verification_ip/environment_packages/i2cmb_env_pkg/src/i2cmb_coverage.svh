@@ -34,6 +34,9 @@ class i2cmb_coverage extends ncsu_component#(.T(i2c_transaction));
     endfunction
 
     virtual function void nb_put(T trans);
+        if(verbosity_level > NCSU_MEDIUM) begin
+            $display("I2CMB_COVERAGE: sampling transaction %p at time %d", trans, $time);
+        end
         this.addr = trans.addr;
         this.trans_type = trans.trans_type;
         i2cmb_coverage_cg.sample();

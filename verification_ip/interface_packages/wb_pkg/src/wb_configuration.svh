@@ -1,6 +1,6 @@
 class wb_configuration extends ncsu_configuration;
     bit monitor_show_transactions;
-    bit terminate_with_stop;
+    rand bit terminate_with_stop;
 
     covergroup wb_configuration_cg;
         option.per_instance = 1;
@@ -16,6 +16,9 @@ class wb_configuration extends ncsu_configuration;
     endfunction
     
     function sample_coverage();
+        if(verbosity_level > NCSU_LOW) begin
+            $display("WB_CONFIGURATION: Sampling Coverage at time %d", $time);
+        end
         wb_configuration_cg.sample();
     endfunction
 

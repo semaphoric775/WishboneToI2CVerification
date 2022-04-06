@@ -48,7 +48,8 @@ convert_testplan:
 
 merge_coverage:
 	vcover merge -stats=none -strip -totals sim_and_testplan_merged.ucdb ./*.ucdb
-	coverage open ./sim_and_testplan_merged.ucdb
 
 report_coverage:
 	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
+
+run_test_suite: clean compile optimize convert_testplan run_cli merge_coverage report_coverage
