@@ -1,4 +1,4 @@
-class i2cmb_test extends ncsu_component;
+class i2cmb_test_regs extends ncsu_component;
 
     i2cmb_env_configuration cfg;
     i2cmb_environment env;

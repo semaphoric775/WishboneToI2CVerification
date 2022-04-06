@@ -137,7 +137,7 @@ wb_bus (
 // ****************************************************************************
 // Define the flow of the simulation
 
-i2cmb_test tst;
+i2cmb_test_base tst;
 
 initial begin : SIM_FLOW
     ncsu_config_db#(.T(virtual i2c_if#(.ADDR_WIDTH(I2C_ADDR_WIDTH), .DATA_WIDTH(I2C_DATA_WIDTH))))::set("tst.env.i2c_agent", i2c_bus);

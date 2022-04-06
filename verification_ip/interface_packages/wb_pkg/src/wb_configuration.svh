@@ -1,15 +1,18 @@
 class wb_configuration extends ncsu_configuration;
     bit monitor_show_transactions;
-    bit collect_coverage;
+    bit terminate_with_stop;
 
     covergroup wb_configuration_cg;
         option.per_instance = 1;
         option.name = name;
+
+        coverpoint terminate_with_stop;
     endgroup
 
     function new(string name=""); 
         super.new(name);
         monitor_show_transactions = 0;
+        wb_configuration_cg = new;
     endfunction
     
     function sample_coverage();

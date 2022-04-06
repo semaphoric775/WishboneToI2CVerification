@@ -1,15 +1,18 @@
 class i2c_configuration extends ncsu_configuration;
     bit monitor_show_transactions;
-    bit collect_coverage;
+    bit en_clock_stretching;
 
     covergroup i2c_configuration_cg;
         option.per_instance = 1;
         option.name = name;
+
+        coverpoint en_clock_stretching;
     endgroup
 
     function new(string name="");
         super.new(name);
         monitor_show_transactions = 0;
+        i2c_configuration_cg = new;
     endfunction
 
     function void sample_coverage();

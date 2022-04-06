@@ -5,6 +5,8 @@ include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/i2c_pkg/Makefi
 include $(ECE745_PROJECT_HOME)/verification_ip/environment_packages/i2cmb_env_pkg/Makefile
 include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
 
+TEST_SEED ?= 12345
+
 clean: 
 	rm -rf work *.wlf transcript
 
@@ -30,7 +32,23 @@ optimize:
 
 compile: comp_I2C_MB comp_bench optimize
 
-simulate:
-	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb &
+run_gui:
+	vsim -sv_seed $(TEST_SEED) -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb &
 
-debug: clean compile simulate
+run_cli:
+	vsim  -c -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME; coverage save i2cmb_test.$(TEST_SEED).ucdb; quit -f" optimized_debug_top_tb
+
+cli: clean compile optimize run_cli
+
+debug: clean compile optimize run_gui
+
+convert_testplan:
+	xml2ucdb -format Excel ../../../docs/i2cmb_test_plan.xml ./i2mcb_test_plan.ucdb
+	add testbrowser ./*.udcb
+
+merge_coverage:
+	vcover merge -stats=none -strip -totals sim_and_testplan_merged.ucdb ./*.ucdb
+	coverage open ./sim_and_testplan_merged.ucdb
+
+report_coverage:
+	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb

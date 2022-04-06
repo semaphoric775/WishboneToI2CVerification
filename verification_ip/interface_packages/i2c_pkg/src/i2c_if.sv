@@ -80,6 +80,13 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 // ****************************************************************************             
     bit wait_for_i2c_transfer_repeated_start = 1'b0;
 
+    property ack_bit_sends;
+        //NOT IMPLEMENTED
+        @(posedge scl) sda || !sda;
+    endproperty
+
+    assert property(ack_bit_sends) else $warning("INTERFACE WARNING: I2C acknowledge bit not sent at time %d", $time);
+
     task wait_for_i2c_transfer (output i2c_op_t op, output bit[I2C_DATA_WIDTH-1:0] write_data[]);
     //temporary storage values
     bit[I2C_ADDR_WIDTH-1:0] addr_tmp;
@@ -89,6 +96,7 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
 
     i2c_bit_type bt;
     bit one_data_bit;
+    
     
     //clears queue to remove previous transmissions 
     write_data_queue.delete();
@@ -129,20 +137,20 @@ typedef enum {START, STOP, DATA} i2c_bit_type;
    endtask
 
 // ****************************************************************************              
-     task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data [], output bit transfer_complete);
-    transfer_complete = 0;
-    for(int i=0; i<read_data.size(); i++) begin
-        for(int j=I2C_DATA_WIDTH-1; j >= 0; j--) begin
-            send_bit(read_data[i][j]);
-        end 
-        @(posedge scl);
-        //nack condition detected
-        if(sda == 1) begin
-            transfer_complete = 1;
-            return;
-        end    
-        @(negedge scl);
-    end // quit task with transfer_complete=0 if read_data exhausted
+    task provide_read_data (input bit [I2C_DATA_WIDTH-1:0] read_data [], output bit transfer_complete);
+        transfer_complete = 0;
+        for(int i=0; i<read_data.size(); i++) begin
+            for(int j=I2C_DATA_WIDTH-1; j >= 0; j--) begin
+                send_bit(read_data[i][j]);
+            end 
+            @(posedge scl);
+            //nack condition detected
+            if(sda == 1) begin
+                transfer_complete = 1;
+                return;
+            end    
+            @(negedge scl);
+        end // quit task with transfer_complete=0 if read_data exhausted
     endtask
 
 // ****************************************************************************
