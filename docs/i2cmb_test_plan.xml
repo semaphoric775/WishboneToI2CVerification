@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>12570</WindowHeight>
-  <WindowWidth>27255</WindowWidth>
+  <WindowHeight>8190</WindowHeight>
+  <WindowWidth>20415</WindowWidth>
   <WindowTopX>1545</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <ProtectStructure>False</ProtectStructure>
@@ -319,7 +319,7 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.2999999999999998</Data><NamedCell
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;2.3&quot;"><Data ss:Type="String">2.3</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Differing Device Addresses</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -353,7 +353,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s69"><Data ss:Type="Number">2.5</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
-    <Cell ss:StyleID="s66"><Data ss:Type="String">Readand Writes</Data><NamedCell
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Read and Writes</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Read and write operations to range of I2C devices</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -567,11 +567,11 @@
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">FSM</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
-    <Cell ss:StyleID="s71"><Data ss:Type="String">Bit &amp; Byte level FSM valid transitions</Data><NamedCell
+    <Cell ss:StyleID="s71"><Data ss:Type="String">Byte level FSM valid transitions</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
-    <Cell ss:StyleID="s71"><Data ss:Type="String">/top/DUT</Data><NamedCell
+    <Cell ss:StyleID="s71"><Data ss:Type="String">/top/DUT/iicmb_m_inst0/mbit_inst0</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
-    <Cell ss:StyleID="s71"><Data ss:Type="String">Instance</Data><NamedCell
+    <Cell ss:StyleID="s71"><Data ss:Type="String">FSM</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="Number">1</Data><NamedCell
       ss:Name="test_plan_layered_testbench"/></Cell>
@@ -610,11 +610,12 @@
     <VerticalResolution>600</VerticalResolution>
    </Print>
    <Selected/>
+   <TopRowVisible>16</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>21</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>30</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
