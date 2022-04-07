@@ -137,13 +137,31 @@ wb_bus (
 // ****************************************************************************
 // Define the flow of the simulation
 
-i2cmb_test_base tst;
+//handles for each type of test
+//if there were more directed tests,
+//the factory would be useful
+//however, ncsu package factory only works with objects
+i2cmb_test_base tst_base;
+i2cmb_test_regs tst_regs;
+string testname;
 
 initial begin : SIM_FLOW
     ncsu_config_db#(.T(virtual i2c_if#(.ADDR_WIDTH(I2C_ADDR_WIDTH), .DATA_WIDTH(I2C_DATA_WIDTH))))::set("tst.env.i2c_agent", i2c_bus);
     ncsu_config_db#(.T(virtual wb_if#(.ADDR_WIDTH(WB_ADDR_WIDTH), .DATA_WIDTH(WB_DATA_WIDTH))))::set("tst.env.wb_agent", wb_bus);
-    tst = new("tst");
-    tst.run();
+    if ( !$value$plusargs("TESTNAME=%s", testname)) begin
+      $display("FATAL: +TESTNAME plusarg not found on command line");
+      $fatal;
+    end
+    if(testname=="i2cmb_test_base") begin
+        tst_base = new("tst");
+        tst_base.run();
+    end else if (testname=="i2cmb_test_regs") begin
+        tst_regs = new("tst");
+        tst_regs.run();
+    end else begin
+        $display("Could not find requested test. Check TESTNAME argument");
+        $fatal;
+    end
 end
 
 endmodule

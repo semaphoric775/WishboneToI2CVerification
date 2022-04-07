@@ -31,7 +31,6 @@ class i2cmb_generator extends ncsu_component;
     virtual task run();
         i2c_device_addr = 8'h22;
         initializeCore(8'h00);
-        $display("FINISHED INITIALIZING CORE");
         wb_master_agent.bus.wait_for_num_clocks(20);
 
         //create array of data for I2C sequential and alternating reads
