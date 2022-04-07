@@ -14,6 +14,11 @@ class i2cmb_test_base extends ncsu_component;
         gen = new("gen", this);
         gen.set_wb_agent(env.get_wb_agent());
         gen.set_i2c_agent(env.get_i2c_agent());
+
+        //notify generator of device setup
+        //another way of doing this would be using the factory
+        //for a unique generator
+        gen.cei = cfg.core_enable_interrupts;
     endfunction
 
     virtual task run();

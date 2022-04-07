@@ -17,6 +17,9 @@ class i2cmb_generator extends ncsu_component;
     bit[7:0] i2c_write_data[$];
     bit[7:0] i2c_current_write_data[1];
 
+    //passed down from the configuration
+    bit cei;
+
     int seq_write_num_trans_to_send;
     int seq_read_count = 32;
 
@@ -27,7 +30,9 @@ class i2cmb_generator extends ncsu_component;
 
     virtual task run();
         i2c_device_addr = 8'h22;
-        initializeCore(8'h05);
+        initializeCore(8'h00);
+        $display("FINISHED INITIALIZING CORE");
+        wb_master_agent.bus.wait_for_num_clocks(20);
 
         //create array of data for I2C sequential and alternating reads
         for(int i = 0; i < 32; i++) begin
@@ -122,18 +127,27 @@ class i2cmb_generator extends ncsu_component;
 
     local task clearIRQ();
         bit[7:0] tmp;
-        wb_master_agent.bus.wait_for_interrupt();
-        wb_master_agent.bus.master_read(CMDR, tmp);
+        //IRQ raised
+        if(cei) begin
+            wb_master_agent.bus.wait_for_interrupt();
+            wb_master_agent.bus.master_read(CMDR, tmp);
+        end else begin //IRQ not raised, polling mode
+            do begin
+                wb_master_agent.bus.master_read(CMDR, tmp);
+            end while(tmp[7] == 1'b0);
+            return;
+        end
     endtask
 
     //task to reset DUT and set busID
     local task initializeCore(input byte busID);
         wb_transaction tmp = new;
-        tmp.address = CSR;
-        tmp.data = 8'b11xxxxxx;
-        wb_master_agent.bl_put(tmp);
 
-         wb_master_agent.bus.wait_for_reset();
+        wb_master_agent.bus.wait_for_reset();
+        tmp.address = CSR;
+        if(cei) tmp.data = 8'b11xxxxxx;
+        else tmp.data = 8'b1xxxxxxx;
+        wb_master_agent.bl_put(tmp);
         
         tmp = new;
         tmp.address = DPR;

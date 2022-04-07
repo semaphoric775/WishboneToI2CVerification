@@ -2,7 +2,7 @@ class i2cmb_env_configuration extends ncsu_configuration;
 
     i2c_configuration i2c_agent_config;
     wb_configuration wb_agent_config;
-    bit core_enable_interrupts;
+    bit core_enable_interrupts = 1;
     bit address_invalid_bus_id;
     rand int num_connected_i2c_busses;
     rand int num_i2c_devices_per_bus;
