@@ -6,7 +6,7 @@ include $(ECE745_PROJECT_HOME)/verification_ip/environment_packages/i2cmb_env_pk
 include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
 
 TEST_SEED ?= 12345
-TESTNAME ?= i2cmb_test_base
+TESTNAME ?= i2cmb_test_regs
 
 clean: 
 	rm -rf work *.wlf transcript
@@ -34,7 +34,7 @@ optimize:
 compile: comp_I2C_MB comp_bench optimize
 
 run_gui:
-	vsim -coverage -sv_seed $(TEST_SEED) -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" +TESTNAME=$(TESTNAME) optimized_debug_top_tb &
+	vsim -sv_seed $(TEST_SEED) -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" +TESTNAME=$(TESTNAME) optimized_debug_top_tb &
 
 run_cli:
 	vsim  -coverage -c -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TESTNAME); coverage save $(TESTNAME).$(TEST_SEED).ucdb; quit -f" +TESTNAME=$(TESTNAME) optimized_debug_top_tb
