@@ -6,7 +6,7 @@ include $(ECE745_PROJECT_HOME)/verification_ip/environment_packages/i2cmb_env_pk
 include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
 
 TEST_SEED ?= 12345
-TESTNAME ?= i2cmb_test_regs
+TESTNAME ?= i2cmb_test_base
 
 clean: 
 	rm -rf work *.wlf transcript
@@ -60,3 +60,6 @@ report_coverage:
 	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
 
 run_test_suite: clean compile optimize convert_testplan run_i2cmb_test_regs run_i2cmb_test_base  merge_coverage report_coverage
+
+merge_coverage_with_test_plan:
+	vsim -do load_ucdbs_and_merge_with_test_plan.do	

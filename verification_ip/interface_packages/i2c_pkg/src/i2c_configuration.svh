@@ -1,6 +1,6 @@
 class i2c_configuration extends ncsu_configuration;
     bit monitor_show_transactions;
-    rand bit en_clock_stretching;
+    bit en_clock_stretching = 1;
 
     covergroup i2c_configuration_cg;
         option.per_instance = 1;
