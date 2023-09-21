@@ -1,0 +1,632 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Eamon Murphy</Author>
+  <LastAuthor>Eamon Murphy</LastAuthor>
+  <Created>2022-03-29T20:12:28Z</Created>
+  <LastSaved>2022-04-09T18:38:10Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>5832</WindowHeight>
+  <WindowWidth>16092</WindowWidth>
+  <WindowTopX>1548</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#9BC2E6" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s63">
+   <Borders/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s64">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#DDEBF7" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s68">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#DDEBF7" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s69">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#EDEDED" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s70">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s72">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s73">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="TestPlan">
+  <Names>
+   <NamedRange ss:Name="test_plan_layered_testbench"
+    ss:RefersTo="=TestPlan!R1C1:R33C10"/>
+  </Names>
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="32" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Column ss:Width="189"/>
+   <Column ss:Width="115.80000000000001"/>
+   <Column ss:Width="398.4"/>
+   <Column ss:Width="240.60000000000002"/>
+   <Column ss:Width="60.6"/>
+   <Column ss:Width="39"/>
+   <Column ss:Width="26.4"/>
+   <Column ss:Width="45"/>
+   <Column ss:Width="45.599999999999994"/>
+   <Column ss:Width="39.6"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Verification Plan for WB-I2C Interface</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:Index="3" ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">#</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Section</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Description</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Link</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Type</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Weight</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Goal</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s63"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s63"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s63"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Simulation </Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s64"><Data ss:Type="String">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Register Testing</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">1.1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Access Permissions</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Verify the wishbone control registers have read, write permissions set correctly</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_test_regs</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">test</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=1.2"><Data ss:Type="Number">1.2</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Invalid Addressing</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Verify invalid addresses don't overwrite or affect DUT registers</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_test_regs</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">test</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1.3</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Default Values</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Wishbone control registers have default values at startup</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_test_regs</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">test</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1.4</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CSR Reset Lock</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">No control bits should be writeable other than core enable at startup in the CSR</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_test_regs</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">test</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1.5</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CMDR Reserved  Bit</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CMDR bit 3 reserved and write only even when IRQ is cleared</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_test_regs</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">test</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">I2C Operation</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;2.1&quot;"><Data ss:Type="String">2.1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Data Received</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Wishbone concurrent writes to I2C</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_coverage_cg::trans_type</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;2.2&quot;"><Data ss:Type="String">2.2</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Data Written</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Data writes correctly back to the Wishbone interface</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_coverage_cg::trans_type</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;2.3&quot;"><Data ss:Type="String">2.3</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Differing Device Addresses</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Using I2C devices with a range of device addresses</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_coverage_cg::addr</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.4</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Alternating read writes</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Alternating read, write operations</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_coverage_cg::trans_type</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.5</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Read and Writes</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Read and write operations to range of I2C devices</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">i2cmb_coverage_cg::addrXtrans_type</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Cross</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.6</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">SDA Released</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DUT releases SDA line to send ACK bit during wishbone write transaction</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">/top/i2c_bus/assert__ack_bit_sends</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Assertion</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">2.7</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Clock stretching</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">DUT behaves correctly and pauses I2C transfer when clock is held low through tri-state buffer</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">i2c_configuration_cg::en_clock_stretching</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Interrupts</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">3.1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DUT Interrupts</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Operation with polling CMDR and clearing IRQ interrupt</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">env_configuration_cg::core_enable_interrupts</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Coverpoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">4</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Transaction Format</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;4.1&quot;"><Data ss:Type="String">4.1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Stop bit</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Transactions ended with stop bit</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">wb_configuration_cg::repeated_start_allowed</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;4.2&quot;"><Data ss:Type="String">4.2</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Repeated Start</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Transactions reinitiated with repeated start bit</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">wb_configuration_cg::repeated_start_allowed</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">5</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Multiple I2C Devices and Busses</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;5.1&quot;"><Data ss:Type="String">5.1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Multiple busses</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DUT has multiple I2C interfaces connected</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">env_configuration_cg::num_connected_i2c_busses</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;5.2&quot;"><Data ss:Type="String">5.2</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Multiple I2C Devices</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Multiple I2C devices on the same bus</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">env_configuration_cg::num_i2c_devices_per_bus</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69" ss:Formula="=&quot;5.3&quot;"><Data ss:Type="String">5.3</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Invalid bus selected</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Device behavior when an invalid bus is selected</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">env_configuration_cg::address_invalid_bus_id</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">CoverPoint</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">100</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">6</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Code Coverage</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="Number">75</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">6.1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">RTL Core</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">All design units have 75% code and branch coverage</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">/top/DUT</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Instance</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">75</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="Number">6.2</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">FSM</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Byte level FSM valid transitions</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">/top/DUT/iicmb_m_inst0/mbit_inst0</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">FSM</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Number">75</Data><NamedCell
+      ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+    <Cell ss:StyleID="s72"><NamedCell ss:Name="test_plan_layered_testbench"/></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Zoom>81</Zoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>28</ActiveRow>
+     <ActiveCol>6</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <QueryTable xmlns="urn:schemas-microsoft-com:office:excel">
+   <Name>test_plan_layered_testbench</Name>
+   <AutoFormatFont/>
+   <AutoFormatPattern/>
+   <QuerySource>
+    <QueryType>Web</QueryType>
+    <EnableRedirections/>
+    <RefreshedInXl9/>
+    <URLString
+     x:HRef="C:\Users\eamon\Documents\ece745\project3\layered_testbench_with_testplan_with_updated_makefile\test_plan_layered_te"/>
+    <URLString x:HRef="stbench.xml"/>
+    <VersionLastEdit>7</VersionLastEdit>
+    <VersionLastRefresh>7</VersionLastRefresh>
+    <VersionRefreshableMin>1</VersionRefreshableMin>
+   </QuerySource>
+  </QueryTable>
+ </Worksheet>
+</Workbook>
